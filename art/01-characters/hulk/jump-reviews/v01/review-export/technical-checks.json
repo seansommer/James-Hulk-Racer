@@ -1,0 +1,335 @@
+{
+  "result": "PASS_FILE_CHECKS",
+  "selectedDrawings": 9,
+  "individualPngExports": 18,
+  "atlasRegionComparisons": 9,
+  "sourcePreserved": true,
+  "productionReadyFrames": 0,
+  "checks": [
+    {
+      "file": "frames-512/hulk_jump_rear_000.png",
+      "sha256": "f1d8c0e2795e2ff3001fc4ce49f90ecdbbdd55d439a9d892d9742a62f80a0bb3",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        114,
+        185,
+        407,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_jump_rear_000.png",
+      "sha256": "782b45c62a68802c5c100e3841569411a58e2ebeb0365e441d60ca7035f4ec10",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        55,
+        91,
+        205,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_jump_rear_001.png",
+      "sha256": "077fa58fe6add6af12d0ba75ace1032b3d9ab5b6434f11eb9075d2d9109b4731",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        84,
+        113,
+        444,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_jump_rear_001.png",
+      "sha256": "b410b580212cf392ccab65d656f1af5f30e3de68d523042e3b9db61ccf0b7e53",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        41,
+        56,
+        223,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_jump_rear_002.png",
+      "sha256": "c4c02ee95ebc8e62fa2de2757d195edfbcbb157481af134f3290d3c898cf2a48",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        82,
+        122,
+        427,
+        523
+      ]
+    },
+    {
+      "file": "frames-256/hulk_jump_rear_002.png",
+      "sha256": "83f0c96f7bfcfe0460fff8b07ea2f40514d81bd409fb6b1d08ea8027964c36a4",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        40,
+        60,
+        215,
+        263
+      ]
+    },
+    {
+      "file": "frames-512/hulk_jump_rear_003.png",
+      "sha256": "a7445ab834ccf8560a6e5473fc56ecd9114d4688e61136f198b3a87d4d927ff9",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        61,
+        146,
+        463,
+        488
+      ]
+    },
+    {
+      "file": "frames-256/hulk_jump_rear_003.png",
+      "sha256": "0eb5e30f5336082154d66d0c2aa56ba3e7eb870e7df767b8be3bf4fd85500a99",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        29,
+        72,
+        233,
+        246
+      ]
+    },
+    {
+      "file": "frames-512/hulk_jump_rear_004.png",
+      "sha256": "de4daf14493d6849ca9f2e52a56fa5971e22db6355beaf4406c9b4b4524e029e",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        79,
+        139,
+        445,
+        570
+      ]
+    },
+    {
+      "file": "frames-256/hulk_jump_rear_004.png",
+      "sha256": "df2e2aba75c0119eaec23106396ba51ef7aec2dfa060f23749e697a5b520bf27",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        38,
+        68,
+        224,
+        286
+      ]
+    },
+    {
+      "file": "frames-512/hulk_jump_rear_005.png",
+      "sha256": "79c48ef453416ac47d484c7d7d51a6ed4a92aa924a444a2d8aa78f321a337cd9",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        101,
+        140,
+        407,
+        576
+      ]
+    },
+    {
+      "file": "frames-256/hulk_jump_rear_005.png",
+      "sha256": "9a406026a86ffacbe31e24782656ccee41e49cd4040908cdc143b350faa4b0a0",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        49,
+        69,
+        205,
+        289
+      ]
+    },
+    {
+      "file": "frames-512/hulk_land_rear_000.png",
+      "sha256": "f1b1714822b8960d60eb089e8b65751bea0c21497c744efd52f03ab7a502e400",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        52,
+        140,
+        464,
+        582
+      ]
+    },
+    {
+      "file": "frames-256/hulk_land_rear_000.png",
+      "sha256": "57a89c5129997f8d86591d795cce36da4b401a3aa50bae795ed384cbae580e55",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        25,
+        69,
+        233,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_land_rear_001.png",
+      "sha256": "d457eae96829499e186af5c77bd5d43b5f0f7a18b3a5497bdf834a5d2c0f58f4",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        49,
+        196,
+        472,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_land_rear_001.png",
+      "sha256": "876fd878652ea991f9c42cbfa517b2e441407957f5e80e67f0a4dd8402c8138f",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        23,
+        97,
+        237,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_land_rear_002.png",
+      "sha256": "5cfabf31a19fd31bd7365fb41d33f0e9aa38d7d9981c5f81781e5eed1ffcdbea",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        114,
+        131,
+        386,
+        584
+      ]
+    },
+    {
+      "file": "frames-256/hulk_land_rear_002.png",
+      "sha256": "82cf6a98b0641cedec435db2a1065aef1ef4cc97418f53f4b418443cbd8b6472",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        56,
+        64,
+        195,
+        293
+      ]
+    }
+  ],
+  "scope": "Checksums, RGBA dimensions, alpha, margins and atlas equality; not approval of anatomy, motion, real game alignment or physical-phone performance."
+}
