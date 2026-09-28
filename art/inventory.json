@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "art/00-reference/lineup-j-v1.png",
+      "sha256": "6fa0dc53e03be60c4f2becd0d8c32ef175c670b801e0aeb5b516447ba8328c14",
+      "bytes": 2057086,
+      "width": 1916,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": "Original five-costume lineup supplied in this conversation. J on chest/belt/shield and descriptor-first names. Not a sprite sheet."
+    },
+    {
+      "path": "art/00-reference/lineup-j-v1.webp",
+      "sha256": "86fa8d69be1a3b071997da7554723f7968c788c967bd4e5ab7e298359bbaa4d3",
+      "bytes": 272222,
+      "width": 1916,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/captain/references/lineup-crop-v1.webp",
+      "sha256": "dcab77e488b4780e890fccafd8f2e3e80228581f870b8981cfb2d4bd5805c191",
+      "bytes": 64274,
+      "width": 384,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/hulk/references/lineup-crop-v1.webp",
+      "sha256": "8399b25b46fd5dee476ea2ffb530a1c55b3a8724274e902d28f4ff9d9d1e90d3",
+      "bytes": 59014,
+      "width": 383,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/iron/references/lineup-crop-v1.webp",
+      "sha256": "24dd76a23b5fb659ab95461d988f47e65236c10caa571703b913cbfa31355f9a",
+      "bytes": 62868,
+      "width": 383,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/spider/references/lineup-crop-v1.webp",
+      "sha256": "318a79f54a7b8ad2ed6a325f30a45661668b33b4110b6477b62cf1418adf35c1",
+      "bytes": 57118,
+      "width": 383,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/super/references/lineup-crop-v1.webp",
+      "sha256": "6d7f7529b13aab1b8d90a2bde6a81a72e1e024de06682290e7f33aebe361d334",
+      "bytes": 57940,
+      "width": 383,
+      "height": 821,
+      "status": "reference",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    }
+  ],
+  "totalBytes": 2630522,
+  "productionReadyCount": 0,
+  "note": "Counts describe real files; no candidate is automatically approved."
+}
