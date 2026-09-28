@@ -1,0 +1,25 @@
+{
+  "result": "PASS_LOCAL_REVIEWER",
+  "checkCount": 15,
+  "checks": [
+    "Nine embedded images load; initially paused",
+    "Next selects the next source pose",
+    "Previous returns to the preceding pose",
+    "Pause holds the current pose",
+    "Combined one-shot holds its last pose",
+    "Replay restarts from first pose",
+    "Jump selects six frames",
+    "Landing selects three frames",
+    "Checker background selected",
+    "Gameplay-size display selected",
+    "Provisional anchor guide can be hidden",
+    "Pose strip contains the selected clip only",
+    "390px portrait has no horizontal page overflow",
+    "844px landscape has no horizontal page overflow",
+    "No uncaught script errors or external requests"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "htmlSha256": "0aed90bb280c92ea0ec0240ffe92718d04e9787df6d9bc3ff26c75bf194f71fa",
+  "scope": "Local Chromium with supplied self-contained HTML; simulated portrait/landscape, not physical iPhone/Safari, motion approval or live-game testing."
+}

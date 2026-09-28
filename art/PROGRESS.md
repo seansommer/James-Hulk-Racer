@@ -1,46 +1,52 @@
-# Resume Jamesy art production — idle and banking / Movement 03
+# Resume Jamesy art production — Jump 04
 
 ## Current stage
 
-**Group 1 — Characters. Hulk Jamesy's rear idle and both banking directions are prepared as transparent motion-review candidates.** Characters still come before items, environments, interface, effects and assembly.
+**Group 1 — Characters. Hulk Jamesy's jump and landing pose candidates are prepared for review.** The broader project has a playable original racer and Game Center foundation; the new 2.5D storybook presentation is still in art production and has not replaced the live renderer.
 
 ## New in this batch
 
-- Three original still-image sources: initial twelve-pose study, full-sheet edit, focused four-pose opposite-foot correction. The first edit did not reliably reverse supporting legs; the focused correction supplied those missing poses.
-- Twelve selected drawing candidates: four rear idle, four bank-left, four bank-right. Both supporting feet now appear in each bank set. Names describe screen direction.
-- 512x640 and 256x320 RGBA exports, review atlas, manifest with source mapping/scales/anchors, contact board and an offline viewer. Alternate sizes are not extra unique poses.
-- [Movement 03 reviewer](01-characters/hulk/movement-reviews/v01/review-export/review.html) and [review notes](01-characters/hulk/movement-reviews/v01/REVIEW.md). Starts paused; three pose sets, stepping, speed, size, background and four-frame-strip controls.
-- 24 individual PNG checks, 12 atlas-region comparisons, source hash verification, 10 synthetic tests and 13 executed local Chromium viewer checks. No physical phone or live-game performance claim.
+- One original nine-pose rear-view source, preserved unchanged with its SHA-256 and generation provenance.
+- Six jump and three landing drawing candidates; 512x640 RGBA masters and matching 256x320 copies, review atlas, source rectangles, provisional roots, contact board and an embedded-image reviewer.
+- [Jump 04 reviewer](01-characters/hulk/jump-reviews/v01/review-export/review.html) and [review notes](01-characters/hulk/jump-reviews/v01/REVIEW.md). Starts paused; one-shot playback holds the last pose rather than treating landing as a continuous loop.
+- Source order is unchanged. Pose 2 reads as early lift rather than grounded push-off. No simulated jump path, hidden interpolation, per-pose scale fitting or physics changes are added.
+- 18 individual PNG checks, nine atlas comparisons, source verification, 11 synthetic unit tests and 15 executed local Chromium reviewer checks. Browser checks are separate from the art workflow and do not replace physical phone testing.
 
-## Hulk schedule, without overstating completion
+## Current selected Hulk sequence candidates
 
-| Clip | Planned unique frames | Current selected candidate set |
+| Clip | Planned unique frames | Current selected candidates |
 | --- | ---: | --- |
-| Rear idle | 4 | Movement 03: 4 candidates |
-| Rear run | 8 | Run 02: 8 candidates; retain motion-polish notes |
-| Lean left | 4 | Movement 03: 4 candidates |
-| Lean right | 4 | Movement 03: 4 candidates |
-| Jump | 6 | Next |
-| Land | 3 | Next |
-| Smash | 8 | Contact study only; clip pending |
-| Thunderclap | 6 | Pending |
+| Rear idle | 4 | Movement 03: 4 |
+| Rear run | 8 | Run 02: 8 |
+| Lean left | 4 | Movement 03: 4 |
+| Lean right | 4 | Movement 03: 4 |
+| Jump | 6 | Jump 04: 6 |
+| Land | 3 | Jump 04: 3 |
+| Smash | 8 | Earlier contact study only; sequence next |
+| Thunderclap | 6 | Next action batch |
 | Power-up | 6 | Pending |
 | Bump | 3 | Pending |
 | Victory | 8 | Pending |
 | Menu idle | 4 | Pending |
 
-**20 selected sequence-drawing candidates across four clips, out of 64 planned Hulk frames. None is automatically production-approved.** Six earlier pose studies are separate and are not added to this count. Earlier run revisions and export duplicates are not counted again.
+**29 selected sequence-drawing candidates across six clips, out of 64 planned Hulk frames.** This is a candidate-count milestone, NOT a completion percentage or 29 production-approved frames. Six earlier pose studies are separate. Export resolutions, obsolete run versions and source-sheet copies do not increase this count.
 
-## Remaining movement review
+## Assessment and unresolved work
 
-Idle is intentionally subtle. The bank sets now alternate support, but the four-frame contact-pair cadence, cape changes, cross-source limb proportions and loop seams need a unified movement-polish review. Source scales and provisional placements are explicit. No mirroring, limb warping or hidden interpolation was used. Track-camera, ground and hitbox alignment remain for the isolated game view.
+The character identity, palette, rear-view vocabulary and reusable alpha/export pipeline are established. The largest remaining art risk is motion consistency: stride cadence, cape transitions, cross-sheet proportions, jump takeoff/contact timing, loop seams and final camera/ground alignment. Resolve these together before accepting the character package as production-ready.
+
+The other four costumes have reference designs, not finished animation libraries. Item families, environment layers, matching interface artwork and effects are still later production groups. Do not generate another poster as a substitute for actual pose frames.
 
 ## Next exact sub-batch
 
-**Rear jump (6) plus landing (3)**, then the remaining Hulk actions. Keep outstanding run/bank polish notes open rather than declaring those clips production-ready. Continue the four other character families before item generation.
+**Rear-view Smash (8) and Thunderclap (6)**, with effects kept separate. Then power-up, bump, victory and menu idle. Keep outstanding run/bank/jump notes open for a unified character-motion review. Continue the remaining four character families before items, then environments, interface, effects and assembly.
 
-## Established foundation and protected boundary
+## Whole-project checkpoint
 
-Art bible v1.2, the permanent J-emblem five-costume lineup, earlier pose studies and Run 02 remain preserved. The five costumes are not five accounts. No live renderer, Firebase rules, sign-in flow, roster or score changes. Preserve the existing v1.3 email/nickname Realtime Database design and Sean as sole initial Master. This art branch does not deploy the game.
+See [PROJECT_STATUS.md](../production/art-bible-v1/PROJECT_STATUS.md). Main already contains the original three-world game and the hub/account/Player Card/Hall of Fame foundation. The new sprite presentation and matching hub graphics are not integrated. Live Firebase rule activation and physical Safari behavior have not been verified by the art tests.
 
-GitHub remains the archive. Sources, review exports and intermediate attempts have separate labels. No Google Drive migration, new generated video or broad poster generation was done in this batch.
+## Protected boundary and storage
+
+Preserve art bible v1.2, the permanent J-emblem five-costume reference, prior reviewed sources and the current v1.3 email/nickname Realtime Database design with Sean as sole initial Master. Costumes are not player accounts. No main deployment, live-renderer change, Firebase rule edit, roster import or score migration is part of this batch.
+
+GitHub remains the artwork archive. Original sources, candidates and export copies have explicit statuses. No Google Drive migration or generated video is needed for this handoff. Confirm real saved bytes in the file inventory and successful archive job rather than counting generation prompts as assets.
