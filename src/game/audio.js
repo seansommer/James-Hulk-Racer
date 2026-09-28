@@ -1,7 +1,7 @@
-/** Small original, generated soundtrack. No recordings, speech or external media. */
+/** Original synthesized soundtrack. Audio permission must never block gameplay. */
 export class AudioEngine{
  constructor(settings){this.settings=settings;this.ctx=null;this.timer=null;this.step=0;this.level=0;}
- async unlock(){try{if(!this.ctx){this.ctx=new(window.AudioContext||window.webkitAudioContext)();this.master=this.ctx.createGain();this.master.gain.value=.6;this.master.connect(this.ctx.destination);}if(this.ctx.state==='suspended')await this.ctx.resume();}catch{}}
+ async unlock(){try{if(!this.ctx){this.ctx=new(window.AudioContext||window.webkitAudioContext)();this.master=this.ctx.createGain();this.master.gain.value=.6;this.master.connect(this.ctx.destination);}if(this.ctx.state==='suspended'){const resume=this.ctx.resume().catch(()=>{});await Promise.race([resume,new Promise(resolve=>setTimeout(resolve,350))]);}}catch{}}
  tone(freq,duration,volume=.1,type='sine',delay=0,end){if(!this.ctx||this.ctx.state!=='running')return;const t=this.ctx.currentTime+delay,o=this.ctx.createOscillator(),g=this.ctx.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);if(end)o.frequency.exponentialRampToValueAtTime(end,t+duration);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(volume,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g);g.connect(this.master);o.start(t);o.stop(t+duration+.04);}
  sfx(kind){const v=this.settings.sfx*.15;if(!v)return;const notes={gem:[740,990],special:[523,659,784,1047],jump:[230,540],power:[330,440,554,660,880],finish:[523,659,784,1047,1319],hit:[190,130],smash:[105,52],clap:[180,90]};(notes[kind]||notes.gem).forEach((f,i)=>this.tone(f,kind==='smash'?.3:.15,v,kind==='smash'?'triangle':'sine',i*.055));}
  start(level=0){this.stop();this.level=level;this.step=0;this.timer=setInterval(()=>this.music(),190);}

@@ -17,13 +17,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
       - name: Install pinned dependencies
         run: |
           if [ -f package-lock.json ]; then npm ci --no-fund; else npm install --no-fund; fi
+      - name: Audit browser dependencies
+        run: npm audit --omit=dev --audit-level=high
       - name: Game logic and local profile tests
         run: npm test
       - name: Private Firestore rules tests (demo emulator only)
@@ -43,6 +45,8 @@ jobs:
           name: james-racer-verification
           path: |
             dist/qa/
+            dist/assets/*.webp
+            dist/assets/*.jpg
             package-lock.json
           retention-days: 14
       - name: Upload site
