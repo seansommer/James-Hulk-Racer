@@ -11,7 +11,7 @@
       "hasAlphaChannel": false,
       "hasTransparentPixels": false,
       "productionReady": false,
-      "notes": "Original five-costume lineup supplied in this conversation. J on chest/belt/shield and descriptor-first names. Not a sprite sheet."
+      "notes": "Established five-costume reference with J emblems. Not a sprite sheet."
     },
     {
       "path": "art/00-reference/lineup-j-v1.webp",
@@ -36,6 +36,30 @@
       "hasTransparentPixels": false,
       "productionReady": false,
       "notes": ""
+    },
+    {
+      "path": "art/01-characters/hulk/archived-studies/hulk-visual-study-v01-superseded.png",
+      "sha256": "d60ed2a607e83f5c866a8c27d475a51a33a0cd6368cc90165e03a1a4ed417820",
+      "bytes": 2654913,
+      "width": 1536,
+      "height": 1024,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": true,
+      "hasTransparentPixels": true,
+      "productionReady": false,
+      "notes": "Superseded visual study, NOT an authoritative bible or a sprite atlas. Obsolete numeral emblems and cape-back badge conflict with v1.2; preserve only as an archived study, not a generation reference."
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v01-candidate.png",
+      "sha256": "51d8f6df4c21884c588e12e53ab606dcece85d444bb2e2e387529da9c7b033c0",
+      "bytes": 2070104,
+      "width": 1536,
+      "height": 1024,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": true,
+      "hasTransparentPixels": true,
+      "productionReady": false,
+      "notes": "Six-pose candidate with genuine alpha, NOT approved. Chest numerals must become J; lower-right contact pose faces front instead of the requested rear-three-quarter view; bank order and registration need review. See REVIEW-v01.md."
     },
     {
       "path": "art/01-characters/hulk/references/lineup-crop-v1.webp",
@@ -86,7 +110,7 @@
       "notes": ""
     }
   ],
-  "totalBytes": 2630522,
+  "totalBytes": 7355539,
   "productionReadyCount": 0,
   "note": "Counts describe real files; no candidate is automatically approved."
 }
