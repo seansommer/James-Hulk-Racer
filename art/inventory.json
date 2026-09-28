@@ -38,6 +38,30 @@
       "notes": ""
     },
     {
+      "path": "art/01-characters/hulk/action-reviews/v01/source-smash.png",
+      "sha256": "36e645f36a91bf4d358f0c86aa1479d3d9d0d78a84ae92fe4b184fb6d4336692",
+      "bytes": 4510898,
+      "width": 2560,
+      "height": 1712,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/hulk/action-reviews/v01/source-thunderclap.png",
+      "sha256": "57df82cb4b5798bdf5f28490d3ed4a6168aaa3688d53ef5d87f41a0ff4812cf8",
+      "bytes": 4389518,
+      "width": 2560,
+      "height": 1712,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
       "path": "art/01-characters/hulk/archived-studies/hulk-visual-study-v01-superseded.png",
       "sha256": "d60ed2a607e83f5c866a8c27d475a51a33a0cd6368cc90165e03a1a4ed417820",
       "bytes": 2654913,
@@ -1358,7 +1382,7 @@
       "notes": ""
     }
   ],
-  "totalBytes": 52716816,
+  "totalBytes": 61617232,
   "productionReadyCount": 0,
   "note": "Real image-file counts include alternate resolutions, atlases and review boards. They are not unique animation-frame counts. No candidate is automatically approved."
 }
