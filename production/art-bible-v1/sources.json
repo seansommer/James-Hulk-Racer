@@ -1,0 +1,12 @@
+[
+ {"id":"R1","title":"Current racer README","url":"https://github.com/seansommer/James-Hulk-Racer/blob/47d8291eadd9c0848dee38dc508b67f3129b6d11/README.md"},
+ {"id":"R2","title":"Current v1.3 account behavior","url":"https://github.com/seansommer/James-Hulk-Racer/blob/47d8291eadd9c0848dee38dc508b67f3129b6d11/docs/PLAYER_CENTER.md"},
+ {"id":"R3","title":"Stable game rules and world IDs","url":"https://github.com/seansommer/James-Hulk-Racer/blob/47d8291eadd9c0848dee38dc508b67f3129b6d11/src/game/logic.js"},
+ {"id":"R4","title":"Hall of Fame model","url":"https://github.com/seansommer/James-Hulk-Racer/blob/47d8291eadd9c0848dee38dc508b67f3129b6d11/src/shared/center-model.js"},
+ {"id":"R5","title":"Hub baseline commit","url":"https://github.com/seansommer/James-Game-Center/commit/40a1f4b2355e8e920ecd8a53cdc115cb47c75b49"},
+ {"id":"T1","title":"Three.js Sprite","url":"https://threejs.org/docs/pages/Sprite.html"},
+ {"id":"T2","title":"Three.js Textures","url":"https://threejs.org/manual/pages/textures.html"},
+ {"id":"T3","title":"Three.js Cleanup","url":"https://threejs.org/manual/pages/cleanup.html"},
+ {"id":"A1","title":"W3C WCAG 2.2","url":"https://www.w3.org/TR/wcag/"},
+ {"id":"A2","title":"MDN safe-area env values","url":"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/env"}
+]
