@@ -1,0 +1,298 @@
+{
+  "id": "run-v01",
+  "technicalResult": "PASS",
+  "visualStatus": "motion_needs_revision",
+  "uniqueReviewDrawings": 8,
+  "productionReadyFrames": 0,
+  "checks": [
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_000.png",
+      "sha256": "3a51f5d615d408119b4bf2cb771254177eda04e817c2dae790b4564b079273ad",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        142,
+        103,
+        444,
+        577
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_000.png",
+      "sha256": "a7b1e73af87c46d0b3469b163607a01bdd027347273eafa5a3c20b0d333fb06f",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        70,
+        50,
+        224,
+        290
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_001.png",
+      "sha256": "77acb1d91d512d802d03e75fbf049c0a9a88822d1a5eaec16aca25ba24204aca",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        131,
+        106,
+        438,
+        577
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_001.png",
+      "sha256": "c2e37b9b9b43c2bdfc3f1a8cec41a646075789dc9cd827deb1bb65e56c858543",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        64,
+        52,
+        220,
+        290
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_002.png",
+      "sha256": "4d465d094e6dc0d8647cf964c0bbc8394a3f3b4c0e06a14d780ef1c1a15cf926",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        141,
+        103,
+        449,
+        571
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_002.png",
+      "sha256": "12ad40d25db51611b62dd8b6e1814dce711bb4b3ae9e3506d36a3a8e47db9936",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        69,
+        50,
+        226,
+        287
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_003.png",
+      "sha256": "965bba346325bb0bb2a0d803b5266a31e8b6cfd2c13d02199cdd01af1ecf6ec5",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        137,
+        105,
+        440,
+        560
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_003.png",
+      "sha256": "77198b9119ff573fe5e59e7a6fff6f4d885948017e4565c134e231dd254fa980",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        67,
+        51,
+        221,
+        282
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_004.png",
+      "sha256": "d4a2af04acc8a9cc5357c811f213c3156487a095577c623398666ef981a65de8",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        128,
+        106,
+        441,
+        572
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_004.png",
+      "sha256": "a8df3a4b8d5063979fcf235b87678edba69bc3465a7c7760a8031550219f9399",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        63,
+        52,
+        222,
+        287
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_005.png",
+      "sha256": "2f758aaf9ebfd27909875dd7bd948ce4611808033804edb1856964d50a32addb",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        129,
+        106,
+        436,
+        572
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_005.png",
+      "sha256": "bbb65d3574761bc33ad43a16ea56cf503218f4dfb33d8b639a42e5f726e44632",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        63,
+        52,
+        219,
+        287
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_006.png",
+      "sha256": "54f83dbb82620af2321049a720a0f1ce8bea38952ba3b8ada1723fd85aeb7c38",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        134,
+        106,
+        443,
+        575
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_006.png",
+      "sha256": "3bfced7096e8f6d0d1b60ef0fca57c214443d27fc13c927584d11f9c2cf26176",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        66,
+        52,
+        223,
+        289
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-512/hulk_run_rear_007.png",
+      "sha256": "3dda6e9f87d5b717d8751d38eb2f04f8252f2dad62659805bef16bc83f88ddcd",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        136,
+        103,
+        445,
+        582
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/review-export/frames-256/hulk_run_rear_007.png",
+      "sha256": "f7f9a7f2cfde4ef7d1934a4bf322f9ec21381d3291f3ae434fec7a32765b9737",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        67,
+        51,
+        224,
+        292
+      ]
+    }
+  ],
+  "scope": "File dimensions, alpha range, nonempty silhouette, canvas bounds, source hash. Not approval of motion, likeness, track alignment or physical-device behavior."
+}
