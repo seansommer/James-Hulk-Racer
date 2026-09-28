@@ -1,14 +1,19 @@
 {
   "schemaVersion": 1,
-  "status": "source_recovery",
-  "sources": [{
-    "path": "art/01-characters/hulk/jump-reviews/v01/source-sheet.png",
-    "taskId": "0f1a94b3-5a0c-456f-a6e7-e5a4a758bc14",
-    "expectedBytes": 5494363,
-    "dimensions": [2560, 2560],
-    "status": "pending",
-    "reviewStatus": "pose_candidate",
-    "notes": "Nine rear-view jump/landing drawings. White-backed source retained unchanged. Pose 2 reads as early ascent rather than literal toe-contact push-off. Candidates, not runtime approval.",
-    "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/0f1a94b3-5a0c-456f-a6e7-e5a4a758bc14/Create_ONE_clean_CHARACTER_ANIMATION_CONTACT_SHEET_containing_EXACTLY_NINE_full_body_poses_in_a_prec_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOWZhZWY3NjJlZDBmMDA0YSIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc2NTUzOH0.XxAEWF8X8YVVNiAoNx6IWESn0prnk9N3rt8irBBVLtA"
-  }]
+  "status": "source_archived",
+  "sources": [
+    {
+      "path": "art/01-characters/hulk/jump-reviews/v01/source-sheet.png",
+      "taskId": "0f1a94b3-5a0c-456f-a6e7-e5a4a758bc14",
+      "expectedBytes": 5494363,
+      "dimensions": [
+        2560,
+        2560
+      ],
+      "status": "archived",
+      "reviewStatus": "pose_candidate",
+      "notes": "Nine rear-view jump/landing drawings. White-backed source retained unchanged. Pose 2 reads as early ascent rather than literal toe-contact push-off. Candidates, not runtime approval.",
+      "sha256": "3f3f2427774acb47d651294ab8af964904463383588bdfe49339e44263f71996"
+    }
+  ]
 }

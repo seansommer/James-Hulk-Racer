@@ -50,6 +50,18 @@
       "notes": "Superseded visual study, NOT an authoritative bible or a sprite atlas. Obsolete numeral emblems and cape-back badge conflict with v1.2; preserve only as an archived study, not a generation reference."
     },
     {
+      "path": "art/01-characters/hulk/jump-reviews/v01/source-sheet.png",
+      "sha256": "3f3f2427774acb47d651294ab8af964904463383588bdfe49339e44263f71996",
+      "bytes": 5494363,
+      "width": 2560,
+      "height": 2560,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
       "path": "art/01-characters/hulk/movement-reviews/v01/review-export/atlas-review.png",
       "sha256": "6ac084d27d3cfd86ad69550728299a603b868940ee80a06929a7639229e7e3b3",
       "bytes": 635006,
@@ -1106,7 +1118,7 @@
       "notes": ""
     }
   ],
-  "totalBytes": 44533613,
+  "totalBytes": 50027976,
   "productionReadyCount": 0,
   "note": "Real image-file counts include alternate resolutions, atlases and review boards. They are not unique animation-frame counts. No candidate is automatically approved."
 }
