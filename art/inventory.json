@@ -482,6 +482,30 @@
       "notes": "Eight rear-running drawings from a generated contact sheet. Source order retained for honest motion review; not yet a verified continuous stride. White background, not transparent."
     },
     {
+      "path": "art/01-characters/hulk/run-reviews/v02/source-intermediate.png",
+      "sha256": "c3b9c234722db92171f4b5bfbd65babf42d6deac5e538e1467653b424b9c689e",
+      "bytes": 4230617,
+      "width": 2560,
+      "height": 1712,
+      "status": "intermediate_needs_motion_revision",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": "First v02 generation: complementary arm swing and asymmetric flight. Its third pose in each half-cycle swaps support too early. Not approved."
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v02/source-sheet.png",
+      "sha256": "a15c2083fd81d46076cd8cb24e2bc0ccdd602cb58b9f637c5517736d7c86d9aa",
+      "bytes": 4430885,
+      "width": 2560,
+      "height": 1712,
+      "status": "candidate_needs_phase_review",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": "Targeted leg/boot refinement of the preceding source. Tucked legs and toe-off detail improve, but actual left/right phase order must be checked and corrected before approval. Original bytes preserved."
+    },
+    {
       "path": "art/01-characters/iron/references/lineup-crop-v1.webp",
       "sha256": "24dd76a23b5fb659ab95461d988f47e65236c10caa571703b913cbfa31355f9a",
       "bytes": 62868,
@@ -518,7 +542,7 @@
       "notes": ""
     }
   ],
-  "totalBytes": 18182737,
+  "totalBytes": 26844239,
   "productionReadyCount": 0,
   "note": "Real image-file counts include alternate resolutions, atlases and review boards. They are not unique animation-frame counts. No candidate is automatically approved."
 }
