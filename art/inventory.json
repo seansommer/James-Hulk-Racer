@@ -62,6 +62,18 @@
       "notes": "Six-pose candidate with genuine alpha, NOT approved. Chest numerals must become J; lower-right contact pose faces front instead of the requested rear-three-quarter view; bank order and registration need review. See REVIEW-v01.md."
     },
     {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v02-source.png",
+      "sha256": "a88cd96b65d272a646b9300e1edef4ba3388c0d8cdc0a5ea2a41a4439291a47a",
+      "bytes": 3454219,
+      "width": 2560,
+      "height": 1712,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": "Corrected J chest and rear-three-quarter two-fist contact study. Original white background retained. Not registered animation."
+    },
+    {
       "path": "art/01-characters/hulk/references/lineup-crop-v1.webp",
       "sha256": "8399b25b46fd5dee476ea2ffb530a1c55b3a8724274e902d28f4ff9d9d1e90d3",
       "bytes": 59014,
@@ -72,6 +84,18 @@
       "hasTransparentPixels": false,
       "productionReady": false,
       "notes": ""
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/source-sheet.png",
+      "sha256": "fe9cb4356404185535e410ff3e60c1cd2ab6b1061a48875ddb6ddd9519f74ef9",
+      "bytes": 3600366,
+      "width": 2560,
+      "height": 1712,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": "Eight rear-running drawings from a generated contact sheet. Source order retained for honest motion review; not yet a verified continuous stride. White background, not transparent."
     },
     {
       "path": "art/01-characters/iron/references/lineup-crop-v1.webp",
@@ -110,7 +134,7 @@
       "notes": ""
     }
   ],
-  "totalBytes": 7355539,
+  "totalBytes": 14410124,
   "productionReadyCount": 0,
   "note": "Counts describe real files; no candidate is automatically approved."
 }

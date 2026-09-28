@@ -6,21 +6,27 @@
       "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v02-source.png",
       "taskId": "35c32e2d-2a1d-4f88-9463-c3dc75e2076d",
       "expectedBytes": 3454219,
-      "dimensions": [2560,1712],
-      "status": "pending",
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "status": "archived",
       "reviewStatus": "candidate_unreviewed",
       "notes": "Corrected J chest and rear-three-quarter two-fist contact study. Original white background retained. Not registered animation.",
-      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_flare/35c32e2d-2a1d-4f88-9463-c3dc75e2076d/Edit_the_supplied_six_pose_character_sheet__Preserve_the_existing_character_design__rendering_qualit_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiOTViNTM5ZWUzNDYyMWM3ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc2MDQzMH0.87oOIhGkPN-iQqLY44zW49GGpCmx3-Ery-dvx7lZEVU"
+      "sha256": "a88cd96b65d272a646b9300e1edef4ba3388c0d8cdc0a5ea2a41a4439291a47a"
     },
     {
       "path": "art/01-characters/hulk/run-reviews/v01/source-sheet.png",
       "taskId": "70752a33-bd71-4481-b558-3f01c87c1a6e",
       "expectedBytes": 3600366,
-      "dimensions": [2560,1712],
-      "status": "pending",
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "status": "archived",
       "reviewStatus": "motion_candidate",
       "notes": "Eight rear-running drawings from a generated contact sheet. Source order retained for honest motion review; not yet a verified continuous stride. White background, not transparent.",
-      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_flare/70752a33-bd71-4481-b558-3f01c87c1a6e/Create_ONE_animation_production_contact_sheet__EXACTLY_EIGHT_sequential_running_poses_of__jamesy_in__0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYzcyZmEyNDZkMGU1ZTQ5YyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDczNDkxOH0.zklKVz10C30jHKbbj4eBeMqPf64lThjGkWe5vpQY65E"
+      "sha256": "fe9cb4356404185535e410ff3e60c1cd2ab6b1061a48875ddb6ddd9519f74ef9"
     }
   ]
 }

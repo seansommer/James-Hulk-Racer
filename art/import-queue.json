@@ -31,6 +31,26 @@
       "bytes": 2654913,
       "width": 1536,
       "height": 1024
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v02-source.png",
+      "status": "archived",
+      "reviewStatus": "candidate_unreviewed",
+      "sha256": "a88cd96b65d272a646b9300e1edef4ba3388c0d8cdc0a5ea2a41a4439291a47a",
+      "bytes": 3454219,
+      "width": 2560,
+      "height": 1712,
+      "notes": "Corrected J chest and rear-three-quarter two-fist contact study. Original white background retained. Not registered animation."
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/source-sheet.png",
+      "status": "archived",
+      "reviewStatus": "motion_candidate",
+      "sha256": "fe9cb4356404185535e410ff3e60c1cd2ab6b1061a48875ddb6ddd9519f74ef9",
+      "bytes": 3600366,
+      "width": 2560,
+      "height": 1712,
+      "notes": "Eight rear-running drawings from a generated contact sheet. Source order retained for honest motion review; not yet a verified continuous stride. White background, not transparent."
     }
   ]
 }
