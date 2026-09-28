@@ -1,6 +1,7 @@
 {
-  "version": "1.0",
+  "version": "1.2",
   "hero": "hulk",
+  "status": "specified_not_produced",
   "uniqueFrames": 64,
   "animations": [
     {"id":"rear_idle","name":"Rear idle","frames":4,"fps":6,"loop":true,"view":"rear","note":"Feet stay on the shared baseline."},
@@ -13,7 +14,7 @@
     {"id":"thunderclap","name":"Thunderclap","frames":6,"fps":12,"loop":false,"view":"rear","note":"Hands in, clap, release; route visible."},
     {"id":"power_up","name":"Power-up pose","frames":6,"fps":12,"loop":false,"view":"rear","note":"Separate aura layer."},
     {"id":"hurt","name":"Bump reaction","frames":3,"fps":10,"loop":false,"view":"rear","note":"Surprise, not distress; no flashing."},
-    {"id":"victory","name":"Victory","frames":8,"fps":10,"loop":false,"view":"front_three_quarter","note":"Legible 4 and J."},
+    {"id":"victory","name":"Victory","frames":8,"fps":10,"loop":false,"view":"front_three_quarter","note":"Upright J on chest and belt."},
     {"id":"menu_idle","name":"Menu idle","frames":4,"fps":6,"loop":true,"view":"front_three_quarter","note":"Calm breathing and cape motion."}
   ],
   "reuse":{"fast_run":{"source":"run","fps":16},"level_intro":{"source":"menu_idle","fps":6}}

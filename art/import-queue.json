@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "description": "Explicit owner-authorized image imports. Transfer URLs grant access to these artwork files only and are removed from this current file after successful archival. They are not game or Firebase credentials.",
+  "imports": [
+    {
+      "path": "art/00-reference/lineup-j-v1.png",
+      "status": "pending",
+      "reviewStatus": "reference",
+      "sha256": "6fa0dc53e03be60c4f2becd0d8c32ef175c670b801e0aeb5b516447ba8328c14",
+      "notes": "Original five-costume lineup supplied in this conversation. J on chest/belt/shield and descriptor-first names. Not a sprite sheet.",
+      "url": "https://d2jqrm6oza8nb6.cloudfront.net/datasets/c640be69-0f7d-448c-b88d-218f42945727.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYTdhYTBkZGIyNmYzMzBkMyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc0MTMzOX0.AWgabbM9UsrPjEY0EOLQZ657SPhsKsZH0FneVYsYSKI"
+    }
+  ]
+}
