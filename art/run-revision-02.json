@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "note": "Character-only rear-run revision. Original generated sources are candidates, not production sprites. First download verifies the provider's exact dimensions and byte count, records SHA-256 and removes its temporary media URL. Later reads require the recorded hash.",
+  "sources": [
+    {
+      "taskId": "f0922c65-0d68-4583-b181-ca969c7733ed",
+      "path": "art/01-characters/hulk/run-reviews/v02/source-intermediate.png",
+      "expectedBytes": 4230617,
+      "dimensions": [2560,1712],
+      "status": "pending",
+      "reviewStatus": "intermediate_needs_motion_revision",
+      "notes": "First v02 generation: complementary arm swing and asymmetric flight. Its third pose in each half-cycle swaps support too early. Not approved.",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/f0922c65-0d68-4583-b181-ca969c7733ed/One_precise_animation_contact_sheet__FOUR_COLUMNS_and_TWO_ROWS__exactly_EIGHT_isolated_FULL_BODY_dra_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNjE3MTQwMDcyNWMyZGFkNiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc2MzkxMX0.TpfpzRL2GFo4vlJxw1sT2sEKehX2pPf1HFNDlI9jMgM"
+    },
+    {
+      "taskId": "bb55a169-e01f-4908-99f8-73bf70a64025",
+      "path": "art/01-characters/hulk/run-reviews/v02/source-sheet.png",
+      "expectedBytes": 4430885,
+      "dimensions": [2560,1712],
+      "status": "pending",
+      "reviewStatus": "candidate_needs_phase_review",
+      "notes": "Targeted leg/boot refinement of the preceding source. Tucked legs and toe-off detail improve, but actual left/right phase order must be checked and corrected before approval. Original bytes preserved.",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/bb55a169-e01f-4908-99f8-73bf70a64025/Make_a_surgical_animation_correction_to__sheet__preserving_the_entire_FOUR_column_TWO_row_grid__all__0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDgxZmFkOTZkYjcxMWJiZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDczMjMxMH0.Cti_YarmHwoFDWceLDJms41BsbwHhNu4l2Ka7Eh8gsc"
+    }
+  ]
+}

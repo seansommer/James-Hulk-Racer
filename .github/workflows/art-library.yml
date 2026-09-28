@@ -5,6 +5,7 @@ on:
     paths:
       - 'art/import-queue.json'
       - 'art/character-batch-02.json'
+      - 'art/run-revision-02.json'
       - 'production/tools/**'
       - 'production/art-bible-v1/ART_BIBLE_v1.2.md'
       - '.github/workflows/art-library.yml'
@@ -31,8 +32,10 @@ jobs:
           test -f /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf || (sudo apt-get update -qq && sudo apt-get install -y fonts-dejavu-core)
       - name: Check the importer boundary
         run: python -m unittest discover -s production/tools -p test_archive.py -v
-      - name: Recover the two completed character source sheets
-        run: python production/tools/recover_character_sources.py
+      - name: Recover the completed character source sheets
+        run: |
+          python production/tools/recover_character_sources.py
+          python production/tools/recover_run_v02.py
       - name: Check sprite alpha, path and canvas handling
         run: python -m unittest discover -s production/tools -p test_character_sprites.py -v
       - name: Extract candidate character sprites without changing motion
@@ -48,7 +51,7 @@ jobs:
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Archive Jamesy transparent character review frames and inventory'
+            git commit -m 'Archive Jamesy character revisions and factual inventory'
             git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
           fi
       - uses: actions/upload-artifact@v4
