@@ -1,0 +1,31 @@
+{
+  "result": "PASS_LOCAL_REVIEWER",
+  "checkCount": 21,
+  "checks": [
+    "Thirteen embedded images load; initially paused",
+    "Next steps forward",
+    "Previous steps backward",
+    "Pause holds the current pose",
+    "Power-up one-shot holds the final pose",
+    "Replay restarts from the first pose",
+    "Bump recovery selects three poses",
+    "Bump recovery one-shot holds the final pose",
+    "Menu idle selects four front-view poses",
+    "Menu idle wraps rather than stopping",
+    "Accessible pose description matches the front camera",
+    "Checker background works",
+    "Light background works",
+    "Dark background works",
+    "Small display size works",
+    "Provisional root guide can be hidden",
+    "Strip shows only the selected clip",
+    "Pose-strip selection is precise and paused",
+    "390px portrait has no horizontal page overflow",
+    "844px landscape has no horizontal page overflow",
+    "No uncaught script errors or external requests"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "htmlSha256": "eb773f2781606a4958dbfe6a7d8a9ccbe2df0c959bc50f077f8e471e3664e2d6",
+  "scope": "Executed local Chromium checks against the self-contained reviewer. Simulated viewports, not physical Safari testing, visual approval or live-game validation."
+}

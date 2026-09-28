@@ -1,4 +1,4 @@
-# James project checkpoint — 28 September 2026 / Jump 04
+# James project checkpoint — 28 September 2026 / States 06
 
 ## Overall assessment
 
@@ -8,7 +8,7 @@
 
 The current art bible v1.2 defines a dimensional storybook 2.5D presentation and a consistent five-costume Jamesy lineup. Permanent upright J branding replaces the old age numeral. Actual source files, transparent exports, checksums, manifests and review viewers are stored on the art branch.
 
-Hulk has 29 selected drawing candidates across rear idle, run, both banks, jump and land, plus six separate pose studies. The 64-frame first-hero plan still requires the action/reaction/presentation clips and a unified motion-polish pass. None of this count implies automatic final approval. The other four costumes are at reference-design stage. Items, layered environments, interface graphics and effects are still to be produced as groups.
+Hulk now has 56 selected sequence-drawing candidates across eleven clips: rear idle, run, both banks, jump, land, Smash, Thunderclap, power-up, bump and menu idle. Six earlier pose studies are separate. The 64-frame plan still needs eight victory drawings and a unified motion-polish pass. The victory generation action was not authorized, produced no task/image and was not retried. None of these counts implies automatic final approval. The other four costumes remain at reference-design stage. Items, layered environments, interface graphics and effects are later groups.
 
 The strongest progress is visual identity and reusable asset preparation. The biggest remaining risk is temporal consistency: a pose may look polished alone yet change head scale, cape shape, stride rhythm or contact timing when played. Treat this as a motion-review problem rather than generating more general style posters.
 
@@ -35,17 +35,19 @@ The user-requested art order stays characters → items → environments → int
 
 ## This handoff and next
 
-Jump 04 adds six rear jump and three landing candidates, transparent files and a one-shot review viewer. Next: rear-view Smash and Thunderclap action frames. The existing art bible PDF is unchanged; this status note and the per-batch review ledger track new work.
+States 06 adds six power-up, three bump/recovery and four menu-idle candidates, transparent files and an offline review viewer. File checks, fifteen synthetic unit tests and twenty-one local reviewer checks passed. Next is the eight-pose victory request once authorized, followed by a combined Hulk pass. The existing art bible PDF is unchanged; this status note and per-batch ledger track new work.
 
 ## Evidence
 
-Repository README files inspected in this session:
+Application foundation references:
 - https://github.com/seansommer/James-Hulk-Racer/blob/main/README.md
 - https://github.com/seansommer/James-Game-Center/blob/main/README.md
 
-Art decisions and current counts:
+Current art decisions and counts:
 - `ART_BIBLE_v1.2.md`
 - `../../art/PROGRESS.md`
-- `../../art/01-characters/hulk/jump-reviews/v01/REVIEW.md`
+- `../../art/01-characters/hulk/state-reviews/v01/REVIEW.md`
+- `../../art/01-characters/hulk/state-reviews/v01/review-export/technical-checks.json`
+- `../../art/01-characters/hulk/state-reviews/v01/review-export/browser-checks.json`
 
 Art tests do not prove that production rules are published, that all real accounts work, or that a physical device meets the intended frame rate.
