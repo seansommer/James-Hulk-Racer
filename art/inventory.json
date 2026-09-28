@@ -1730,6 +1730,42 @@
       "notes": "Targeted leg/boot refinement of the preceding source. Tucked legs and toe-off detail improve, but actual left/right phase order must be checked and corrected before approval. Original bytes preserved."
     },
     {
+      "path": "art/01-characters/hulk/state-reviews/v01/source-bump.png",
+      "sha256": "b496eb4c1fc13906c097c78da457f442d6ae4cd3f7775e07bf4216f4ff131757",
+      "bytes": 2779604,
+      "width": 2912,
+      "height": 1248,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/hulk/state-reviews/v01/source-menu-idle.png",
+      "sha256": "0dbdcfac9f2f203e90ea0797261b57f699dabafbbe6b0543e18acbc1e45689e9",
+      "bytes": 3398619,
+      "width": 2560,
+      "height": 1920,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
+      "path": "art/01-characters/hulk/state-reviews/v01/source-power-up.png",
+      "sha256": "01cfb020dc47f515a478b871f6c6683522b1bc24f82776aab7368a2109f33d9b",
+      "bytes": 3263089,
+      "width": 2560,
+      "height": 1712,
+      "status": "candidate_unreviewed",
+      "hasAlphaChannel": false,
+      "hasTransparentPixels": false,
+      "productionReady": false,
+      "notes": ""
+    },
+    {
       "path": "art/01-characters/iron/references/lineup-crop-v1.webp",
       "sha256": "24dd76a23b5fb659ab95461d988f47e65236c10caa571703b913cbfa31355f9a",
       "bytes": 62868,
@@ -1766,7 +1802,7 @@
       "notes": ""
     }
   ],
-  "totalBytes": 65955004,
+  "totalBytes": 75396316,
   "productionReadyCount": 0,
   "note": "Real image-file counts include alternate resolutions, atlases and review boards. They are not unique animation-frame counts. No candidate is automatically approved."
 }
