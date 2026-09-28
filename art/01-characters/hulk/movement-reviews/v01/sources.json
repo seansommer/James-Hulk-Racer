@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "batch": "movement-03-idle-and-banks",
+  "note": "Three completed character-only still sources. Validate provider dimensions and byte counts on first import, then record SHA-256. Temporary file-specific transfer URLs are removed after import. No production approval is implied.",
+  "sources": [
+    {
+      "file": "source-intermediate.png",
+      "taskId": "b9de1615-acfc-405c-86bc-187461c291d7",
+      "expectedBytes": 3909923,
+      "dimensions": [2560,1920],
+      "status": "pending",
+      "reviewStatus": "intermediate_study",
+      "notes": "Initial twelve-pose idle/bank source. Bank rows repeat the same supporting leg. Preserve as lineage, not a completed bank loop.",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/b9de1615-acfc-405c-86bc-187461c291d7/A_CHARACTER_ONLY_animation_review_contact_sheet_with_EXACTLY_TWELVE_separate_full_body_drawings_arra_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2M5ZjA5YWFhYjRmOGI1ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc2NzY1OH0.evbqAjwwqYxNpUYEgRFLAeLyD-GD-OqUNU6YmbFrBT4"
+    },
+    {
+      "file": "source-sheet.png",
+      "taskId": "7408e01c-9848-4947-bf86-32a07027228b",
+      "expectedBytes": 4788672,
+      "dimensions": [2560,1920],
+      "status": "pending",
+      "reviewStatus": "pose_candidate",
+      "notes": "Four idle poses plus bank studies. The attempted leg correction did not change support reliably; only selected poses may be used with the separate opposite-foot source.",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/7408e01c-9848-4947-bf86-32a07027228b/Precisely_edit__sheet__Keep_this_exact_4_column_3_row_arrangement_of_12_rear_view_green_and_purple_c_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMDIzMjZlY2JhZDI3NjYxNyIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc3OTU5NX0.EeFmDkXIYrm57cRsgiyfeg8z5JiaXMINYxsRc6JpE0k"
+    },
+    {
+      "file": "source-opposite-steps.png",
+      "taskId": "a84e9f5e-7e1d-4a61-b91e-f1274619cd97",
+      "expectedBytes": 3289915,
+      "dimensions": [2560,1920],
+      "status": "pending",
+      "reviewStatus": "pose_candidate",
+      "notes": "Focused four-pose source supplies the opposite support foot for each bank. Needs scale, anchor and motion review alongside the main source.",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/a84e9f5e-7e1d-4a61-b91e-f1274619cd97/Create_a_FOUR_POSE_character_sheet__exactly_TWO_COLUMNS_and_TWO_ROWS_on_pure_white__Use_the_same_rea_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZTg3M2M4OGQ1NDA3MzE0ZiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc5MTY5M30.L4wcbvMr8cDPnnmNCOCMw7zNsqd2vh68ugW3dfJFUbs"
+    }
+  ]
+}
