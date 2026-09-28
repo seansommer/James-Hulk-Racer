@@ -1,0 +1,64 @@
+name: Test and publish Jamesy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: james-racer-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install pinned dependencies
+        run: |
+          if [ -f package-lock.json ]; then npm ci --no-fund; else npm install --no-fund; fi
+      - name: Game logic and local profile tests
+        run: npm test
+      - name: Private Firestore rules tests (demo emulator only)
+        run: npm run test:rules
+      - name: Build production app
+        run: npm run build
+      - name: Install browser for actual 3D checks
+        run: npx playwright install --with-deps chromium
+      - name: Test gameplay and render real app artwork
+        run: npm run test:browser
+      - name: Prepare scoped offline shell
+        run: npm run offline
+      - name: Keep test results and dependency lock
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: james-racer-verification
+          path: |
+            dist/qa/
+            package-lock.json
+          retention-days: 14
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

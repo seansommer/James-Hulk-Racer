@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner(uid) { return request.auth != null && request.auth.uid == uid; }
+    function integer(n, max) { return n is int && n >= 0 && n <= max; }
+    function triple(a, max) {
+      return a is list && a.size() == 3 && integer(a[0], max) && integer(a[1], max) && integer(a[2], max);
+    }
+    function validPlayer(p) {
+      let fields = ['name', 'bestCozy', 'bestHero', 'medals', 'runs', 'gems', 'smashes', 'bursts', 'lastLevel', 'updatedAt'];
+      return p.keys().hasAll(fields) && p.keys().hasOnly(fields)
+        && p.name is string && p.name.size() > 0 && p.name.size() <= 20
+        && triple(p.bestCozy, 500000) && triple(p.bestHero, 500000) && triple(p.medals, 7)
+        && integer(p.runs, 9999999) && integer(p.gems, 9999999)
+        && integer(p.smashes, 9999999) && integer(p.bursts, 9999999)
+        && integer(p.lastLevel, 2) && p.updatedAt == request.time;
+    }
+    match /players/{uid} {
+      allow get: if owner(uid);
+      allow list: if false;
+      allow create, update: if owner(uid) && validPlayer(request.resource.data);
+      allow delete: if owner(uid);
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

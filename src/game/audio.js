@@ -1,0 +1,10 @@
+/** Small original, generated soundtrack. No recordings, speech or external media. */
+export class AudioEngine{
+ constructor(settings){this.settings=settings;this.ctx=null;this.timer=null;this.step=0;this.level=0;}
+ async unlock(){try{if(!this.ctx){this.ctx=new(window.AudioContext||window.webkitAudioContext)();this.master=this.ctx.createGain();this.master.gain.value=.6;this.master.connect(this.ctx.destination);}if(this.ctx.state==='suspended')await this.ctx.resume();}catch{}}
+ tone(freq,duration,volume=.1,type='sine',delay=0,end){if(!this.ctx||this.ctx.state!=='running')return;const t=this.ctx.currentTime+delay,o=this.ctx.createOscillator(),g=this.ctx.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);if(end)o.frequency.exponentialRampToValueAtTime(end,t+duration);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(volume,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g);g.connect(this.master);o.start(t);o.stop(t+duration+.04);}
+ sfx(kind){const v=this.settings.sfx*.15;if(!v)return;const notes={gem:[740,990],special:[523,659,784,1047],jump:[230,540],power:[330,440,554,660,880],finish:[523,659,784,1047,1319],hit:[190,130],smash:[105,52],clap:[180,90]};(notes[kind]||notes.gem).forEach((f,i)=>this.tone(f,kind==='smash'?.3:.15,v,kind==='smash'?'triangle':'sine',i*.055));}
+ start(level=0){this.stop();this.level=level;this.step=0;this.timer=setInterval(()=>this.music(),190);}
+ music(){const v=this.settings.music*.045;if(!v||!this.ctx)return;const patterns=[[0,7,12,7,3,7,10,7,5,9,12,9,7,11,14,11],[0,7,12,15,3,10,15,10,5,12,17,12,7,14,19,14],[0,12,7,12,3,15,10,15,5,17,12,17,7,19,14,19]],n=patterns[this.level][this.step%16],base=[130.81,110,146.83][this.level];this.tone(base*Math.pow(2,n/12),.24,v,'triangle');if(this.step%4===0)this.tone(base/2,.45,v*.8,'sine');if(this.step%4===2)this.tone(80,.12,v*.6,'triangle',0,35);this.step++;}
+ stop(){if(this.timer)clearInterval(this.timer);this.timer=null;}
+}

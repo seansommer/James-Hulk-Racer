@@ -1,0 +1,13 @@
+import {before,after,beforeEach,test} from 'node:test';
+import {readFileSync} from 'node:fs';
+import {initializeTestEnvironment,assertSucceeds,assertFails} from '@firebase/rules-unit-testing';
+import {doc,setDoc,getDoc,getDocs,collection,deleteDoc,serverTimestamp,Timestamp} from 'firebase/firestore';
+let env;const payload=()=>({name:'Jamesy',bestCozy:[0,0,0],bestHero:[0,0,0],medals:[0,0,0],runs:0,gems:0,smashes:0,bursts:0,lastLevel:0,updatedAt:serverTimestamp()});
+before(async()=>{if(!process.env.FIRESTORE_EMULATOR_HOST)throw Error('Rules tests must run against the demo emulator, never production.');env=await initializeTestEnvironment({projectId:'demo-james-game-center',firestore:{rules:readFileSync('firestore.rules','utf8')}});});
+beforeEach(async()=>env.clearFirestore());after(async()=>env?.cleanup());
+test('Anonymous authenticated owner can create, read, update and delete own profile',async()=>{const db=env.authenticatedContext('hero-1',{firebase:{sign_in_provider:'anonymous'}}).firestore(),ref=doc(db,'players','hero-1');await assertSucceeds(setDoc(ref,payload()));await assertSucceeds(getDoc(ref));await assertSucceeds(setDoc(ref,{...payload(),runs:1}));await assertSucceeds(deleteDoc(ref));});
+test('Unauthenticated clients cannot read or write profiles',async()=>{const db=env.unauthenticatedContext().firestore();await assertFails(setDoc(doc(db,'players','hero-1'),payload()));await assertFails(getDoc(doc(db,'players','hero-1')));});
+test('A different signed-in user cannot read, change or delete the owner profile',async()=>{const db=env.authenticatedContext('other').firestore(),ref=doc(db,'players','hero-1');await assertFails(setDoc(ref,payload()));await assertFails(getDoc(ref));await assertFails(deleteDoc(ref));});
+test('Listing players and writing outside the private path are denied',async()=>{const db=env.authenticatedContext('hero-1').firestore();await assertFails(getDocs(collection(db,'players')));await assertFails(setDoc(doc(db,'admin','hero-1'),{role:'admin'}));await assertFails(setDoc(doc(db,'players','hero-1','private','data'),{}));});
+test('Extra fields and role injection are rejected',async()=>{const db=env.authenticatedContext('hero-1').firestore();await assertFails(setDoc(doc(db,'players','hero-1'),{...payload(),role:'admin'}));});
+test('Invalid names, arrays, counters, score bounds and timestamps are rejected',async()=>{const db=env.authenticatedContext('hero-1').firestore();for(const invalid of[{name:''},{name:'x'.repeat(21)},{bestCozy:[0,0]},{bestHero:[0,0,500001]},{medals:[0,0,8]},{gems:-1},{runs:1.5},{lastLevel:3},{updatedAt:Timestamp.fromMillis(1)}])await assertFails(setDoc(doc(db,'players','hero-1'),{...payload(),...invalid}));});
