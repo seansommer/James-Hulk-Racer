@@ -1,27 +1,26 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, setPersistence, browserLocalPersistence, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
-import { getDatabase, ref, get, set, update, remove, query, orderByChild, equalTo, onValue, serverTimestamp } from 'firebase/database';
+import { getDatabase, ref, get, set, update, remove, query, orderByChild, equalTo, onValue, serverTimestamp, push } from 'firebase/database';
 import { firebaseConfig } from './firebase-config.js';
 import { addToRecord, stats, nickname } from './center-model.js';
 import { loginKey } from './identity.js';
 
-// Immutable run receipts are the source of truth. No writable aggregate counters.
+// Fresh James profiles only. Legacy root records are neither read, copied nor deleted.
+export const ACCOUNT_PATH = 'jamesV1';
+export const MASTER_PROFILE = 'sean';
 export function recordsFromRuns(runs) {
   let result = { cozy: stats(), hero: stats() };
-  for (const [, run] of Object.entries(runs || {}).sort(([a, x], [b, y]) => x.playedAt - y.playedAt || a.localeCompare(b))) {
-    result = addToRecord(result, run);
-  }
+  for (const [, run] of Object.entries(runs || {}).sort(([a, x], [b, y]) => x.playedAt - y.playedAt || a.localeCompare(b))) result = addToRecord(result, run);
   return result;
 }
-
 export class CenterService {
   constructor() {
     this.user = null; this.member = null; this.ready = false; this.loading = false;
-    this.ticket = 0; this.listeners = new Set(); this.pending = null; this.problem = '';
+    this.ticket = 0; this.listeners = new Set(); this.problem = '';
   }
   subscribe(fn) { this.listeners.add(fn); return () => this.listeners.delete(fn); }
   notify() { for (const fn of this.listeners) fn(this); }
-  ref(path) { return ref(this.db, path); }
+  ref(path = '') { return ref(this.db, ACCOUNT_PATH + (path ? '/' + path : '')); }
   async init() {
     const app = getApps().find(a => a.name === 'james-center') || initializeApp(firebaseConfig, 'james-center');
     this.auth = getAuth(app); this.db = getDatabase(app);
@@ -36,36 +35,21 @@ export class CenterService {
     return this;
   }
   fail(error) {
-    this.member = null; this.loading = false; this.problem = explain(error); this.notify();
+    ++this.ticket; this.member = null; this.loading = false; this.problem = explain(error); this.notify();
   }
   async inspect(user) {
     const ticket = ++this.ticket;
-    this.user = user; this.member = null; this.pending = null; this.loading = true; this.problem = ''; this.notify();
+    this.user = user; this.member = null; this.loading = true; this.problem = ''; this.notify();
     try {
       if (!user) return;
       const session = (await get(this.ref('sessions/' + user.uid))).val();
       if (ticket !== this.ticket) return;
-      if (!session) {
-        this.stopMember?.(); this.watchedMember = null;
-        const pending = (await get(this.ref('accessRequests/' + user.uid))).val();
-        if (ticket !== this.ticket) return;
-        this.pending = pending;
-        if (!pending) return;
-        const master = (await get(this.ref('_admin/masterUid'))).val();
-        if (ticket !== this.ticket) return;
-        if (master === user.uid) {
-          await this.activateMaster(user.uid, pending);
-          // The realtime session listener will also refresh; generations prevent stale results.
-          return await this.inspect(this.auth.currentUser || user);
-        }
-        this.problem = 'Your details are saved for approval, not a player card. For the first launch, set your User ID as _admin/masterUid in Realtime Database, then press Check access.';
-        return;
-      }
+      if (!session) { this.stopMember?.(); this.watchedMember = null; return; }
       const uid = session.profileId;
       const found = (await get(this.ref('members/' + uid))).val();
       if (ticket !== this.ticket) return;
-      if (!found?.active) { this.problem = 'This player is not approved or access is paused.'; return; }
-      this.member = { ...found, uid }; this.pending = null;
+      if (!found?.active) { this.problem = 'Player access is paused. Ask the master to restore it.'; return; }
+      this.member = { ...found, uid };
       if (this.watchedMember !== uid) {
         this.stopMember?.(); this.watchedMember = uid;
         this.stopMember = onValue(this.ref('members/' + uid), snapshot => {
@@ -75,54 +59,46 @@ export class CenterService {
           else if (!this.loading) { this.member = { ...value, uid }; this.notify(); }
         }, error => this.fail(error));
       }
-    } catch (error) {
-      if (ticket === this.ticket) this.problem = explain(error);
-    } finally {
-      if (ticket === this.ticket) { this.loading = false; this.notify(); }
-    }
-  }
-  async activateMaster(uid, request) {
-    const existing = (await get(this.ref('members/' + uid))).val();
-    if (existing) throw new Error('This account already exists. Sign in with its original email and nickname.');
-    // Master authority comes exclusively from a console-assigned UID, never a name or first visit.
-    await update(this.ref(), {
-      ['members/' + uid]: { nickname: 'Sean', role: 'master', active: true, joinedAt: serverTimestamp() },
-      ['identities/' + uid]: { loginKey: request.loginKey },
-      ['loginLookup/' + request.loginKey]: uid,
-      ['sessions/' + uid]: { profileId: uid, loginKey: request.loginKey },
-      ['accessRequests/' + uid]: null
-    });
+    } catch (error) { if (ticket === this.ticket) this.problem = explain(error); }
+    finally { if (ticket === this.ticket) { this.loading = false; this.notify(); } }
   }
   async login({ email, displayName } = {}) {
     if (!this.ready) throw new Error('The account connection is still loading. Try again.');
-    const key = await loginKey(email, displayName);
-    const user = this.auth.currentUser || (await signInAnonymously(this.auth)).user;
-    const uid = (await get(this.ref('loginLookup/' + key))).val();
-    if (uid) {
-      try { await set(this.ref('sessions/' + user.uid), { profileId: uid, loginKey: key }); }
-      catch (error) {
-        this.user = user; this.pending = { nickname: nickname(displayName) };
-        this.problem = 'Access was not granted. Master access on another browser requires authorizing that browser’s User ID in _admin/masterDevices. Other players may be paused.';
-        this.notify(); throw new Error(this.problem);
+    try {
+      const key = await loginKey(email, displayName);
+      const user = this.auth.currentUser || (await signInAnonymously(this.auth)).user;
+      let uid = (await get(this.ref('loginLookup/' + key))).val();
+      if (!uid) {
+        // Only the privately reserved email/nickname key can pass the bootstrap rules.
+        // Nothing is approved based on first visit, displayed nickname or device ID.
+        try {
+          await update(this.ref(), {
+            ['members/' + MASTER_PROFILE]: { nickname: 'Sean', role: 'master', active: true, joinedAt: serverTimestamp() },
+            ['identities/' + MASTER_PROFILE]: { loginKey: key },
+            ['loginLookup/' + key]: MASTER_PROFILE,
+            ['sessions/' + user.uid]: { profileId: MASTER_PROFILE, loginKey: key }
+          });
+          uid = MASTER_PROFILE;
+        } catch (error) {
+          // Another browser may have completed the same bootstrap atomically.
+          uid = (await get(this.ref('loginLookup/' + key))).val();
+          if (!uid) throw new Error('That email and nickname are not registered. For Sean’s first sign-in, publish the personalized James rules and use your original email with Sean.');
+        }
       }
-    } else {
-      const previous = (await get(this.ref('accessRequests/' + user.uid))).val();
-      await set(this.ref('accessRequests/' + user.uid), { nickname: nickname(displayName), loginKey: key, createdAt: previous?.createdAt || serverTimestamp() });
+      await set(this.ref('sessions/' + user.uid), { profileId: uid, loginKey: key });
+      await this.inspect(user);
+    } catch (error) {
+      this.problem = explain(error); this.notify(); throw new Error(this.problem);
     }
-    await this.inspect(user);
   }
   async logout() {
-    // End the app session, retaining the underlying anonymous device identity for protected master re-entry.
     this.stopMember?.(); this.watchedMember = null;
-    if (this.auth.currentUser) {
-      await remove(this.ref('sessions/' + this.auth.currentUser.uid));
-      await remove(this.ref('accessRequests/' + this.auth.currentUser.uid)).catch(() => {});
-    }
-    ++this.ticket; this.member = null; this.pending = null; this.loading = false; this.problem = ''; this.notify();
+    if (this.auth.currentUser) await remove(this.ref('sessions/' + this.auth.currentUser.uid));
+    ++this.ticket; this.member = null; this.loading = false; this.problem = ''; this.notify();
   }
   async refresh() { await this.inspect(this.auth.currentUser); }
   async ownRecord() {
-    if (!this.member) throw new Error('Sign in with an approved player first.');
+    if (!this.member) throw new Error('Sign in first.');
     return { uid: this.member.uid, ...recordsFromRuns((await get(this.ref('racerRuns/' + this.member.uid))).val()) };
   }
   async roster(all = false) {
@@ -143,7 +119,6 @@ export class CenterService {
     if (existing) { this.checkReceipt(existing, run); return; }
     try { await set(target, { ...run, createdAt: serverTimestamp() }); }
     catch (error) {
-      // A simultaneous retry may already have saved the same immutable receipt.
       const saved = (await get(target)).val();
       if (!saved) throw error;
       this.checkReceipt(saved, run);
@@ -157,26 +132,27 @@ export class CenterService {
     await update(this.ref('members/' + this.member.uid), { nickname: nickname(name) });
     this.member.nickname = nickname(name); this.notify();
   }
-  async approve(uid, name) {
+  async approve(email, name) {
     if (this.member?.role !== 'master') throw new Error('Master access required.');
-    if (!/^[A-Za-z0-9_-]{1,128}$/.test(uid) || uid === this.member.uid) throw new Error('Enter the intended new player’s exact User ID.');
-    const request = (await get(this.ref('accessRequests/' + uid))).val();
-    if (!request?.loginKey) throw new Error('Have this player enter an email and nickname in James Game Center first, then share their User ID.');
+    const key = await loginKey(email, name);
+    if ((await get(this.ref('loginLookup/' + key))).exists()) throw new Error('That email and nickname already have a player. Use the existing card.');
+    const uid = push(this.ref('members')).key;
     await update(this.ref(), {
       ['members/' + uid]: { nickname: nickname(name), role: 'player', active: true, joinedAt: serverTimestamp() },
-      ['identities/' + uid]: { loginKey: request.loginKey },
-      ['loginLookup/' + request.loginKey]: uid
+      ['identities/' + uid]: { loginKey: key }, ['loginLookup/' + key]: uid
     });
+    return uid;
   }
   async setActive(uid, active) {
-    if (this.member?.role !== 'master' || uid === this.member.uid) throw new Error('The sole master cannot be disabled here.');
+    if (this.member?.role !== 'master' || uid === MASTER_PROFILE) throw new Error('The sole master cannot be disabled here.');
     await update(this.ref('members/' + uid), { active: Boolean(active) });
   }
+  dispose() { ++this.ticket; this.stopAuth?.(); this.stopSession?.(); this.stopMember?.(); this.listeners.clear(); }
 }
 export function explain(error) {
   const code = String(error?.code || error?.message || '').toLowerCase();
-  if (/operation-not-allowed|configuration-not-found|admin-restricted/.test(code)) return 'Enable Anonymous sign-in in the james-game-center Firebase project.';
-  if (/permission.denied|permission_denied/.test(code)) return 'Access is not ready. Publish the new Realtime Database rules and check your master setup. Do not use the old Firestore rules.';
+  if (/operation-not-allowed|configuration-not-found|admin-restricted/.test(code)) return 'Enable Anonymous under Authentication → Sign-in method in james-game-center.';
+  if (/permission.denied|permission_denied/.test(code)) return 'Publish the new personalized rules under Realtime Database → Rules in james-game-center, then sign in again.';
   if (/network|unavailable|disconnected/.test(code)) return 'Connect to the internet and try again. Local practice is still available.';
-  return error?.message || 'Account connection unavailable. Try again.';
+  return error?.message || 'Sign-in could not finish. Try again.';
 }

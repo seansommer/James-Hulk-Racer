@@ -1,84 +1,87 @@
-// All permission and adapter tests run ONLY on the demo Realtime Database emulator.
-import { before, after, beforeEach, test } from 'node:test';
+// Demo emulator only. No real emails, master matching keys or production data.
+import { before, after, beforeEach, afterEach, test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { initializeTestEnvironment, assertSucceeds, assertFails } from '@firebase/rules-unit-testing';
-import { ref, get, set, update, remove, query, orderByChild, equalTo, serverTimestamp } from 'firebase/database';
-import { CenterService, recordsFromRuns } from '../src/shared/center-service.js';
+import { initializeTestEnvironment, assertFails } from '@firebase/rules-unit-testing';
+import { ref, get, set, update, remove, serverTimestamp } from 'firebase/database';
+import { buildRules, PLACEHOLDER } from '../scripts/database-rules.mjs';
+import { CenterService } from '../src/shared/center-service.js';
 import { loginKey } from '../src/shared/identity.js';
-import { normalizeRun } from '../src/shared/center-model.js';
-let env; const services=[]; const MASTER='master-device';
-const db=uid=>uid ? env.authenticatedContext(uid,{firebase:{sign_in_provider:'anonymous'}}).database() : env.unauthenticatedContext().database();
-const service=uid=>{const s=new CenterService();s.ready=true;s.auth={currentUser:{uid,isAnonymous:true}};s.user=s.auth.currentUser;s.db=db(uid);services.push(s);return s;};
-const request=async(uid,name='Sean',email='owner@example.test')=>{const key=await loginKey(email,name);const r={nickname:name,loginKey:key,createdAt:serverTimestamp()};await set(ref(db(uid),'accessRequests/'+uid),r);return r;};
-const activate=async()=>{const s=service(MASTER);const r=await request(MASTER);await s.activateMaster(MASTER,r);await s.inspect(s.user);assert.equal(s.member?.role,'master');return s;};
-const rawRun=(mode='cozy',points=250)=>normalizeRun({mode,score:points,complete:true,hits:0,collected:10,total:20,smashes:2,bursts:1},0);
+let env, ownerKey; const services=[];
+const owner = {email:'owner@example.test',displayName:'Sean'};
+const other = {email:'friend@example.test',displayName:'Friend'};
+const run=()=>({mode:'cozy',world:0,score:250,treasures:5,smashes:1,bursts:0,complete:true,clean:true,medals:5,playedAt:Date.now()});
+const make=(uid)=>{const s=new CenterService();s.db=env.authenticatedContext(uid,{firebase:{sign_in_provider:'anonymous'}}).database();s.auth={currentUser:{uid,isAnonymous:true}};s.ready=true;services.push(s);return s;};
+const stored=async()=>env.withSecurityRulesDisabled(async c=>(await get(ref(c.database()))).val()||{});
 before(async()=>{
- if(!process.env.FIREBASE_DATABASE_EMULATOR_HOST)throw new Error('Demo database emulator required; never contact production.');
- env=await initializeTestEnvironment({projectId:'demo-james-game-center',database:{rules:readFileSync('firebase-database.rules.json','utf8')}});
+ if(!process.env.FIREBASE_DATABASE_EMULATOR_HOST)throw Error('Use the Realtime Database DEMO emulator, never production.');
+ ownerKey=await loginKey(owner.email,owner.displayName);
+ env=await initializeTestEnvironment({projectId:'demo-james-game-center',database:{rules:JSON.stringify(buildRules(ownerKey))}});
 });
-beforeEach(async()=>{for(const s of services.splice(0)){s.stopMember?.();s.stopSession?.();}await env.clearDatabase();await env.withSecurityRulesDisabled(async context=>set(ref(context.database()),{_admin:{masterUid:MASTER}}));});
-after(async()=>{for(const s of services){s.stopMember?.();s.stopSession?.();}await env?.cleanup();});
+beforeEach(async()=>env.clearDatabase());
+afterEach(()=>{for(const s of services.splice(0))s.dispose();});
+after(async()=>env?.cleanup());
 
-test('No public reads/writes, no first-visitor master claim, no private lookup enumeration',async()=>{
- await assertFails(get(ref(db(null))));await assertFails(set(ref(db(null),'anything'),true));
- const stranger=db('stranger');await assertFails(set(ref(stranger,'_admin/masterUid'),'stranger'));
- await assertFails(set(ref(stranger,'_admin/masterDevices/stranger'),true));
- await assertFails(get(ref(stranger,'loginLookup')));await assertFails(get(ref(stranger,'identities')));
- await assertFails(get(ref(stranger,'members')));await assertFails(get(ref(stranger,'racerRuns')));
- await assertFails(set(ref(stranger,'members/stranger'),{nickname:'Sean',role:'master',active:true,joinedAt:serverTimestamp()}));
+test('Public rule template is locked and contains no usable master key',()=>{
+ const text=JSON.stringify(buildRules());assert.ok(text.includes(PLACEHOLDER));assert.ok(!text.includes(ownerKey));
+ assert.equal(buildRules().rules['.read'],false);assert.equal(buildRules().rules['.write'],false);
 });
-test('Only console-designated master activates; initial roster contains exactly Sean and no scores',async()=>{
- const stranger=service('stranger');await request('stranger');await stranger.inspect(stranger.user);assert.equal(stranger.member,null);
- const s=await activate();const people=await s.roster(true);assert.equal(people.length,1);assert.equal(people[0].nickname,'Sean');assert.equal(people[0].records.cozy.attempts,0);
- await assertFails(remove(s.ref('members/'+MASTER)));await assertFails(update(s.ref('members/'+MASTER),{active:false}));
- await assertFails(update(s.ref('members/'+MASTER),{role:'player'}));await assertFails(set(s.ref('_admin/masterUid'),'other'));
+test('Wrong email or Sean nickname alone cannot bootstrap, write requests or create a profile',async()=>{
+ const s=make('visitor');await assert.rejects(s.login({email:'wrong@example.test',displayName:'Sean'}));
+ const all=await stored();assert.equal(all.jamesV1?.members,undefined);assert.equal(all.accessRequests,undefined);
+ await assertFails(set(s.ref('members/sean'),{nickname:'Sean',role:'master',active:true,joinedAt:serverTimestamp()}));
 });
-test('Knowing master email and nickname does not grant master access on an unapproved browser',async()=>{
- const s=await activate(),other=db('second-device'),key=await loginKey('owner@example.test','Sean');
- assert.equal((await get(ref(other,'loginLookup/'+key))).val(),MASTER);
- await assertFails(set(ref(other,'sessions/second-device'),{profileId:MASTER,loginKey:key}));
- await env.withSecurityRulesDisabled(async c=>set(ref(c.database(),'_admin/masterDevices/second-device'),true));
- await assertSucceeds(set(ref(other,'sessions/second-device'),{profileId:MASTER,loginKey:key}));
- await assertSucceeds(get(ref(other,'members')));
- await env.withSecurityRulesDisabled(async c=>remove(ref(c.database(),'_admin/masterDevices/second-device')));
- await assertFails(get(ref(other,'members')));
- await s.logout();assert.equal(s.member,null);await s.login({email:'owner@example.test',displayName:'Sean'});assert.equal(s.member?.role,'master');
+test('Usual email and nickname create exactly one master automatically with zero scores',async()=>{
+ const s=make('first-browser');await s.login(owner);assert.equal(s.member.uid,'sean');assert.equal(s.member.role,'master');
+ const all=await stored();assert.deepEqual(Object.keys(all.jamesV1.members),['sean']);assert.equal(all.jamesV1.members.sean.nickname,'Sean');
+ assert.equal(all.jamesV1.racerRuns,undefined);assert.equal(all._admin,undefined);
+ assert.equal((await s.ownRecord()).cozy.attempts,0);assert.equal((await s.ownRecord()).hero.points,0);
+ assert.ok(!JSON.stringify(all).includes(owner.email));
 });
-test('Future users require explicit approval; normal email/nickname re-entry works and never promotes roles',async()=>{
- const master=await activate(),pending=service('player-one');await pending.login({email:'player@example.test',displayName:'Player One'});assert.equal(pending.member,null);
- assert.equal((await master.roster()).length,1);await master.approve('player-one','Player One');
- await pending.login({email:'player@example.test',displayName:'Player One'});assert.equal(pending.member?.role,'player');
- const second=service('player-browser-two');await second.login({email:'player@example.test',displayName:'Player One'});assert.equal(second.member?.uid,'player-one');
- await assertFails(update(second.ref('members/player-one'),{role:'master'}));await assertFails(set(second.ref('_admin/masterDevices/player-browser-two'),true));
- await assertFails(get(second.ref('members')));await assertSucceeds(get(query(second.ref('members'),orderByChild('active'),equalTo(true))));
- await assertFails(get(second.ref('identities/'+MASTER)));await assertFails(get(second.ref('accessRequests')));
- await second.rename('New Display');assert.equal((await get(second.ref('members/player-one/nickname'))).val(),'New Display');
- await master.setActive('player-one',false);await assertFails(get(query(second.ref('members'),orderByChild('active'),equalTo(true))));
- await assertFails(set(second.ref('racerRuns/player-one/no-access'),{...rawRun(),createdAt:serverTimestamp()}));
+test('Same pair signs in on another browser without codes, approval or duplicate card',async()=>{
+ const a=make('browser-A'),b=make('browser-B');await a.login(owner);await b.login(owner);
+ assert.equal(a.member.uid,b.member.uid);assert.equal(b.member.role,'master');assert.equal((await b.roster(true)).length,1);
+ await a.logout();assert.equal(a.member,null);await a.login(owner);assert.equal(a.member.uid,'sean');
 });
-test('Runs are append-only, account-owned, idempotent across retries, with separate difficulty totals',async()=>{
- const s=await activate(),r=rawRun();await s.submit(MASTER,'run-1',r);await s.submit(MASTER,'run-1',r);
- const one=await s.ownRecord();assert.equal(one.cozy.attempts,1);assert.equal(one.cozy.points,250);assert.equal(one.hero.points,0);
- await s.submit(MASTER,'run-2',rawRun('hero',400));const two=await s.ownRecord();assert.equal(two.hero.points,400);assert.equal(two.cozy.points,250);
- await assert.rejects(s.submit(MASTER,'run-1',{...r,score:999}));await assertFails(remove(s.ref('racerRuns/'+MASTER+'/run-1')));
- await assertFails(update(s.ref('racerRuns/'+MASTER+'/run-1'),{score:999}));await assertFails(set(s.ref('racerRecords/'+MASTER),{cozy:{points:9999999}}));
- await assertFails(set(s.ref('racerRuns/someone-else/run-x'),{...r,createdAt:serverTimestamp()}));
- const merged=recordsFromRuns({b:{...r,playedAt:2000},a:{...r,playedAt:1000}});assert.equal(merged.cozy.bestStreak,2);
+test('Concurrent first sign-ins converge on one master profile',async()=>{
+ const a=make('first-A'),b=make('first-B');await Promise.all([a.login(owner),b.login(owner)]);
+ assert.equal(a.member.uid,'sean');assert.equal(b.member.uid,'sean');assert.equal((await a.roster(true)).length,1);
 });
-test('Invalid fields, values, completion medals, timestamps and forged sessions are rejected',async()=>{
- const s=await activate(),base={...rawRun(),createdAt:serverTimestamp()};let i=0;
- for(const wrong of [{score:-1},{score:500001},{score:1.5},{mode:'cheat'},{world:3},{medals:8},{complete:false},{clean:false},{role:'master'},{email:'private@example.test'},{createdAt:1},{playedAt:Date.now()+3600000}]) {
-  await assertFails(set(s.ref('racerRuns/'+MASTER+'/bad-'+i++),{...base,...wrong}));
- }
- const missing={...base};delete missing.score;await assertFails(set(s.ref('racerRuns/'+MASTER+'/missing'),missing));
- await assertFails(set(s.ref('sessions/'+MASTER),{profileId:MASTER,loginKey:'0'.repeat(64)}));
- await assertFails(update(s.ref('members/'+MASTER),{email:'private@example.test'}));
+test('Legacy root requests and records are left untouched, not migrated into fresh scores',async()=>{
+ await env.withSecurityRulesDisabled(c=>set(ref(c.database()),{_admin:{masterUid:'old-device'},accessRequests:{old:{nickname:'Sean'}},members:{old:{nickname:'Sean',role:'master'}},racerRuns:{old:{sample:{score:999}}}}));
+ const s=make('new-browser');await s.login(owner);assert.equal((await s.ownRecord()).cozy.points,0);
+ const all=await stored();assert.equal(all.racerRuns.old.sample.score,999);assert.equal(all._admin.masterUid,'old-device');
 });
-test('Practice backup stays owner-private and does not enter the roster',async()=>{
- const other=db('practice'),p={name:'Jamesy',bestCozy:[0,0,0],bestHero:[0,0,0],medals:[0,0,0],runs:0,gems:0,smashes:0,bursts:0,lastLevel:0,updatedAt:serverTimestamp()};
- await assertSucceeds(set(ref(other,'practiceBackups/practice'),p));await assertSucceeds(get(ref(other,'practiceBackups/practice')));
- await assertFails(get(ref(db('outsider'),'practiceBackups/practice')));await assertFails(get(ref(other,'practiceBackups')));
- await assertFails(set(ref(other,'practiceBackups/practice'),{...p,medals:[8,0,0]}));
- const s=await activate();assert.equal((await s.roster()).length,1);
+test('Root, login directory, private identities and other sessions are not publicly readable',async()=>{
+ const s=make('master-browser');await s.login(owner);const v=make('visitor');
+ await assertFails(get(ref(v.db)));await assertFails(get(v.ref('members')));await assertFails(get(v.ref('loginLookup')));
+ await assertFails(get(v.ref('identities/sean')));await assertFails(get(v.ref('sessions/master-browser')));
+ await assertFails(set(v.ref('sessions/visitor'),{profileId:'sean',loginKey:'a'.repeat(64)}));
+ const noAuth=env.unauthenticatedContext().database();await assertFails(get(ref(noAuth,'jamesV1/loginLookup/'+ownerKey)));
+});
+test('Only master can add a player by email and nickname; normal players cannot elevate roles',async()=>{
+ const master=make('master-browser');await master.login(owner);const id=await master.approve(other.email,other.displayName);
+ const player=make('friend-browser');await player.login(other);assert.equal(player.member.uid,id);assert.equal(player.member.role,'player');
+ await assertFails(update(player.ref('members/'+id),{role:'master'}));await assertFails(update(player.ref('members/sean'),{active:false}));
+ await assertFails(update(master.ref('members/sean'),{role:'player'}));await assertFails(remove(master.ref('members/sean')));
+ await assert.rejects(master.approve(other.email,other.displayName));assert.equal((await master.roster(true)).length,2);
+ await master.setActive(id,false);await assertFails(get(player.ref('racerRuns/sean')));
+ await master.setActive(id,true);await player.login(other);assert.equal(player.member.role,'player');
+});
+test('Display nickname changes preserve original sign-in pair and master identity',async()=>{
+ const a=make('browser-A');await a.login(owner);await a.rename('Sean Hero');await a.logout();await a.login(owner);
+ assert.equal(a.member.uid,'sean');assert.equal(a.member.nickname,'Sean Hero');assert.equal(a.member.role,'master');
+});
+test('Valid receipts save once; conflicting retry, editing, deletion, negative and injected scores fail',async()=>{
+ const s=make('owner-browser');await s.login(owner);const r=run();await s.submit('sean','run-one',r);await s.submit('sean','run-one',r);
+ const record=await s.ownRecord();assert.equal(record.cozy.attempts,1);assert.equal(record.cozy.points,250);
+ await assert.rejects(s.submit('sean','run-one',{...r,score:500}));
+ await assertFails(update(s.ref('racerRuns/sean/run-one'),{score:1000}));await assertFails(remove(s.ref('racerRuns/sean/run-one')));
+ await assertFails(set(s.ref('racerRuns/sean/bad'),{...r,score:-1,createdAt:serverTimestamp()}));
+ await assertFails(set(s.ref('racerRuns/sean/injected'),{...r,role:'master',createdAt:serverTimestamp()}));
+ await assertFails(set(s.ref('racerRecords/sean'),{points:999}));
+});
+test('Master matching credentials and member identity cannot be replaced through browser writes',async()=>{
+ const s=make('owner-browser');await s.login(owner);
+ await assertFails(set(s.ref('identities/sean'),{loginKey:'b'.repeat(64)}));
+ await assertFails(remove(s.ref('loginLookup/'+ownerKey)));await assertFails(set(s.ref('_admin/masterUid'),'other'));
 });

@@ -7,3 +7,7 @@ dist/
 !.env.example
 test-results/
 .DS_Store
+# Owner-specific matching credentials must never be committed.
+*Personalized*
+*personalized*
+private-rules/
