@@ -1,38 +1,46 @@
-# Resume Jamesy art production — rear run revision 02
+# Resume Jamesy art production — idle and banking / Movement 03
 
 ## Current stage
 
-**Group 1 — Characters. Hulk Jamesy's second rear-run study is prepared for motion review.** Character art still comes before items, environments, interface, effects and assembly.
+**Group 1 — Characters. Hulk Jamesy's rear idle and both banking directions are prepared as transparent motion-review candidates.** Characters still come before items, environments, interface, effects and assembly.
 
-## Previously established
+## New in this batch
 
-Art bible v1.2 and PDF; the five-costume J-emblem lineup; six corrected transparent Hulk pose studies; original rear run v01 with its review findings. The old assets stay preserved. The five character costumes are not player accounts.
+- Three original still-image sources: initial twelve-pose study, full-sheet edit, focused four-pose opposite-foot correction. The first edit did not reliably reverse supporting legs; the focused correction supplied those missing poses.
+- Twelve selected drawing candidates: four rear idle, four bank-left, four bank-right. Both supporting feet now appear in each bank set. Names describe screen direction.
+- 512x640 and 256x320 RGBA exports, review atlas, manifest with source mapping/scales/anchors, contact board and an offline viewer. Alternate sizes are not extra unique poses.
+- [Movement 03 reviewer](01-characters/hulk/movement-reviews/v01/review-export/review.html) and [review notes](01-characters/hulk/movement-reviews/v01/REVIEW.md). Starts paused; three pose sets, stepping, speed, size, background and four-frame-strip controls.
+- 24 individual PNG checks, 12 atlas-region comparisons, source hash verification, 10 synthetic tests and 13 executed local Chromium viewer checks. No physical phone or live-game performance claim.
 
-## New in this handoff
+## Hulk schedule, without overstating completion
 
-- Two new rear-run source sheets archived as original PNG bytes; their task IDs, dimensions, byte counts and SHA-256 values are in `run-revision-02.json`.
-- Eight new transparent run-drawing candidates, each exported at 512×640 and 256×320, plus a review atlas, contact board, flipbook, manifest and technical checks.
-- A self-contained [Run 02 reviewer](01-characters/hulk/run-reviews/v02/review-export/review.html) with previous/new comparison, source-order view, stepping, speed, size and background controls.
-- [Review notes and exact phase mapping](01-characters/hulk/run-reviews/v02/REVIEW.md). These distinguish new source drawings from exports and from final approval.
+| Clip | Planned unique frames | Current selected candidate set |
+| --- | ---: | --- |
+| Rear idle | 4 | Movement 03: 4 candidates |
+| Rear run | 8 | Run 02: 8 candidates; retain motion-polish notes |
+| Lean left | 4 | Movement 03: 4 candidates |
+| Lean right | 4 | Movement 03: 4 candidates |
+| Jump | 6 | Next |
+| Land | 3 | Next |
+| Smash | 8 | Contact study only; clip pending |
+| Thunderclap | 6 | Pending |
+| Power-up | 6 | Pending |
+| Bump | 3 | Pending |
+| Victory | 8 | Pending |
+| Menu idle | 4 | Pending |
 
-The generated cells were not in the intended order. The new source is deliberately played in one-based cell order 5,6,3,4,1,2,7,8, and the two flight poses get a declared small presentation lift. No mirroring, limb warping, head replacement or hidden interpolation is used. No generated video was requested or started.
+**20 selected sequence-drawing candidates across four clips, out of 64 planned Hulk frames. None is automatically production-approved.** Six earlier pose studies are separate and are not added to this count. Earlier run revisions and export duplicates are not counted again.
 
-## Current review status
+## Remaining movement review
 
-The run remains **motion_review**, not production_ready. The new drawings provide complementary half-step poses and no symmetric airborne hop, but cape timing, compression, body-proportion continuity, the loop seam and final track-camera alignment still require review. Passing file checks is not automatic art approval.
+Idle is intentionally subtle. The bank sets now alternate support, but the four-frame contact-pair cadence, cape changes, cross-source limb proportions and loop seams need a unified movement-polish review. Source scales and provisional placements are explicit. No mirroring, limb warping or hidden interpolation was used. Track-camera, ground and hitbox alignment remain for the isolated game view.
 
-This is one eight-drawing run revision, not eight completed animation clips and not a finished 64-frame Hulk package. The older v01 run is retained only for comparison. No other hero animation package or item family is claimed complete.
+## Next exact sub-batch
 
-## Exact next checkpoint
+**Rear jump (6) plus landing (3)**, then the remaining Hulk actions. Keep outstanding run/bank polish notes open rather than declaring those clips production-ready. Continue the four other character families before item generation.
 
-Review Run 02 at 12 fps and small display size. Resolve any remaining cape/stride concerns, then use the accepted movement reference for **rear idle and left/right bank clips**. Continue the rest of Hulk's 12-clip / 64-frame plan and the four other character families before item generation.
+## Established foundation and protected boundary
 
-## Verification
+Art bible v1.2, the permanent J-emblem five-costume lineup, earlier pose studies and Run 02 remain preserved. The five costumes are not five accounts. No live renderer, Firebase rules, sign-in flow, roster or score changes. Preserve the existing v1.3 email/nickname Realtime Database design and Sean as sole initial Master. This art branch does not deploy the game.
 
-11 executed export checks, seven new synthetic unit tests, and 12 locally executed Chromium review-page checks. The art workflow repeats export/unit checks before saving generated assets; browser checks are a separate local test. No physical iPhone/Safari or rebuilt-game performance claim.
-
-## Protected boundary
-
-Art files, production tools and the art-only archive workflow are the only changes. No live renderer, Firebase rules, account source, roster or scores are changed. Preserve the v1.3 email/nickname Realtime Database design and Sean as sole initial Master. Main is not deployed by this branch.
-
-GitHub is still the archive. Original source sheets, accepted references and review outputs are separated; superseded posters must not be used as character references. A new automatic poster result in this session was off-target and is not used or counted as a run asset.
+GitHub remains the archive. Sources, review exports and intermediate attempts have separate labels. No Google Drive migration, new generated video or broad poster generation was done in this batch.
