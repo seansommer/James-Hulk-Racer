@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "id": "run-v02",
+  "status": "motion_review",
+  "productionReady": false,
+  "source": "art/01-characters/hulk/run-reviews/v02/source-sheet.png",
+  "sourceSha256": "a15c2083fd81d46076cd8cb24e2bc0ccdd602cb58b9f637c5517736d7c86d9aa",
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "originalSheetSize": [
+    2560,
+    1712
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    1056,
+    656
+  ],
+  "padding": 4,
+  "alpha": "straight",
+  "trimmed": false,
+  "rotated": false,
+  "mipmaps": false,
+  "frames": [
+    {
+      "id": "hulk_run_rear_000",
+      "sourceCell": 4,
+      "sourceRect": [
+        0,
+        856,
+        640,
+        1712
+      ],
+      "phaseTarget": "Left contact",
+      "sourceGroundAnchor": [
+        364,
+        781
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        41,
+        115
+      ],
+      "presentationFlightOffsetY": 0,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_000.png",
+      "frame256": "frames-256/hulk_run_rear_000.png",
+      "sha256": "0ed2e1fd0a2efa4468f606a2b72623b03d6d67e79a5ce789392254152dcca402",
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_001",
+      "sourceCell": 5,
+      "sourceRect": [
+        640,
+        856,
+        1280,
+        1712
+      ],
+      "phaseTarget": "Left compression",
+      "sourceGroundAnchor": [
+        334,
+        781
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        59,
+        115
+      ],
+      "presentationFlightOffsetY": 0,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_001.png",
+      "frame256": "frames-256/hulk_run_rear_001.png",
+      "sha256": "dad2785cc1adf67ae05237a96e850fa1a7a4f3ecbd0cf439a2663748ec165b3a",
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_002",
+      "sourceCell": 2,
+      "sourceRect": [
+        1280,
+        0,
+        1920,
+        856
+      ],
+      "phaseTarget": "Left toe-off",
+      "sourceGroundAnchor": [
+        299,
+        828
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        80,
+        87
+      ],
+      "presentationFlightOffsetY": 0,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_002.png",
+      "frame256": "frames-256/hulk_run_rear_002.png",
+      "sha256": "a4bab79ac2ef9c6a7992b1df499c8c8af485ebc6980153fa0efa566e5a1b8503",
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_003",
+      "sourceCell": 3,
+      "sourceRect": [
+        1920,
+        0,
+        2560,
+        856
+      ],
+      "phaseTarget": "Flight to right",
+      "sourceGroundAnchor": [
+        273,
+        828
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        95,
+        75
+      ],
+      "presentationFlightOffsetY": -12,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_003.png",
+      "frame256": "frames-256/hulk_run_rear_003.png",
+      "sha256": "1733d2062ed01159a63a5f520693c26634495310447a46add33e1fa924a10a0d",
+      "productionReady": false,
+      "rect": [
+        796,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_004",
+      "sourceCell": 0,
+      "sourceRect": [
+        0,
+        0,
+        640,
+        856
+      ],
+      "phaseTarget": "Right contact",
+      "sourceGroundAnchor": [
+        358,
+        828
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        45,
+        87
+      ],
+      "presentationFlightOffsetY": 0,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_004.png",
+      "frame256": "frames-256/hulk_run_rear_004.png",
+      "sha256": "4541cbae8035b89d16a420fb497f3b8306f9d76c6ce48214c617075f94e4c54f",
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_005",
+      "sourceCell": 1,
+      "sourceRect": [
+        640,
+        0,
+        1280,
+        856
+      ],
+      "phaseTarget": "Right compression",
+      "sourceGroundAnchor": [
+        338,
+        828
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        57,
+        87
+      ],
+      "presentationFlightOffsetY": 0,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_005.png",
+      "frame256": "frames-256/hulk_run_rear_005.png",
+      "sha256": "4f7ed581ac6c9de9654819684853edb9ff837de8dd633290f8188cb803a90861",
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_006",
+      "sourceCell": 6,
+      "sourceRect": [
+        1280,
+        856,
+        1920,
+        1712
+      ],
+      "phaseTarget": "Right toe-off",
+      "sourceGroundAnchor": [
+        294,
+        781
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        83,
+        115
+      ],
+      "presentationFlightOffsetY": 0,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_006.png",
+      "frame256": "frames-256/hulk_run_rear_006.png",
+      "sha256": "fbfff06344edd9b88628244bb7673b06cf1c1bbc4c35cc6448046169ba94db34",
+      "productionReady": false,
+      "rect": [
+        532,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_007",
+      "sourceCell": 7,
+      "sourceRect": [
+        1920,
+        856,
+        2560,
+        1712
+      ],
+      "phaseTarget": "Flight to left",
+      "sourceGroundAnchor": [
+        273,
+        781
+      ],
+      "commonSheetScale": 0.59,
+      "offset": [
+        95,
+        103
+      ],
+      "presentationFlightOffsetY": -12,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_007.png",
+      "frame256": "frames-256/hulk_run_rear_007.png",
+      "sha256": "0bf491b61613188de52d7a8f0a9ae3dd02f0ddb4bd5f5a0dfa5fb12db21c7a73",
+      "productionReady": false,
+      "rect": [
+        796,
+        332,
+        256,
+        320
+      ]
+    }
+  ],
+  "playbackSourceCells": [
+    4,
+    5,
+    2,
+    3,
+    0,
+    1,
+    6,
+    7
+  ],
+  "previewFps": 12,
+  "uniqueDrawingCount": 8,
+  "notes": "Newly generated toe-off and tucked-leg drawings are phase-ordered as source cells 5,6,3,4,1,2,7,8 (one-based). This is not a relabel of v01. Two flight frames have a declared -12 master-pixel presentation offset. No mirrored artwork, limb warping, head replacement or interpolated frames. Cape timing, proportional continuity and final camera alignment still need approval."
+}

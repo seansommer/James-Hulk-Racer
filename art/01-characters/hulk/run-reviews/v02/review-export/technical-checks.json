@@ -1,0 +1,22 @@
+{
+  "result": "PASS_TECHNICAL_ONLY",
+  "checks": [
+    "Eight unique source cells used exactly once",
+    "Original source and v01 atlas remain unchanged",
+    "All 16 individual PNG exports have the stated fixed canvas",
+    "All exports have transparent and opaque pixels",
+    "All silhouettes remain within the canvas",
+    "Atlas copies preserve straight-alpha pixels",
+    "Runtime checksums match manifest",
+    "One common scale across the new sheet",
+    "Two cosmetic flight offsets are explicitly recorded",
+    "Production approval is not inferred from file generation",
+    "Flipbook contains all eight frames"
+  ],
+  "checkCount": 11,
+  "uniqueNewDrawingCandidates": 8,
+  "individualPngExports": 16,
+  "productionApprovedFrames": 0,
+  "motionApproval": "pending",
+  "scope": "File and export checks only; no claim of final animation quality, physical iPhone behavior or gameplay testing."
+}
