@@ -1,0 +1,479 @@
+{
+  "result": "PASS_FILE_CHECKS",
+  "selectedDrawings": 13,
+  "individualPngExports": 26,
+  "atlasRegionComparisons": 13,
+  "sourcesPreserved": 3,
+  "productionReadyFrames": 0,
+  "checks": [
+    {
+      "file": "frames-512/hulk_power_up_rear_000.png",
+      "sha256": "dddbb5df6a760d44896264e2871f1f1f38c3fb79bc659f21630f05ba4a0f2bf9",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        131,
+        104,
+        380,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_power_up_rear_000.png",
+      "sha256": "a1b7a647e6a6975482c636c0d828371a420748ddefe6c4d1bb2a28ff7e580588",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        64,
+        51,
+        191,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_power_up_rear_001.png",
+      "sha256": "8270ef864c9a05a8a70751d32029d1d9e3f349e3930c0e165b7fcdcccca08b98",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        133,
+        114,
+        382,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_power_up_rear_001.png",
+      "sha256": "d2bbc644c5ad64183537fcc537f7f95235a353bf5453835b1cf65f146ff17cfb",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        65,
+        56,
+        192,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_power_up_rear_002.png",
+      "sha256": "6b6c41345d9c4a7d4bf45c6341c3fa260eee434ee4f9be66e8b21a187f550f65",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        121,
+        150,
+        393,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_power_up_rear_002.png",
+      "sha256": "5324b02bd9dd256bcdb1a82763692e7e3d3b8c30fea560b12f9ddc6b2f04fb48",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        59,
+        74,
+        198,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_power_up_rear_003.png",
+      "sha256": "adde88252c5cf2e7e2eb662a29cb49cf6faa16c9a00e9d1112e449d89d6ecd93",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        104,
+        123,
+        432,
+        578
+      ]
+    },
+    {
+      "file": "frames-256/hulk_power_up_rear_003.png",
+      "sha256": "3ef3f6a5fb9461d1be30d5118ce917f6d8e6925bde942fb73c18da36d68253f3",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        51,
+        60,
+        218,
+        290
+      ]
+    },
+    {
+      "file": "frames-512/hulk_power_up_rear_004.png",
+      "sha256": "3cd00b829cd1cf76e3cbc80c07a6bb58cabb763d26ba7f04a47f8ae390c5fec0",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        68,
+        107,
+        434,
+        577
+      ]
+    },
+    {
+      "file": "frames-256/hulk_power_up_rear_004.png",
+      "sha256": "626ffd8110d23c67778405db4910d1f22e01136d5556f184b179257792f9081c",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        33,
+        52,
+        218,
+        290
+      ]
+    },
+    {
+      "file": "frames-512/hulk_power_up_rear_005.png",
+      "sha256": "f64df84e2e93423154a32783ddf2b8274907d3a22ddeebd2bea6d6fc1f520968",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        130,
+        116,
+        382,
+        583
+      ]
+    },
+    {
+      "file": "frames-256/hulk_power_up_rear_005.png",
+      "sha256": "33acebaab5421a9a0aa170aca4b1fbcb81d7dd9c3543e3617395bcab0ac0bc2d",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        64,
+        57,
+        192,
+        293
+      ]
+    },
+    {
+      "file": "frames-512/hulk_hurt_rear_000.png",
+      "sha256": "29ab5cf1d0119c41a0c1805f47de2c15458d62713ee10e84dd354a97f87280d3",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        61,
+        107,
+        394,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_hurt_rear_000.png",
+      "sha256": "02fb93100caab331e0a462943f419df12c2ccef92735125cb7a95f4d8b239598",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        29,
+        52,
+        199,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_hurt_rear_001.png",
+      "sha256": "c5068bc90c52024dad77683dc2e40e87cf89247079622e2bb811370514b6aafd",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        79,
+        133,
+        449,
+        581
+      ]
+    },
+    {
+      "file": "frames-256/hulk_hurt_rear_001.png",
+      "sha256": "6ca0e7f475745170bf8cce5d840a86d0e86a914f5cc871b66b3c3a72d2ddf358",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        38,
+        65,
+        226,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_hurt_rear_002.png",
+      "sha256": "3e3f1aa6a07c86c313888918ddb9af88bbb7dd5a4d4da476686458bd4c9c04d4",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        121,
+        114,
+        415,
+        581
+      ]
+    },
+    {
+      "file": "frames-256/hulk_hurt_rear_002.png",
+      "sha256": "9fba96cd05dcd6b2d9591f609801a4eced33caa9af178d53a86514c464d03a3e",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        59,
+        56,
+        209,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_menu_idle_front_000.png",
+      "sha256": "1f89cf063ad0480d82317864a6511450d882b68f57495caafaa1dba9c7c748c3",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        152,
+        151,
+        484,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_menu_idle_front_000.png",
+      "sha256": "809fd75dfebacac97920a2fd497b1efb6125059073a0fc417f019cce811188e5",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        75,
+        74,
+        243,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_menu_idle_front_001.png",
+      "sha256": "b4f550e4c993c98dfa0da49a4e76778e7f8bb80cb072315ecac5a805bdda8cdb",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        152,
+        151,
+        501,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_menu_idle_front_001.png",
+      "sha256": "2b2b1e20234b09acc2887596a1e45cf933164e7a17410d47b0c7a6f4be0b918a",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        75,
+        74,
+        252,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_menu_idle_front_002.png",
+      "sha256": "9b6db203534f87d00b21aea9b1eb9b2946b3090a2e1290c91f23e4369bc64605",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        151,
+        148,
+        497,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_menu_idle_front_002.png",
+      "sha256": "1d41d52ac8d4647c44e7395ea355ff3a4eb0190e9963dd4c5308710b66f741ef",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        74,
+        73,
+        250,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_menu_idle_front_003.png",
+      "sha256": "44346551163bbc64ed7ac167e91eb99eaf833afc952b370739e583a5a193a0fb",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        152,
+        148,
+        495,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_menu_idle_front_003.png",
+      "sha256": "b2467c5d3b8974c9ea653bafa7f01832a4943c0f807a62057e409febc434d65f",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        74,
+        73,
+        249,
+        291
+      ]
+    }
+  ],
+  "scope": "Checksums, RGBA dimensions, alpha, margins and atlas equality. Not approval of motion, anatomy, camera matching or physical-device performance."
+}
