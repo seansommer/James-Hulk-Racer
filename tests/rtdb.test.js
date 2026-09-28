@@ -11,7 +11,7 @@ const owner = {email:'owner@example.test',displayName:'Sean'};
 const other = {email:'friend@example.test',displayName:'Friend'};
 const run=()=>({mode:'cozy',world:0,score:250,treasures:5,smashes:1,bursts:0,complete:true,clean:true,medals:5,playedAt:Date.now()});
 const make=(uid)=>{const s=new CenterService();s.db=env.authenticatedContext(uid,{firebase:{sign_in_provider:'anonymous'}}).database();s.auth={currentUser:{uid,isAnonymous:true}};s.ready=true;services.push(s);return s;};
-const stored=async()=>env.withSecurityRulesDisabled(async c=>(await get(ref(c.database()))).val()||{});
+const stored=async()=>{let value={};await env.withSecurityRulesDisabled(async c=>{value=(await get(ref(c.database()))).val()||{};});return value;};
 before(async()=>{
  if(!process.env.FIREBASE_DATABASE_EMULATOR_HOST)throw Error('Use the Realtime Database DEMO emulator, never production.');
  ownerKey=await loginKey(owner.email,owner.displayName);
