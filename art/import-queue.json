@@ -1,16 +1,32 @@
 {
   "schemaVersion": 1,
-  "description": "Explicit owner-authorized image imports. Transfer URLs grant access to these artwork files only and are removed from this current file after successful archival. They are not game or Firebase credentials.",
+  "description": "Explicit owner-authorized artwork imports. Temporary media transfer URLs are removed from the current manifest after archival. No game credentials or Firebase rules are included.",
   "imports": [
     {
       "path": "art/00-reference/lineup-j-v1.png",
       "status": "archived",
       "reviewStatus": "reference",
       "sha256": "6fa0dc53e03be60c4f2becd0d8c32ef175c670b801e0aeb5b516447ba8328c14",
-      "notes": "Original five-costume lineup supplied in this conversation. J on chest/belt/shield and descriptor-first names. Not a sprite sheet.",
+      "notes": "Established five-costume reference with J emblems. Not a sprite sheet.",
       "bytes": 2057086,
       "width": 1916,
       "height": 821
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v01-candidate.png",
+      "status": "pending",
+      "reviewStatus": "needs_revision",
+      "sha256": "51d8f6df4c21884c588e12e53ab606dcece85d444bb2e2e387529da9c7b033c0",
+      "notes": "Six-pose candidate with genuine alpha, NOT approved. Chest numerals must become J; lower-right contact pose faces front instead of the requested rear-three-quarter view; bank order and registration need review. See REVIEW-v01.md.",
+      "url": "https://d2jqrm6oza8nb6.cloudfront.net/datasets/f686a9f3-6e56-4ff7-b1d6-858fe790cc40.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZDAyYjYyYWExMWViNGI2NCIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc2OTgzNH0.fZS5Vek6a4qjWPjiQpx2ZgMkC611JWLpPGsJbQi_bXw"
+    },
+    {
+      "path": "art/01-characters/hulk/archived-studies/hulk-visual-study-v01-superseded.png",
+      "status": "pending",
+      "reviewStatus": "superseded_study",
+      "sha256": "d60ed2a607e83f5c866a8c27d475a51a33a0cd6368cc90165e03a1a4ed417820",
+      "notes": "Superseded visual study, NOT an authoritative bible or a sprite atlas. Obsolete numeral emblems and cape-back badge conflict with v1.2; preserve only as an archived study, not a generation reference.",
+      "url": "https://d2jqrm6oza8nb6.cloudfront.net/datasets/b47f4edd-ecbb-4538-a5e8-c1de42d5e8b0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNDVjMmU2OWFmYjYwNmQ4YSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc1MjkyMn0.2MvSGn5T6drdeD6MtH-_eTnBnUSWnTVuD0dsNLMEnbA"
     }
   ]
 }
