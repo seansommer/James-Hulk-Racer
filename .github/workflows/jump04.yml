@@ -1,0 +1,52 @@
+name: Archive Jamesy jump and landing art
+on:
+  push:
+    branches: ['art/storybook-bible-v1-20260928']
+    paths:
+      - '.github/workflows/jump04.yml'
+      - 'production/jump04/**'
+      - 'art/01-characters/hulk/jump-reviews/v01/sources.json'
+permissions:
+  contents: write
+concurrency:
+  group: jamesy-art-archive
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.ref == 'refs/heads/art/storybook-bible-v1-20260928'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: art/storybook-bible-v1-20260928
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing art dependency
+        run: python -m pip install --disable-pip-version-check Pillow==12.3.0
+      - name: Archive the selected jump and landing source
+        run: python production/jump04/import_source.py
+      - name: Build and test exports when available
+        run: |
+          if test -f production/jump04/export.py; then
+            python -m unittest discover -s production/jump04 -p 'test_*.py' -v
+            python production/jump04/export.py
+          fi
+          python production/tools/prepare_art.py
+      - name: Commit artwork only
+        run: |
+          git add -- art
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Archive Hulk Jamesy jump and landing review artwork'
+            git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jamesy-jump-landing
+          path: |
+            art/01-characters/hulk/jump-reviews/v01/
+            production/jump04/
+          retention-days: 14
