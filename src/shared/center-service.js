@@ -1,38 +1,182 @@
-import {initializeApp,getApps} from 'firebase/app';
-import {getAuth,setPersistence,browserLocalPersistence,GoogleAuthProvider,signInWithPopup,linkWithPopup,signOut,onAuthStateChanged} from 'firebase/auth';
-import {getFirestore,doc,getDoc,getDocs,collection,query,where,limit,startAfter,runTransaction,updateDoc,serverTimestamp} from 'firebase/firestore';
-import {addToRecord,stats,nickname} from './center-model.js';
-// Public browser configuration. Roles are assigned privately through Firestore rules.
-const config={apiKey:'AIzaSyCkQdOb7Y_L0DWR3ech1x_KhKqWDt7wCsk',authDomain:'james-game-center.firebaseapp.com',projectId:'james-game-center',storageBucket:'james-game-center.firebasestorage.app',messagingSenderId:'184479595586',appId:'1:184479595586:web:3a2bc02579732535ddc1db'};
-export class CenterService{
- constructor(){this.user=null;this.member=null;this.ready=false;this.ticket=0;this.listeners=new Set();}
- subscribe(fn){this.listeners.add(fn);return()=>this.listeners.delete(fn);}
- notify(){for(const fn of this.listeners)fn(this);}
- async init(){const app=getApps().find(a=>a.name==='james-center')||initializeApp(config,'james-center');this.auth=getAuth(app);this.db=getFirestore(app);await setPersistence(this.auth,browserLocalPersistence);await this.auth.authStateReady();this.ready=true;onAuthStateChanged(this.auth,user=>{this.inspect(user).catch(e=>{this.member=null;this.problem=explain(e);this.notify();});});return this;}
- async inspect(user){const ticket=++this.ticket;this.user=user;this.member=null;this.problem='';this.loading=true;this.notify();try{
-  if(!user||user.isAnonymous)return;
-  if(!user.providerData.some(p=>p.providerId==='google.com')||!user.emailVerified){this.problem='Use Google sign-in to verify your account.';return;}
-  const launch=await getDoc(doc(this.db,'_admin','launch'));if(ticket!==this.ticket)return;
-  if(!launch.exists()){this.problem='Master setup is not finished. Copy your User ID below and complete the private Firebase launch document.';return;}
-  this.masterUid=launch.data().masterUid;const ref=doc(this.db,'members',user.uid);
-  if(user.uid===this.masterUid)await runTransaction(this.db,async tx=>{const found=await tx.get(ref);if(!found.exists())tx.set(ref,{nickname:'Sean',role:'master',active:true,joinedAt:serverTimestamp()});});
-  const found=await getDoc(ref);if(ticket!==this.ticket)return;
-  if(!found.exists()||found.data().active!==true){this.problem='This account is not approved for James Game Center. No player card has been created.';return;}
-  this.member={...found.data(),uid:user.uid,role:user.uid===this.masterUid?'master':'player'};
- }finally{if(ticket===this.ticket){this.loading=false;this.notify();}}}
- async login(){if(!this.ready)throw new Error('The account connection is still loading. Try again in a moment.');const provider=new GoogleAuthProvider();provider.setCustomParameters({prompt:'select_account'});try{if(this.auth.currentUser?.isAnonymous)await linkWithPopup(this.auth.currentUser,provider);else await signInWithPopup(this.auth,provider);}catch(e){if(e.code==='auth/credential-already-in-use')await signInWithPopup(this.auth,provider);else throw e;}}
- async logout(){await signOut(this.auth);}
- async refresh(){await this.inspect(this.auth.currentUser);}
- async ownRecord(){if(!this.member)throw new Error('Sign in with an approved account first.');const uid=this.member.uid,snap=await getDoc(doc(this.db,'racerRecords',uid));return {uid,cozy:stats(snap.data()?.cozy),hero:stats(snap.data()?.hero)};}
- async roster(all=false){if(!this.member)throw new Error('Sign in with an approved account first.');if(all&&this.member.role!=='master')throw new Error('Master access required.');let cursor=null;const people=[];
-  do{const constraints=[...(all?[]:[where('active','==',true)]),limit(100),...(cursor?[startAfter(cursor)]:[])];const batch=await getDocs(query(collection(this.db,'members'),...constraints));for(const d of batch.docs)people.push({...d.data(),uid:d.id,role:d.id===this.masterUid?'master':'player'});cursor=batch.size===100?batch.docs.at(-1):null;}while(cursor);
-  return Promise.all(people.map(async p=>{if(!p.active)return p;try{const record=await getDoc(doc(this.db,'racerRecords',p.uid));return {...p,records:{cozy:stats(record.data()?.cozy),hero:stats(record.data()?.hero)}};}catch{return {...p,unavailable:true};}}));
- }
- async submit(uid,id,run){if(!this.member||this.member.uid!==uid)throw new Error('Account changed; this run stays with its original player.');const userRef=doc(this.db,'members',uid),runRef=doc(userRef,'runs',id),summary=doc(this.db,'racerRecords',uid);
-  await runTransaction(this.db,async tx=>{const previous=await tx.get(runRef);if(previous.exists())return;const before=await tx.get(summary),next=addToRecord(before.data(),run);tx.set(runRef,{...run,createdAt:serverTimestamp()});tx.set(summary,{...next,lastRunId:id,updatedAt:serverTimestamp()});},{maxAttempts:3});
- }
- async rename(name){if(!this.member)throw new Error('Sign in first.');await updateDoc(doc(this.db,'members',this.member.uid),{nickname:nickname(name)});this.member.nickname=nickname(name);this.notify();}
- async approve(uid,name){if(this.member?.role!=='master')throw new Error('Master access required.');if(!/^[A-Za-z0-9:_-]{1,128}$/.test(uid))throw new Error('Paste the exact Firebase User ID.');if(uid===this.masterUid)throw new Error('Your master account is already active.');const ref=doc(this.db,'members',uid);await runTransaction(this.db,async tx=>{const old=await tx.get(ref);if(old.exists())tx.update(ref,{nickname:nickname(name),active:true,role:'player'});else tx.set(ref,{nickname:nickname(name),active:true,role:'player',joinedAt:serverTimestamp()});});}
- async setActive(uid,active){if(this.member?.role!=='master'||uid===this.masterUid)throw new Error('The sole master cannot be removed or disabled here.');await updateDoc(doc(this.db,'members',uid),{active:Boolean(active)});}
+import { initializeApp, getApps } from 'firebase/app';
+import { getAuth, setPersistence, browserLocalPersistence, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
+import { getDatabase, ref, get, set, update, remove, query, orderByChild, equalTo, onValue, serverTimestamp } from 'firebase/database';
+import { firebaseConfig } from './firebase-config.js';
+import { addToRecord, stats, nickname } from './center-model.js';
+import { loginKey } from './identity.js';
+
+// Immutable run receipts are the source of truth. No writable aggregate counters.
+export function recordsFromRuns(runs) {
+  let result = { cozy: stats(), hero: stats() };
+  for (const [, run] of Object.entries(runs || {}).sort(([a, x], [b, y]) => x.playedAt - y.playedAt || a.localeCompare(b))) {
+    result = addToRecord(result, run);
+  }
+  return result;
 }
-export function explain(e){const c=e?.code||'';if(c.includes('popup-closed-by-user'))return 'Sign-in was cancelled. Your practice progress is unchanged.';if(c.includes('popup-blocked'))return 'Allow pop-ups for this site, then tap Google sign-in again.';if(c.includes('unauthorized-domain'))return 'Add seansommer.github.io to Authentication → Settings → Authorized domains in the James Firebase project.';if(c.includes('operation-not-allowed')||c.includes('configuration-not-found'))return 'Enable Google under Authentication → Sign-in method in the James Firebase project.';if(c.includes('permission-denied'))return 'Account access is not ready. Publish the new James Firestore rules and check the private master setup.';if(c.includes('unavailable')||c.includes('network'))return 'The account connection is unavailable. Try again online; practice mode is still available.';return e?.message||'Connection unavailable. Try again.';}
+
+export class CenterService {
+  constructor() {
+    this.user = null; this.member = null; this.ready = false; this.loading = false;
+    this.ticket = 0; this.listeners = new Set(); this.pending = null; this.problem = '';
+  }
+  subscribe(fn) { this.listeners.add(fn); return () => this.listeners.delete(fn); }
+  notify() { for (const fn of this.listeners) fn(this); }
+  ref(path) { return ref(this.db, path); }
+  async init() {
+    const app = getApps().find(a => a.name === 'james-center') || initializeApp(firebaseConfig, 'james-center');
+    this.auth = getAuth(app); this.db = getDatabase(app);
+    await setPersistence(this.auth, browserLocalPersistence);
+    await this.auth.authStateReady(); this.ready = true;
+    this.stopAuth = onAuthStateChanged(this.auth, user => {
+      this.stopSession?.(); this.stopMember?.(); this.watchedMember = null;
+      if (!user) { this.inspect(null); return; }
+      this.stopSession = onValue(this.ref('sessions/' + user.uid), () => this.inspect(user), error => this.fail(error));
+    });
+    await this.inspect(this.auth.currentUser);
+    return this;
+  }
+  fail(error) {
+    this.member = null; this.loading = false; this.problem = explain(error); this.notify();
+  }
+  async inspect(user) {
+    const ticket = ++this.ticket;
+    this.user = user; this.member = null; this.pending = null; this.loading = true; this.problem = ''; this.notify();
+    try {
+      if (!user) return;
+      const session = (await get(this.ref('sessions/' + user.uid))).val();
+      if (ticket !== this.ticket) return;
+      if (!session) {
+        this.stopMember?.(); this.watchedMember = null;
+        const pending = (await get(this.ref('accessRequests/' + user.uid))).val();
+        if (ticket !== this.ticket) return;
+        this.pending = pending;
+        if (!pending) return;
+        const master = (await get(this.ref('_admin/masterUid'))).val();
+        if (ticket !== this.ticket) return;
+        if (master === user.uid) {
+          await this.activateMaster(user.uid, pending);
+          // The realtime session listener will also refresh; generations prevent stale results.
+          return await this.inspect(this.auth.currentUser || user);
+        }
+        this.problem = 'Your details are saved for approval, not a player card. For the first launch, set your User ID as _admin/masterUid in Realtime Database, then press Check access.';
+        return;
+      }
+      const uid = session.profileId;
+      const found = (await get(this.ref('members/' + uid))).val();
+      if (ticket !== this.ticket) return;
+      if (!found?.active) { this.problem = 'This player is not approved or access is paused.'; return; }
+      this.member = { ...found, uid }; this.pending = null;
+      if (this.watchedMember !== uid) {
+        this.stopMember?.(); this.watchedMember = uid;
+        this.stopMember = onValue(this.ref('members/' + uid), snapshot => {
+          if (this.user?.uid !== user.uid || this.watchedMember !== uid) return;
+          const value = snapshot.val();
+          if (!value?.active) this.fail(new Error('Player access is paused.'));
+          else if (!this.loading) { this.member = { ...value, uid }; this.notify(); }
+        }, error => this.fail(error));
+      }
+    } catch (error) {
+      if (ticket === this.ticket) this.problem = explain(error);
+    } finally {
+      if (ticket === this.ticket) { this.loading = false; this.notify(); }
+    }
+  }
+  async activateMaster(uid, request) {
+    const existing = (await get(this.ref('members/' + uid))).val();
+    if (existing) throw new Error('This account already exists. Sign in with its original email and nickname.');
+    // Master authority comes exclusively from a console-assigned UID, never a name or first visit.
+    await update(this.ref(), {
+      ['members/' + uid]: { nickname: 'Sean', role: 'master', active: true, joinedAt: serverTimestamp() },
+      ['identities/' + uid]: { loginKey: request.loginKey },
+      ['loginLookup/' + request.loginKey]: uid,
+      ['sessions/' + uid]: { profileId: uid, loginKey: request.loginKey },
+      ['accessRequests/' + uid]: null
+    });
+  }
+  async login({ email, displayName } = {}) {
+    if (!this.ready) throw new Error('The account connection is still loading. Try again.');
+    const key = await loginKey(email, displayName);
+    const user = this.auth.currentUser || (await signInAnonymously(this.auth)).user;
+    const uid = (await get(this.ref('loginLookup/' + key))).val();
+    if (uid) {
+      try { await set(this.ref('sessions/' + user.uid), { profileId: uid, loginKey: key }); }
+      catch (error) {
+        this.user = user; this.pending = { nickname: nickname(displayName) };
+        this.problem = 'Access was not granted. Master access on another browser requires authorizing that browser’s User ID in _admin/masterDevices. Other players may be paused.';
+        this.notify(); throw new Error(this.problem);
+      }
+    } else {
+      const previous = (await get(this.ref('accessRequests/' + user.uid))).val();
+      await set(this.ref('accessRequests/' + user.uid), { nickname: nickname(displayName), loginKey: key, createdAt: previous?.createdAt || serverTimestamp() });
+    }
+    await this.inspect(user);
+  }
+  async logout() {
+    // End the app session, retaining the underlying anonymous device identity for protected master re-entry.
+    this.stopMember?.(); this.watchedMember = null;
+    if (this.auth.currentUser) {
+      await remove(this.ref('sessions/' + this.auth.currentUser.uid));
+      await remove(this.ref('accessRequests/' + this.auth.currentUser.uid)).catch(() => {});
+    }
+    ++this.ticket; this.member = null; this.pending = null; this.loading = false; this.problem = ''; this.notify();
+  }
+  async refresh() { await this.inspect(this.auth.currentUser); }
+  async ownRecord() {
+    if (!this.member) throw new Error('Sign in with an approved player first.');
+    return { uid: this.member.uid, ...recordsFromRuns((await get(this.ref('racerRuns/' + this.member.uid))).val()) };
+  }
+  async roster(all = false) {
+    if (!this.member || (all && this.member.role !== 'master')) throw new Error('Approved access required.');
+    const target = all ? this.ref('members') : query(this.ref('members'), orderByChild('active'), equalTo(true));
+    const people = (await get(target)).val() || {};
+    return Promise.all(Object.entries(people).map(async ([uid, p]) => {
+      if (!p.active) return { ...p, uid };
+      try { return { ...p, uid, records: recordsFromRuns((await get(this.ref('racerRuns/' + uid))).val()) }; }
+      catch { return { ...p, uid, unavailable: true }; }
+    }));
+  }
+  async submit(uid, id, run) {
+    if (!this.member || this.member.uid !== uid) throw new Error('This result belongs to another player.');
+    if (!/^[A-Za-z0-9_-]{1,80}$/.test(id)) throw new Error('Invalid run ID.');
+    const target = this.ref('racerRuns/' + uid + '/' + id);
+    const existing = (await get(target)).val();
+    if (existing) { this.checkReceipt(existing, run); return; }
+    try { await set(target, { ...run, createdAt: serverTimestamp() }); }
+    catch (error) {
+      // A simultaneous retry may already have saved the same immutable receipt.
+      const saved = (await get(target)).val();
+      if (!saved) throw error;
+      this.checkReceipt(saved, run);
+    }
+  }
+  checkReceipt(saved, run) {
+    if (Object.entries(run).some(([key, value]) => saved[key] !== value)) throw new Error('Run ID conflict. Existing result was not changed.');
+  }
+  async rename(name) {
+    if (!this.member) throw new Error('Sign in first.');
+    await update(this.ref('members/' + this.member.uid), { nickname: nickname(name) });
+    this.member.nickname = nickname(name); this.notify();
+  }
+  async approve(uid, name) {
+    if (this.member?.role !== 'master') throw new Error('Master access required.');
+    if (!/^[A-Za-z0-9_-]{1,128}$/.test(uid) || uid === this.member.uid) throw new Error('Enter the intended new player’s exact User ID.');
+    const request = (await get(this.ref('accessRequests/' + uid))).val();
+    if (!request?.loginKey) throw new Error('Have this player enter an email and nickname in James Game Center first, then share their User ID.');
+    await update(this.ref(), {
+      ['members/' + uid]: { nickname: nickname(name), role: 'player', active: true, joinedAt: serverTimestamp() },
+      ['identities/' + uid]: { loginKey: request.loginKey },
+      ['loginLookup/' + request.loginKey]: uid
+    });
+  }
+  async setActive(uid, active) {
+    if (this.member?.role !== 'master' || uid === this.member.uid) throw new Error('The sole master cannot be disabled here.');
+    await update(this.ref('members/' + uid), { active: Boolean(active) });
+  }
+}
+export function explain(error) {
+  const code = String(error?.code || error?.message || '').toLowerCase();
+  if (/operation-not-allowed|configuration-not-found|admin-restricted/.test(code)) return 'Enable Anonymous sign-in in the james-game-center Firebase project.';
+  if (/permission.denied|permission_denied/.test(code)) return 'Access is not ready. Publish the new Realtime Database rules and check your master setup. Do not use the old Firestore rules.';
+  if (/network|unavailable|disconnected/.test(code)) return 'Connect to the internet and try again. Local practice is still available.';
+  return error?.message || 'Account connection unavailable. Try again.';
+}

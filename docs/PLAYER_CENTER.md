@@ -1,56 +1,83 @@
-# Hall of Fame, Player Cards and Sean's master account
+# James Game Center — Realtime Database setup (v1.2)
 
-This update adds James-only player records, a six-category Hall of Fame, searchable player cards, and protected Master Controls. The initial approved roster is **Sean, Master, only**. No existing family/SUJA accounts are imported. No sample players or scores are created in the live database.
+This guide supersedes the earlier Firestore/Google-sign-in directions. Both James apps now use Firebase Realtime Database:
 
-## One-time activation: the new James Firebase project only
+`https://james-game-center-default-rtdb.firebaseio.com/`
 
-The code cannot configure your Firebase console or identify your new Firebase UID for you. Until the following steps are complete, the interface stays closed to unapproved accounts and offers local practice instead.
+Project: **james-game-center**. Do not change the family or SUJA Firebase projects.
 
-1. Open Firebase Console and select **james-game-center**. Do not change the older family or SUJA projects.
-2. In **Authentication → Sign-in method**, enable **Google**, choose your project support email if requested, and save. The email is used by Firebase Authentication; it is never copied onto player cards or the leaderboard.
-3. Under **Authentication → Settings → Authorized domains**, add **seansommer.github.io** if it is missing. Use the domain only, without either repository path.
-4. In the default **Cloud Firestore** database, open **Rules**. Publish the entire current [`firestore.rules`](../firestore.rules) file. This replaces the earlier practice-only rules while preserving owners' private practice data. Do not paste it into Realtime Database.
-5. Open James Game Center, choose **Hall of Fame** or your profile button, then **Sign in with Google** using the Google account you want to use as master. This verifies identity but does not grant master access by itself.
-6. In **Account setup · Your User ID**, press **Copy User ID**. It is also visible in Firebase **Authentication → Users**. Use the new James project's UID, not your old Game Center ID or a nickname.
-7. In **Firestore Database → Data**, create collection **`_admin`**, document **`launch`**, with one **string** field named **`masterUid`**. Paste your exact copied User ID as its value. Save. This is a private console administration step; the app cannot write or replace the field.
-8. Return to James Game Center and press **Check access**. The configured identity creates the sole initial card, **Sean · Master**. The same Google identity works in both the hub and racer. Check that Player Cards shows exactly one approved player before adding anyone else.
+## 1. Enable Anonymous Authentication
 
-If `_admin/launch` already exists, inspect its value rather than overwriting an unrelated setup. If it points at another account unexpectedly, stop and verify the correct Firebase project and account. There is intentionally no public 'claim master' button and no 'first visitor becomes master' behavior.
+Open Firebase Console → james-game-center → Authentication → Sign-in method. Enable **Anonymous**, then Save. You do not need Google or Email/Password providers for this version. Do not enable automatic anonymous-account cleanup: this app deliberately retains device identities.
 
-Opening a page does not create a player. Another visitor who explicitly tries Google sign-in may appear as an identity in Firebase Authentication, but remains unapproved: no card, no leaderboard access and no master rights. Only the configured master can approve another player. Leave **Add a player later** closed to keep the roster master-only.
+The visible login is email plus nickname. Firebase Anonymous Authentication runs underneath it, like the family hub. No password, Google popup, email delivery service, or Cloudflare Worker is required. The email/nickname pair is hashed locally to locate a player; raw emails are not stored in the Realtime Database or displayed on cards. This is convenience-based, trust-based entry, **not verified email authentication**. Anyone who knows an ordinary player's matching pair could open that approved player. Use this for trusted family play, not sensitive information.
 
-## Your Hall of Fame
+## 2. Publish the new Realtime Database rules
 
-Six separate record categories: Most Points, Most Adventures, Most Worlds Completed, Highest Average, Highest Single Run, and Longest Clean Streak. Select a trophy to see its ranked table; select a player name to open their card. Equal values share a rank, such as 1, 1, 3. A brand-new master has a card but no unearned championship.
+Open **Build → Realtime Database → Rules** for the exact database above. Replace all of the rule text with the complete **firebase-database.rules.json** from this version and press **Publish**.
 
-**Little Hero** and **Superhero** records are separate. An adventure counts when a run reaches its results screen, including a Superhero game-over. Quitting a run does not add a result. Average rankings require at least three results in that difficulty. A clean streak is consecutive no-bump world completions; a bumped or unsuccessful result resets it. Streak order follows accepted run receipts, so overlapping sessions across devices should not be used to measure a strict chronological streak.
+Do not paste the earlier `rules_version = '2'` Firestore file. Realtime Database rules are JSON with a top-level `rules` object. Keep the database locked until the new rules are published. Never set the root `.read` or `.write` to true to fix sign-in.
 
-Cards include role, lifetime points, adventures, completions, average, best run, clean streak, treasures, smashes, power bursts, no-bump finishes, completion rate and world medals. Per-world best scores and medals remain visible. Empty categories clearly explain how to qualify.
+The deterministic source is `scripts/database-rules.mjs`; `npm run rules:build` generates the JSON. The SAME JSON is loaded into the demo emulator for testing and published at:
 
-Only approved signed-in accounts can read the shared roster and records. Nicknames and game statistics are shared within that approved group. Emails are not stored in these shared documents. Future public distribution, especially to children, needs a separate privacy and consent review; this update is a private family setup, not a public child-account system.
+https://seansommer.github.io/James-Hulk-Racer/firebase-database.rules.json
 
-## Saving and migration
+The build also exports it in the verification artifact. Generating/committing the file does not publish Firebase console rules.
 
-Sign in **before** starting a run. Results are bound to the account present at the start, queued under its UID, and uploaded using an immutable receipt so retries do not add the run twice. The Firestore rules verify the matching aggregate calculation and block editing another player's records. In-browser measurement is still client-controlled: this is friendly family scoring, not a server-authoritative anti-cheat system.
+## 3. Register your master device
 
-Guest practice remains local and is kept separate from registered progress. Old anonymous backup data is preserved but is not guessed into new lifetime statistics: it did not contain the run history needed to reconstruct points, completions and streaks. The new Hall starts with signed-in results from this update.
+Open the updated James Game Center in the browser you plan to use. Open Hall of Fame or your profile. Enter **your email address** and **Sean** as the sign-in nickname. Press **Sign in / Request access**.
 
-Registered Google accounts can recover uploaded records on another device by signing into the same account. Unsent runs stay on the original browser/device. Do not clear site data while runs are pending. Unavailable browser storage is reported; those results remain in memory only until upload. A connection error never intentionally substitutes zeroes for another player's missing records.
+An initial request is not yet a player card. Open **Account setup → Your User ID** and copy the exact ID. In **Realtime Database → Data**, add:
 
-## Adding anyone later
+- Key `_admin` at the root, if absent.
+- Within `_admin`, key `masterUid`.
+- Value: your exact copied User ID, stored as a **string**.
 
-Only the master sees **Master Controls**. Future players sign in and share their new James User ID. The master enters that ID and a nickname, checks the confirmation, and approves them. This is optional and not part of the initial one-player setup. The master may pause/restore another player's access without deleting records. The configured master itself cannot be disabled, removed or demoted in the app.
+This is a Realtime Database path `_admin/masterUid`, **not** the old Firestore `_admin/launch` document. Do not import a JSON file over the database root; add only this key. If `masterUid` already exists, check its value rather than overwriting an established master identity blindly.
 
-## Deployment and testing
+Return to the website and press **Check access**. The designated identity can now atomically create **Sean · Master**, the only initial approved card. No visitor can become master by arriving first or typing Sean. The browser cannot assign/change `masterUid`, authorize master devices, create another master, demote the founding master, or delete that card.
 
-Both repositories must publish their new builds. The hub pins the racer's shared-account module as a Git submodule so both apps use the same identity and data model. GitHub Pages needs **Settings → Pages → Source → GitHub Actions** in both repositories.
+Leave **Add a player later** closed. No previous family accounts, demo users or sample scores are imported. A request alone does not appear in rankings. The master is unranked until a signed-in result is earned.
 
-Automated checks cover model arithmetic, tie handling, per-account cache/outbox isolation, Firestore access and atomic updates in `demo-james-game-center`, and local Chromium UI flows using test fixtures. The fixtures are not production users and are never uploaded to the live Firebase project. The generated `qa/center-report.json` identifies that scope. Real Google popup sign-in, live rules activation and physical iPhone Safari behavior still require the owner's live setup test.
+## 4. Try a registered race
 
-App Check enforcement is not configured by this update. Do not enable enforcement before adding and testing the client integration. No service-account keys, master passwords or server secrets belong in the public repositories.
+Sign in before pressing Play. Complete a Little Hero run. Return to Hall of Fame and press Refresh. Confirm the points and adventure count on your card. Refresh both apps and confirm the same player remains selected. Little Hero and Superhero statistics stay separate.
+
+Results are immutable, UID-owned run receipts in `racerRuns`. Repeated upload of the same receipt does not double-count. Cards and rankings derive their totals from those receipts rather than trusting a separately writable total. Pending uploads stay with the original player on the original device. Practice remains a separate local profile and never becomes a leaderboard record automatically.
+
+This version calculates lifetime totals by reading a player's run receipts, appropriate for this small family setup. Before a much larger rollout, use a trusted aggregation service to avoid reading a growing history for every card. Run measurements still originate in the browser; this is friendly competition, not cheat-proof scoring.
+
+## 5. Master access from another browser/device
+
+The master is intentionally safer than ordinary email/nickname entry. A different browser does **not** gain administrative access merely by knowing your email and Sean.
+
+Enter your original pair on that browser, copy its displayed User ID after access is refused, and privately authorize that exact browser in Realtime Database:
+
+`_admin/masterDevices/NEW_BROWSER_USER_ID` = **true** (boolean)
+
+Then submit the email/nickname pair again on the new browser. This opens the SAME master player and records, not a second master card. Keep `_admin/masterUid` unchanged. To revoke that device, delete its `masterDevices` entry; its existing session immediately loses authorization under the rules. The initial master device remains the founding UID.
+
+App Sign out removes its James session, but keeps the underlying anonymous device identity so the founding device can sign in again. Clearing browser data, using private browsing, or automatic anonymous-account deletion may require this new-device authorization. Anyone with access to an already approved, unlocked device and the matching account details may use the master; protect the device itself.
+
+## Adding ordinary players later
+
+Have the intended person enter their email and nickname and share the displayed James User ID. In Master Controls, expand Add a player later, enter that exact ID and a display nickname, check the confirmation, and approve. They should submit their original email/nickname again. Only explicitly approved members can view cards/rankings or submit records. Pausing a member blocks these actions and hides their active card without deleting history.
+
+Changing a display nickname on the hero card does not change the original sign-in nickname. Keep using the original pair to sign in. No raw email is stored for automatic rename-based recovery.
+
+## Existing Firestore data
+
+No Firestore data, auth users, or other Firebase projects are deleted or changed by this code update. The new runtime no longer reads/writes Firestore and no longer opens Google sign-in. Old Firestore records are NOT automatically copied to Realtime Database. Keep them intact for a deliberate migration if they contain results you need. Local practice saves remain unchanged. Do not assume an empty RTDB leaderboard means old Firestore data was erased.
+
+## Verification and limits
+
+CI tests use **demo-james-game-center**, never production. They check master-only bootstrap, ordinary player approval, master impersonation rejection, device revocation, private identity paths, immutable run receipts, invalid data, score aggregation, card/Hall navigation and phone layouts. UI fixtures are in memory; they do not create production players. The owner still must verify actual Firebase console configuration and physical iPhone/Safari behavior.
+
+Public web configuration is not an administrator credential. Security rests on Authentication, these database rules, and the privately assigned master UID. Review API restrictions and quotas; App Check is not enabled here and must not be enforced before client integration/testing.
 
 Official references:
-- Google authentication: https://firebase.google.com/docs/auth/web/google-signin
-- Rules conditions and atomic getAfter checks: https://firebase.google.com/docs/firestore/security/rules-conditions
-- Transactions and retry behavior: https://firebase.google.com/docs/firestore/manage-data/transactions
-- Firebase public web keys: https://firebase.google.com/docs/projects/api-keys
+- https://firebase.google.com/docs/database/web/start
+- https://firebase.google.com/docs/database/security/core-syntax
+- https://firebase.google.com/docs/auth/web/anonymous-auth
+- https://firebase.google.com/docs/database/web/read-and-write

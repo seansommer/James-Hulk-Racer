@@ -1,38 +1,31 @@
 # Launch James Game Center and Jamesy The Hulk Racer
 
-## GitHub Pages — both repositories
+## Website publishing
 
-Open each repository: `James-Game-Center` and `James-Hulk-Racer`.
+Both repositories use GitHub Actions for Pages. In Settings → Pages → Build and deployment → Source select GitHub Actions. Successful main-branch checks publish the static builds automatically.
 
-1. Go to **Settings → Pages**.
-2. Under **Build and deployment → Source**, select **GitHub Actions**.
-3. Open **Actions**, choose the publish workflow, and use **Run workflow** if a deployment ran before Pages was enabled.
-4. Wait for both build and deploy jobs to turn green.
+- Hub: https://seansommer.github.io/James-Game-Center/
+- Racer: https://seansommer.github.io/James-Hulk-Racer/
 
-Case-sensitive addresses:
-- https://seansommer.github.io/James-Game-Center/
-- https://seansommer.github.io/James-Hulk-Racer/
+Deploy both versions together. The hub pins shared account code from the racer as a Git submodule; update that pin when changing account behavior.
 
-The racer generates actual game preview pictures during its build. The hub's linked game images require the racer's first successful deployment. Its own icons and sharing artwork build independently.
+## Firebase — Realtime Database, not Firestore
 
-Reference: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+Project **james-game-center**. Database **https://james-game-center-default-rtdb.firebaseio.com/**.
 
-## Version 1.1: master account and registered player records
+1. Enable **Anonymous** in Authentication → Sign-in method.
+2. Open Realtime Database → Rules. Publish this version's generated `firebase-database.rules.json`, not the old Firestore rules.
+3. Open the hub; enter your email and **Sean** as your sign-in nickname.
+4. Copy the User ID shown under Account setup.
+5. In Realtime Database → Data, add the string `_admin/masterUid` with that exact ID. Do not replace the database root or import other users.
+6. Return to the app and press Check access. Player Cards should show only **Sean · Master**.
 
-**Follow the complete [Player Center activation guide](PLAYER_CENTER.md).** It supersedes the initial anonymous-backup setup. The roster starts with Sean's master account only, after private console activation.
+Full instructions, new-device authorization and privacy limits: [PLAYER_CENTER.md](PLAYER_CENTER.md).
 
-Use only **james-game-center**, not the old family or SUJA Firebase projects. Enable **Google Authentication**, authorize `seansommer.github.io`, create the default **Cloud Firestore** database in Production mode if it does not exist, and publish the full current `firestore.rules`. Sign in on the website, copy your new James User ID, and privately set `_admin/launch.masterUid` to that exact UID in Firestore. Press **Check access** to activate the sole initial master card.
+Google sign-in is not required. The email/nickname entry is trust-based, not email verification; master permissions additionally require a privately authorized device identity. No Cloudflare Worker or third-party provider API is used.
 
-Do not enable open test rules. Do not use the old family profile ID or nickname as the Firebase UID. No private admin key or master password belongs in GitHub. The connected repository tools cannot configure the live Firebase project for you.
+Old Firestore data is left intact and not automatically migrated. Local practice remains available while registered account setup is incomplete. Existing family and SUJA projects are untouched.
 
-Local guest practice still works before account setup. It does not create a registered player or leaderboard record. Existing anonymous backups remain owner-private, but are not imported into the new Hall of Fame.
+## First phone test
 
-## Phone test
-
-Open the hub in Safari, sign in to your approved master account, launch the racer, and start **Little Hero → Emerald Park**. Try portrait and landscape. Hold a steering arrow while tapping Jump. Collect until Smash and Thunderclap unlock. Adjust audio to a comfortable level.
-
-Finish a run, return to the hub, and open Hall of Fame or Player Cards. Confirm it has uploaded and the new record appears under the correct difficulty. Refresh the pages; your identity and uploaded records should remain. Use the same Google account on another device to retrieve uploaded records. Verify there is exactly one approved player before adding anyone later.
-
-Safari's **Share → Add to Home Screen** creates an app shortcut. Initial loads need internet. The service worker caches the built app shell; sign-in and uploaded records require connectivity. Pending runs remain on their original device, so do not clear site data before they upload.
-
-The generated `/James-Hulk-Racer/qa/` reports distinguish automated game/UI tests from live Firebase and physical Safari checks. App Check enforcement is not enabled by this initial account implementation; do not switch on enforcement before integrating and testing the client.
+Use Little Hero → Emerald Park. Try steering while jumping, power unlocks, pause/resume and both orientations. Finish a signed-in run, return to the Hall of Fame, and refresh. Automated Chromium tests do not replace physical Safari testing.

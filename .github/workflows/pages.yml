@@ -26,19 +26,19 @@ jobs:
           if [ -f package-lock.json ]; then npm ci --no-fund; else npm install --no-fund; fi
       - name: Audit browser dependencies
         run: npm audit --omit=dev --audit-level=high
-      - name: Game logic and local profile tests
+      - name: Game logic, identity and isolated-profile tests
         run: npm test
-      - name: Private Firestore rules tests (demo emulator only)
-        run: npm run test:rules
-      - name: Build production app
+      - name: Realtime Database security and adapter tests (demo emulator only)
+        run: npm run test:database
+      - name: Build production app and tested RTDB rules
         run: npm run build
       - name: Install browser for actual 3D checks
         run: npx playwright install --with-deps chromium
-      - name: Test gameplay and render real app artwork
+      - name: Test gameplay, account forms and actual app artwork
         run: npm run test:browser
       - name: Prepare scoped offline shell
         run: npm run offline
-      - name: Keep test results and dependency lock
+      - name: Keep verification, rules and dependency lock
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -47,6 +47,7 @@ jobs:
             dist/qa/
             dist/assets/*.webp
             dist/assets/*.jpg
+            firebase-database.rules.json
             package-lock.json
           retention-days: 14
       - name: Upload site
