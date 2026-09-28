@@ -37,9 +37,13 @@ jobs:
           python production/tools/recover_character_sources.py
           python production/tools/recover_run_v02.py
       - name: Check sprite alpha, path and canvas handling
-        run: python -m unittest discover -s production/tools -p test_character_sprites.py -v
-      - name: Extract candidate character sprites without changing motion
-        run: python production/tools/character_sprites.py
+        run: |
+          python -m unittest discover -s production/tools -p test_character_sprites.py -v
+          python -m unittest discover -s production/tools -p test_run_v02.py -v
+      - name: Build the previous and revised character review exports
+        run: |
+          python production/tools/character_sprites.py
+          python production/tools/run_v02.py
       - name: Archive explicit image files and build the bible
         run: |
           python production/tools/archive_art.py
@@ -51,7 +55,7 @@ jobs:
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Archive Jamesy character revisions and factual inventory'
+            git commit -m 'Save Run 02 transparent frames, comparison viewer and review evidence'
             git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
           fi
       - uses: actions/upload-artifact@v4
