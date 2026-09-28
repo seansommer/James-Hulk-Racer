@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "id": "actions-05",
+  "status": "motion_review",
+  "productionReady": false,
+  "approvedByOwner": false,
+  "sourceHashes": {
+    "source-smash.png": "36e645f36a91bf4d358f0c86aa1479d3d9d0d78a84ae92fe4b184fb6d4336692",
+    "source-thunderclap.png": "57df82cb4b5798bdf5f28490d3ed4a6168aaa3688d53ef5d87f41a0ff4812cf8"
+  },
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "alpha": "straight",
+  "trimmed": false,
+  "rotated": false,
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    1056,
+    1312
+  ],
+  "padding": 4,
+  "mipmaps": false,
+  "clips": {
+    "smash": {
+      "label": "Smash \u00b7 eight poses",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 12,
+      "loop": false,
+      "contactFrame": 4,
+      "note": "Both fists read at ground contact. Overhead-to-downswing spacing, cape lift and foot-placement drift still need a shared motion-polish pass."
+    },
+    "thunderclap": {
+      "label": "Thunderclap \u00b7 six poses",
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "fps": 12,
+      "loop": false,
+      "contactFrame": 3,
+      "note": "The rear-three-quarter view keeps the palms visible. Release opens wider than planned; shoulder/view continuity and hand anatomy need final motion review."
+    }
+  },
+  "frames": [
+    {
+      "id": "hulk_smash_rear_000",
+      "clip": "smash",
+      "phase": "Ready",
+      "source": "source-smash.png",
+      "sourceCell": 1,
+      "sourceRect": [
+        0,
+        0,
+        640,
+        856
+      ],
+      "provisionalRoot": [
+        347,
+        816
+      ],
+      "rootInCell": [
+        347,
+        816
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        41,
+        70
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_000.png",
+      "frame256": "frames-256/hulk_smash_rear_000.png",
+      "negativeSpaceSeeds": [
+        [
+          221,
+          513
+        ],
+        [
+          492,
+          525
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_001",
+      "clip": "smash",
+      "phase": "Wind-up",
+      "source": "source-smash.png",
+      "sourceCell": 2,
+      "sourceRect": [
+        640,
+        0,
+        1280,
+        856
+      ],
+      "provisionalRoot": [
+        974,
+        816
+      ],
+      "rootInCell": [
+        334,
+        816
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        49,
+        70
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_001.png",
+      "frame256": "frames-256/hulk_smash_rear_001.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_002",
+      "clip": "smash",
+      "phase": "Overhead anticipation",
+      "source": "source-smash.png",
+      "sourceCell": 3,
+      "sourceRect": [
+        1280,
+        0,
+        1920,
+        856
+      ],
+      "provisionalRoot": [
+        1586,
+        816
+      ],
+      "rootInCell": [
+        306,
+        816
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        66,
+        70
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_002.png",
+      "frame256": "frames-256/hulk_smash_rear_002.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_003",
+      "clip": "smash",
+      "phase": "Downward swing",
+      "source": "source-smash.png",
+      "sourceCell": 4,
+      "sourceRect": [
+        1920,
+        0,
+        2560,
+        856
+      ],
+      "provisionalRoot": [
+        2204,
+        816
+      ],
+      "rootInCell": [
+        284,
+        816
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        80,
+        70
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_003.png",
+      "frame256": "frames-256/hulk_smash_rear_003.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        796,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_004",
+      "clip": "smash",
+      "phase": "Fists contact",
+      "source": "source-smash.png",
+      "sourceCell": 5,
+      "sourceRect": [
+        0,
+        856,
+        640,
+        1712
+      ],
+      "provisionalRoot": [
+        343,
+        1590
+      ],
+      "rootInCell": [
+        343,
+        734
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        43,
+        121
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_004.png",
+      "frame256": "frames-256/hulk_smash_rear_004.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_005",
+      "clip": "smash",
+      "phase": "Follow-through",
+      "source": "source-smash.png",
+      "sourceCell": 6,
+      "sourceRect": [
+        640,
+        856,
+        1280,
+        1712
+      ],
+      "provisionalRoot": [
+        982,
+        1590
+      ],
+      "rootInCell": [
+        342,
+        734
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        44,
+        121
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_005.png",
+      "frame256": "frames-256/hulk_smash_rear_005.png",
+      "negativeSpaceSeeds": [
+        [
+          200,
+          658
+        ],
+        [
+          484,
+          655
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_006",
+      "clip": "smash",
+      "phase": "Rising recovery",
+      "source": "source-smash.png",
+      "sourceCell": 7,
+      "sourceRect": [
+        1280,
+        856,
+        1920,
+        1712
+      ],
+      "provisionalRoot": [
+        1590,
+        1596
+      ],
+      "rootInCell": [
+        310,
+        740
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        64,
+        117
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_006.png",
+      "frame256": "frames-256/hulk_smash_rear_006.png",
+      "negativeSpaceSeeds": [
+        [
+          438,
+          393
+        ],
+        [
+          473,
+          445
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_smash_rear_007",
+      "clip": "smash",
+      "phase": "Returned stance",
+      "source": "source-smash.png",
+      "sourceCell": 8,
+      "sourceRect": [
+        1920,
+        856,
+        2560,
+        1712
+      ],
+      "provisionalRoot": [
+        2220,
+        1596
+      ],
+      "rootInCell": [
+        300,
+        740
+      ],
+      "commonSourceScale": 0.62,
+      "placement": [
+        70,
+        117
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_smash_rear_007.png",
+      "frame256": "frames-256/hulk_smash_rear_007.png",
+      "negativeSpaceSeeds": [
+        [
+          165,
+          440
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        796,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_thunderclap_rear_000",
+      "clip": "thunderclap",
+      "phase": "Ready",
+      "source": "source-thunderclap.png",
+      "sourceCell": 1,
+      "sourceRect": [
+        0,
+        0,
+        853,
+        856
+      ],
+      "provisionalRoot": [
+        420,
+        810
+      ],
+      "rootInCell": [
+        420,
+        810
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        4,
+        90
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear_three_quarter",
+      "frame512": "frames-512/hulk_thunderclap_rear_000.png",
+      "frame256": "frames-256/hulk_thunderclap_rear_000.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_thunderclap_rear_001",
+      "clip": "thunderclap",
+      "phase": "Arms wide",
+      "source": "source-thunderclap.png",
+      "sourceCell": 2,
+      "sourceRect": [
+        853,
+        0,
+        1707,
+        856
+      ],
+      "provisionalRoot": [
+        1276,
+        810
+      ],
+      "rootInCell": [
+        423,
+        810
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        2,
+        90
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear_three_quarter",
+      "frame512": "frames-512/hulk_thunderclap_rear_001.png",
+      "frame256": "frames-256/hulk_thunderclap_rear_001.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_thunderclap_rear_002",
+      "clip": "thunderclap",
+      "phase": "Palms approaching",
+      "source": "source-thunderclap.png",
+      "sourceCell": 3,
+      "sourceRect": [
+        1707,
+        0,
+        2560,
+        856
+      ],
+      "provisionalRoot": [
+        2134,
+        810
+      ],
+      "rootInCell": [
+        427,
+        810
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        0,
+        90
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear_three_quarter",
+      "frame512": "frames-512/hulk_thunderclap_rear_002.png",
+      "frame256": "frames-256/hulk_thunderclap_rear_002.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_thunderclap_rear_003",
+      "clip": "thunderclap",
+      "phase": "Palms contact",
+      "source": "source-thunderclap.png",
+      "sourceCell": 4,
+      "sourceRect": [
+        0,
+        856,
+        853,
+        1712
+      ],
+      "provisionalRoot": [
+        420,
+        1648
+      ],
+      "rootInCell": [
+        420,
+        792
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        4,
+        101
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear_three_quarter",
+      "frame512": "frames-512/hulk_thunderclap_rear_003.png",
+      "frame256": "frames-256/hulk_thunderclap_rear_003.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        796,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_thunderclap_rear_004",
+      "clip": "thunderclap",
+      "phase": "Hands release",
+      "source": "source-thunderclap.png",
+      "sourceCell": 5,
+      "sourceRect": [
+        853,
+        856,
+        1707,
+        1712
+      ],
+      "provisionalRoot": [
+        1276,
+        1648
+      ],
+      "rootInCell": [
+        423,
+        792
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        2,
+        101
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear_three_quarter",
+      "frame512": "frames-512/hulk_thunderclap_rear_004.png",
+      "frame256": "frames-256/hulk_thunderclap_rear_004.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        988,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_thunderclap_rear_005",
+      "clip": "thunderclap",
+      "phase": "Returned stance",
+      "source": "source-thunderclap.png",
+      "sourceCell": 6,
+      "sourceRect": [
+        1707,
+        856,
+        2560,
+        1712
+      ],
+      "provisionalRoot": [
+        2134,
+        1648
+      ],
+      "rootInCell": [
+        427,
+        792
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        0,
+        101
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear_three_quarter",
+      "frame512": "frames-512/hulk_thunderclap_rear_005.png",
+      "frame256": "frames-256/hulk_thunderclap_rear_005.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        988,
+        256,
+        320
+      ]
+    }
+  ],
+  "contactMarkers": "Review labels only. These markers never trigger game damage, score receipts, cooldowns or effects.",
+  "notes": "Fourteen pose candidates, source order preserved within each action. One scale per source and explicit ground-root translations. No hidden in-betweens, mirroring, warping or final camera/hitbox approval."
+}
