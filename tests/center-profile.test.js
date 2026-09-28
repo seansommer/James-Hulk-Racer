@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+globalThis.window=new EventTarget();globalThis.localStorage={data:new Map(),getItem(k){return this.data.get(k)||null;},setItem(k,v){this.data.set(k,v);}};globalThis.matchMedia=()=>({matches:false});
+const {profile,usePlayerProfile,record,profileOwner}=await import('../src/shared/profile.js');
+const result={mode:'cozy',collected:60,smashes:3,bursts:1,score:2500,medals:7,complete:true};
+test('Practice and approved player caches remain isolated through account changes',()=>{record(result,0,null);assert.equal(profile.runs,1);usePlayerProfile('master-uid','Sean');assert.equal(profile.runs,0);assert.equal(profile.name,'Sean');record(result,0,'master-uid');assert.equal(profile.runs,1);usePlayerProfile('other-uid','Other');assert.equal(profile.runs,0);record(result,0,'master-uid');assert.equal(profile.runs,0);usePlayerProfile('master-uid','Sean');assert.equal(profile.runs,2);usePlayerProfile(null);assert.equal(profile.runs,1);assert.equal(profileOwner(),null);});
+test('Restoring an account summary does not overwrite practice',()=>{usePlayerProfile('master-uid','Sean',{name:'Sean',runs:8,gems:50});assert.equal(profile.runs,8);usePlayerProfile(null);assert.equal(profile.runs,1);});

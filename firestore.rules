@@ -1,26 +1,79 @@
 rules_version = '2';
 service cloud.firestore {
-  match /databases/{database}/documents {
-    function owner(uid) { return request.auth != null && request.auth.uid == uid; }
-    function integer(n, max) { return n is int && n >= 0 && n <= max; }
-    function triple(a, max) {
-      return a is list && a.size() == 3 && integer(a[0], max) && integer(a[1], max) && integer(a[2], max);
-    }
-    function validPlayer(p) {
-      let fields = ['name', 'bestCozy', 'bestHero', 'medals', 'runs', 'gems', 'smashes', 'bursts', 'lastLevel', 'updatedAt'];
-      return p.keys().hasAll(fields) && p.keys().hasOnly(fields)
-        && p.name is string && p.name.size() > 0 && p.name.size() <= 20
-        && triple(p.bestCozy, 500000) && triple(p.bestHero, 500000) && triple(p.medals, 7)
-        && integer(p.runs, 9999999) && integer(p.gems, 9999999)
-        && integer(p.smashes, 9999999) && integer(p.bursts, 9999999)
-        && integer(p.lastLevel, 2) && p.updatedAt == request.time;
-    }
-    match /players/{uid} {
-      allow get: if owner(uid);
-      allow list: if false;
-      allow create, update: if owner(uid) && validPlayer(request.resource.data);
-      allow delete: if owner(uid);
-    }
-    match /{document=**} { allow read, write: if false; }
+ match /databases/{database}/documents {
+  function owner(uid) { return request.auth != null && request.auth.uid == uid; }
+  function integer(n, max) { return n is int && n >= 0 && n <= max; }
+  function triple(a, max) { return a is list && a.size() == 3 && integer(a[0],max) && integer(a[1],max) && integer(a[2],max); }
+  function google() { return request.auth != null && request.auth.token.email_verified == true && request.auth.token.firebase.sign_in_provider == 'google.com'; }
+  function isMaster(uid) { return exists(/databases/$(database)/documents/_admin/launch) && get(/databases/$(database)/documents/_admin/launch).data.masterUid == uid; }
+  function master() { return google() && isMaster(request.auth.uid); }
+  function active(uid) { return exists(/databases/$(database)/documents/members/$(uid)) && get(/databases/$(database)/documents/members/$(uid)).data.active == true; }
+  function approved() { return google() && active(request.auth.uid); }
+  function validMember(p, uid) {
+   return p.keys().hasAll(['nickname','role','active','joinedAt']) && p.keys().hasOnly(['nickname','role','active','joinedAt'])
+    && p.nickname is string && p.nickname.size() > 0 && p.nickname.size() <= 20 && p.active is bool && p.joinedAt is timestamp
+    && (isMaster(uid) ? p.role == 'master' && p.active == true : p.role == 'player');
   }
+  // Set this single document manually in the Firebase console. Browser writes are denied.
+  match /_admin/launch { allow get: if google(); allow list, write: if false; }
+  match /members/{uid} {
+   allow get: if google() && (owner(uid) || master() || (approved() && resource.data.active == true));
+   allow list: if master() || (approved() && resource.data.active == true);
+   allow create: if master() && validMember(request.resource.data, uid) && request.resource.data.joinedAt == request.time;
+   allow update: if validMember(request.resource.data, uid) && request.resource.data.joinedAt == resource.data.joinedAt
+    && (master() || (approved() && owner(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['nickname'])));
+   allow delete: if false;
+   match /runs/{runId} {
+    allow get: if approved() && owner(uid);
+    allow list, update, delete: if false;
+    allow create: if approved() && owner(uid) && validRun(request.resource.data) && runId.matches('^[A-Za-z0-9_-]{1,80}$')
+     && getAfter(/databases/$(database)/documents/racerRecords/$(uid)).data.lastRunId == runId
+     && getAfter(/databases/$(database)/documents/racerRecords/$(uid)).data.updatedAt == request.time;
+   }
+  }
+  function validRun(r) {
+   return r.keys().hasAll(['mode','world','score','treasures','smashes','bursts','complete','clean','medals','playedAt','createdAt'])
+    && r.keys().hasOnly(['mode','world','score','treasures','smashes','bursts','complete','clean','medals','playedAt','createdAt'])
+    && r.mode in ['cozy','hero'] && integer(r.world,2) && integer(r.score,500000) && integer(r.treasures,2000)
+    && integer(r.smashes,1000) && integer(r.bursts,100) && r.complete is bool && r.clean is bool && integer(r.medals,7)
+    && (r.complete ? (r.medals in [1,3,5,7] && (r.clean ? r.medals >= 5 : r.medals < 5)) : r.medals == 0 && r.clean == false)
+    && integer(r.playedAt,4102444800000) && r.playedAt <= request.time.toMillis() + 600000 && r.createdAt == request.time;
+  }
+  function emptyStats() { return {'points':0,'attempts':0,'completions':0,'best':0,'treasures':0,'smashes':0,'bursts':0,'cleanRuns':0,'currentStreak':0,'bestStreak':0,'lastPlayed':0,'worldBest':[0,0,0],'medals':[0,0,0]}; }
+  function maximum(a,b) { return a > b ? a : b; }
+  function medalMask(a,b) { return (a%2 == 1 || b%2 == 1 ? 1 : 0) + (a%4 >= 2 || b%4 >= 2 ? 2 : 0) + (a >= 4 || b >= 4 ? 4 : 0); }
+  function advance(s,r) {
+   let streak = r.clean ? s.currentStreak+1 : 0;
+   return {'points':s.points+r.score,'attempts':s.attempts+1,'completions':s.completions+(r.complete?1:0),'best':maximum(s.best,r.score),
+    'treasures':s.treasures+r.treasures,'smashes':s.smashes+r.smashes,'bursts':s.bursts+r.bursts,'cleanRuns':s.cleanRuns+(r.clean?1:0),
+    'currentStreak':streak,'bestStreak':maximum(s.bestStreak,streak),'lastPlayed':maximum(s.lastPlayed,r.playedAt),
+    'worldBest':[r.world==0?maximum(s.worldBest[0],r.score):s.worldBest[0],r.world==1?maximum(s.worldBest[1],r.score):s.worldBest[1],r.world==2?maximum(s.worldBest[2],r.score):s.worldBest[2]],
+    'medals':[r.world==0?medalMask(s.medals[0],r.medals):s.medals[0],r.world==1?medalMask(s.medals[1],r.medals):s.medals[1],r.world==2?medalMask(s.medals[2],r.medals):s.medals[2]]};
+  }
+  function summaryValid(uid,p) {
+   let id=p.lastRunId;
+   let path=/databases/$(database)/documents/members/$(uid)/runs/$(id);
+   let r=getAfter(path).data;
+   let before=exists(/databases/$(database)/documents/racerRecords/$(uid)) ? get(/databases/$(database)/documents/racerRecords/$(uid)).data : {'cozy':emptyStats(),'hero':emptyStats()};
+   return p.keys().hasAll(['cozy','hero','lastRunId','updatedAt']) && p.keys().hasOnly(['cozy','hero','lastRunId','updatedAt'])
+    && id is string && id.matches('^[A-Za-z0-9_-]{1,80}$') && p.updatedAt == request.time && !exists(path) && validRun(r)
+    && p.cozy == (r.mode=='cozy' ? advance(before.cozy,r) : before.cozy)
+    && p.hero == (r.mode=='hero' ? advance(before.hero,r) : before.hero);
+  }
+  match /racerRecords/{uid} {
+   allow get: if approved() && active(uid);
+   allow list, delete: if false;
+   allow create, update: if approved() && owner(uid) && summaryValid(uid,request.resource.data);
+  }
+  // Keep owners' old practice backups private. They do not create registered members.
+  function validPlayer(p) {
+   let fields=['name','bestCozy','bestHero','medals','runs','gems','smashes','bursts','lastLevel','updatedAt'];
+   return p.keys().hasAll(fields) && p.keys().hasOnly(fields) && p.name is string && p.name.size()>0 && p.name.size()<=20
+    && triple(p.bestCozy,500000) && triple(p.bestHero,500000) && triple(p.medals,7)
+    && integer(p.runs,9999999) && integer(p.gems,9999999) && integer(p.smashes,9999999) && integer(p.bursts,9999999)
+    && integer(p.lastLevel,2) && p.updatedAt == request.time;
+  }
+  match /players/{uid} { allow get, delete: if owner(uid); allow list: if false; allow create, update: if owner(uid) && validPlayer(request.resource.data); }
+  match /{document=**} { allow read, write: if false; }
+ }
 }
