@@ -1,0 +1,53 @@
+name: Archive Jamesy Smash and Thunderclap art
+on:
+  push:
+    branches: ['art/storybook-bible-v1-20260928']
+    paths:
+      - '.github/workflows/actions05.yml'
+      - 'production/actions05/**'
+      - 'art/01-characters/hulk/action-reviews/v01/sources.json'
+permissions:
+  contents: write
+concurrency:
+  group: jamesy-art-archive
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.ref == 'refs/heads/art/storybook-bible-v1-20260928'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: art/storybook-bible-v1-20260928
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install existing art dependency
+        run: python -m pip install --disable-pip-version-check Pillow==12.3.0
+      - name: Archive the selected action source sheets
+        run: python production/actions05/import_sources.py
+      - name: Build and test exports when available
+        run: |
+          if test -f production/actions05/export.py; then
+            python -m unittest discover -s production/actions05 -p test_export.py -v
+            python production/actions05/export.py
+          fi
+          python production/tools/prepare_art.py
+      - name: Commit artwork only
+        run: |
+          git add -- art
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Archive Hulk Jamesy Smash and Thunderclap review artwork'
+            git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jamesy-smash-thunderclap
+          path: |
+            art/01-characters/hulk/action-reviews/v01/
+            production/actions05/*.py
+            production/actions05/*.html
+          retention-days: 14

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "pending_archive",
+  "note": "Owner-authorized character-only still artwork. Original pixels are archived before any sprite processing. First ingestion validates exact provider byte counts, task paths and dimensions; SHA-256 is recorded from those bytes. Temporary media URLs are removed from this current file after ingestion. No game or account credentials are included.",
+  "sources": [
+    {
+      "path": "art/01-characters/hulk/action-reviews/v01/source-smash.png",
+      "taskId": "e0e48694-5d96-4263-97c1-da7827fcc8fa",
+      "expectedBytes": 4510898,
+      "dimensions": [2560, 1712],
+      "status": "pending",
+      "reviewStatus": "candidate_source",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/e0e48694-5d96-4263-97c1-da7827fcc8fa/ONE_clean_animation_reference_CONTACT_SHEET__exactly_EIGHT_isolated_full_body_drawings_in_a_FOUR_COL_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYjE2NWIzNDNmZmY3ZmQ2ZCIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDczNzg1OX0.4iKvQzWdf4ezuScVxBmIKZBcw498MtHstEvkuem2p9Q"
+    },
+    {
+      "path": "art/01-characters/hulk/action-reviews/v01/source-thunderclap.png",
+      "taskId": "578ccb07-6c15-4897-995d-1566db00f7ab",
+      "expectedBytes": 4389518,
+      "dimensions": [2560, 1712],
+      "status": "pending",
+      "reviewStatus": "candidate_source",
+      "url": "https://dnznrvs05pmza.cloudfront.net/gpt_image_2_5_sunburst/578ccb07-6c15-4897-995d-1566db00f7ab/ONE_clean_six_pose_THUNDERCLAP_character_contact_sheet__EXACTLY_THREE_COLUMNS_and_TWO_ROWS__Six_isol_0.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiZGY4MTM3YTQxZmE4OTMxYiIsImJ1Y2tldCI6InJ1bndheS10YXNrLWFydGlmYWN0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MDc1Mzk1Nn0.YQRxgjbq-K3tDiD1LDVg2Da-gUwMB2kQ237jrXobt_0"
+    }
+  ]
+}
