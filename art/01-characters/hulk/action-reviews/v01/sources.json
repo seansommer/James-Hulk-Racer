@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "sources_archived",
+  "note": "Owner-authorized character-only still artwork. Original pixels are archived before any sprite processing. First ingestion validates exact provider byte counts, task paths and dimensions; SHA-256 is recorded from those bytes. Temporary media URLs are removed from this current file after ingestion. No game or account credentials are included.",
+  "sources": [
+    {
+      "path": "art/01-characters/hulk/action-reviews/v01/source-smash.png",
+      "taskId": "e0e48694-5d96-4263-97c1-da7827fcc8fa",
+      "expectedBytes": 4510898,
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "status": "archived",
+      "reviewStatus": "candidate_source",
+      "sha256": "36e645f36a91bf4d358f0c86aa1479d3d9d0d78a84ae92fe4b184fb6d4336692"
+    },
+    {
+      "path": "art/01-characters/hulk/action-reviews/v01/source-thunderclap.png",
+      "taskId": "578ccb07-6c15-4897-995d-1566db00f7ab",
+      "expectedBytes": 4389518,
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "status": "archived",
+      "reviewStatus": "candidate_source",
+      "sha256": "57df82cb4b5798bdf5f28490d3ed4a6168aaa3688d53ef5d87f41a0ff4812cf8"
+    }
+  ]
+}

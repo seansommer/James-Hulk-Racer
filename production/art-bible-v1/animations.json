@@ -1,0 +1,21 @@
+{
+  "version": "1.2",
+  "hero": "hulk",
+  "status": "specified_not_produced",
+  "uniqueFrames": 64,
+  "animations": [
+    {"id":"rear_idle","name":"Rear idle","frames":4,"fps":6,"loop":true,"view":"rear","note":"Feet stay on the shared baseline."},
+    {"id":"run","name":"Run","frames":8,"fps":12,"loop":true,"view":"rear","note":"Two complete foot contacts; stable torso."},
+    {"id":"lean_left","name":"Lean left","frames":4,"fps":12,"loop":true,"view":"rear_left","note":"Separate drawings; never mirror emblems."},
+    {"id":"lean_right","name":"Lean right","frames":4,"fps":12,"loop":true,"view":"rear_right","note":"Match left-lean reach and timing."},
+    {"id":"jump","name":"Jump","frames":6,"fps":8,"loop":false,"view":"rear","note":"Physics owns world height."},
+    {"id":"land","name":"Land","frames":3,"fps":12,"loop":false,"view":"rear","note":"Contact, compression, recover; no flash."},
+    {"id":"smash","name":"Smash","frames":8,"fps":12,"loop":false,"view":"rear","note":"Windup, contact, recovery; FX only, no new hit rule."},
+    {"id":"thunderclap","name":"Thunderclap","frames":6,"fps":12,"loop":false,"view":"rear","note":"Hands in, clap, release; route visible."},
+    {"id":"power_up","name":"Power-up pose","frames":6,"fps":12,"loop":false,"view":"rear","note":"Separate aura layer."},
+    {"id":"hurt","name":"Bump reaction","frames":3,"fps":10,"loop":false,"view":"rear","note":"Surprise, not distress; no flashing."},
+    {"id":"victory","name":"Victory","frames":8,"fps":10,"loop":false,"view":"front_three_quarter","note":"Upright J on chest and belt."},
+    {"id":"menu_idle","name":"Menu idle","frames":4,"fps":6,"loop":true,"view":"front_three_quarter","note":"Calm breathing and cape motion."}
+  ],
+  "reuse":{"fast_run":{"source":"run","fps":16},"level_intro":{"source":"menu_idle","fps":6}}
+}

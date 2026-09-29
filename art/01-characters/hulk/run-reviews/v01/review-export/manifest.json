@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "id": "run-v01",
+  "status": "motion_needs_revision",
+  "productionReady": false,
+  "source": "art/01-characters/hulk/run-reviews/v01/source-sheet.png",
+  "sourceSha256": "fe9cb4356404185535e410ff3e60c1cd2ab6b1061a48875ddb6ddd9519f74ef9",
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "alpha": "straight",
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    1056,
+    656
+  ],
+  "padding": 4,
+  "trimmed": false,
+  "rotated": false,
+  "notes": "Source order is intentionally unchanged. Several contact drawings repeat rather than forming the requested contact/down/passing/up stride. Frame 003 is a symmetric airborne pose; cadence, arm swing, head scale and cape continuity need correction. This viewer diagnoses the source, it does not create missing animation.",
+  "frames": [
+    {
+      "id": "hulk_run_rear_000",
+      "view": "rear",
+      "sourceRect": [
+        0,
+        0,
+        640,
+        856
+      ],
+      "sourceGroundAnchor": [
+        337,
+        790
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_000.png",
+      "frame256": "frames-256/hulk_run_rear_000.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_001",
+      "view": "rear",
+      "sourceRect": [
+        640,
+        0,
+        1280,
+        856
+      ],
+      "sourceGroundAnchor": [
+        978,
+        790
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_001.png",
+      "frame256": "frames-256/hulk_run_rear_001.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_002",
+      "view": "rear",
+      "sourceRect": [
+        1280,
+        0,
+        1920,
+        856
+      ],
+      "sourceGroundAnchor": [
+        1577,
+        790
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_002.png",
+      "frame256": "frames-256/hulk_run_rear_002.png",
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_003",
+      "view": "rear",
+      "sourceRect": [
+        1920,
+        0,
+        2560,
+        856
+      ],
+      "sourceGroundAnchor": [
+        2208,
+        790
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_003.png",
+      "frame256": "frames-256/hulk_run_rear_003.png",
+      "productionReady": false,
+      "rect": [
+        796,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_004",
+      "view": "rear",
+      "sourceRect": [
+        0,
+        856,
+        640,
+        1712
+      ],
+      "sourceGroundAnchor": [
+        334,
+        1614
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_004.png",
+      "frame256": "frames-256/hulk_run_rear_004.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_005",
+      "view": "rear",
+      "sourceRect": [
+        640,
+        856,
+        1280,
+        1712
+      ],
+      "sourceGroundAnchor": [
+        977,
+        1614
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_005.png",
+      "frame256": "frames-256/hulk_run_rear_005.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_006",
+      "view": "rear",
+      "sourceRect": [
+        1280,
+        856,
+        1920,
+        1712
+      ],
+      "sourceGroundAnchor": [
+        1577,
+        1614
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_006.png",
+      "frame256": "frames-256/hulk_run_rear_006.png",
+      "productionReady": false,
+      "rect": [
+        532,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_run_rear_007",
+      "view": "rear",
+      "sourceRect": [
+        1920,
+        856,
+        2560,
+        1712
+      ],
+      "sourceGroundAnchor": [
+        2208,
+        1614
+      ],
+      "commonSheetScale": 0.63,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_run_rear_007.png",
+      "frame256": "frames-256/hulk_run_rear_007.png",
+      "productionReady": false,
+      "rect": [
+        796,
+        332,
+        256,
+        320
+      ]
+    }
+  ]
+}

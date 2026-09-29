@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "batch": "Victory 07",
+  "sourceFile": "sources/hulk-victory-v01-source.png",
+  "sourceSha256": "3f2921e57c786f94ab0ef52db946fd123ea5204b39ac6bcdf95aad9c0d326226",
+  "sourceBytes": 1707548,
+  "sourceSize": [1536, 1024],
+  "sourceOrigin": "Existing conversation attachment: eight_frame_superhero_pose_sheet.png; generation provider not inferred from filename",
+  "newGenerationInThisPass": false,
+  "runwayUsedInThisPass": false,
+  "repositoryBinaryStatus": "pending_direct_upload",
+  "selectedDrawings": 8,
+  "productionReady": false,
+  "localFileChecks": {"result": "PASS", "count": 78},
+  "localBrowserChecks": {"result": "BLOCKED", "executedAssertions": 0, "reason": "Managed Chromium navigation policy; no policy was disabled"}
+}

@@ -1,0 +1,226 @@
+{
+  "id": "poses-v02",
+  "technicalResult": "PASS",
+  "visualStatus": "pose_review",
+  "uniqueReviewDrawings": 6,
+  "productionReadyFrames": 0,
+  "checks": [
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-512/front_stance.png",
+      "sha256": "e861aa493b787a3f753200a8cd5a52baa0c1f256915bd00d755f7e96a5c30697",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        146,
+        117,
+        504,
+        578
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-256/front_stance.png",
+      "sha256": "3ef884617c3c09e8693576fd9e717c4ba98b05ce45ae298b751691adcc30dfdc",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        72,
+        57,
+        253,
+        290
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-512/rear_stance.png",
+      "sha256": "a785804a17df4f9b64744903ae2b2b45dc4db9292b5c65bf79e813569dd2e032",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        136,
+        121,
+        413,
+        579
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-256/rear_stance.png",
+      "sha256": "c63c1a8e2b0bf5baa548fdaa92bcf5e27c8b4f69a31950dd3e3f09597a5643fb",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        67,
+        60,
+        208,
+        291
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-512/rear_run_key.png",
+      "sha256": "4a73610f777088b7346989d568c6f0bd96a3bda138fc97022b7c04421fefc997",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        51,
+        132,
+        380,
+        570
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-256/rear_run_key.png",
+      "sha256": "d895b8c0e95e53e3966aa47c00bd9393e094f9031c8016e6e119a2fbf07ca87f",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        24,
+        65,
+        191,
+        286
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-512/bank_screen_right.png",
+      "sha256": "1c53a29bda0cd92f9cdf8ecb2ca012468fc7ce7d6f3ca88958ce4ceb0125a1a8",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        110,
+        156,
+        470,
+        579
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-256/bank_screen_right.png",
+      "sha256": "9e84a094f52819ee92047d0701fbe7042f6f10aaf3a71e88eecc19201be7a802",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        54,
+        77,
+        236,
+        291
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-512/bank_screen_left.png",
+      "sha256": "f59b4ab27ec70e4d03edb282e38711b9e2457f2c5ea54681843be5b3adffba3e",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        60,
+        165,
+        426,
+        579
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-256/bank_screen_left.png",
+      "sha256": "88b704fce6c64ca4e667feb9c17743a0662c07b3f3c05c29c337a8cb949f6aa8",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        29,
+        81,
+        214,
+        291
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-512/rear_smash_contact.png",
+      "sha256": "21e0a865c9426f8cb39ed13f8c3225f740e19ced9bac911b5a382277826e95ba",
+      "size": [
+        512,
+        640
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        58,
+        217,
+        416,
+        579
+      ]
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/v02-cutouts/frames-256/rear_smash_contact.png",
+      "sha256": "766c1102cccdeb6ef05c73b69cc099584529c5bdde205f4f46c03723bdcdf4d1",
+      "size": [
+        256,
+        320
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        28,
+        107,
+        209,
+        291
+      ]
+    }
+  ],
+  "scope": "File dimensions, alpha range, nonempty silhouette, canvas bounds, source hash. Not approval of motion, likeness, track alignment or physical-device behavior."
+}

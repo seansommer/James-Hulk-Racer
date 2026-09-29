@@ -1,0 +1,515 @@
+{
+  "result": "PASS_FILE_CHECKS",
+  "selectedDrawings": 14,
+  "individualPngExports": 28,
+  "atlasRegionComparisons": 14,
+  "sourcesPreserved": 2,
+  "productionReadyFrames": 0,
+  "checks": [
+    {
+      "file": "frames-512/hulk_smash_rear_000.png",
+      "sha256": "b473fd0cc00ed3949649fecb7012de26f4cc4a710cadb361b1d5b48caa248000",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        127,
+        110,
+        388,
+        581
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_000.png",
+      "sha256": "df26862f0f2eae8b5c34fea2634797d313bdf3ea01f787cd721b8c49824e9295",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        62,
+        54,
+        195,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_001.png",
+      "sha256": "c2c342cc0c523568a37d85a72a35cd78611c77e17f74afbab24e893dbf310bb6",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        115,
+        134,
+        408,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_001.png",
+      "sha256": "baffd458475fb546449a198eac22cf8dc3ff791ddc4e3d28448713e96c08fa44",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        56,
+        66,
+        205,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_002.png",
+      "sha256": "e54217bd8c248afe892ebed1a0576f180eb4380840f414590f2d0723041384f7",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        109,
+        97,
+        403,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_002.png",
+      "sha256": "add7ddadcfc45498c08f2db66e0553d09b466c93bc78e6ddf1886cdfa12cef86",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        53,
+        47,
+        203,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_003.png",
+      "sha256": "a217e39151aeb60495964677be9c7c92927478a72d9ae537eab1ef8b9d519a01",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        83,
+        187,
+        425,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_003.png",
+      "sha256": "48a955523cbeadc6ea87c31654423cab7e30b8e6cc2b3ee540014a368ef5c871",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        40,
+        92,
+        214,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_004.png",
+      "sha256": "d0750c1f5a1799528b5e26d9d657b42b7cb6d9f434bee349c672c68cfd0a12ef",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        75,
+        275,
+        432,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_004.png",
+      "sha256": "b816699c3af0fd124f05c8acebbde111444132f9a289d98ce83b958ba44ff48a",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        36,
+        136,
+        217,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_005.png",
+      "sha256": "01851d125c7c0377e8bbedf1d10958e2a05c2158464e315f14c8bfeb84336bdd",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        73,
+        282,
+        437,
+        581
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_005.png",
+      "sha256": "08e2cf86e233815412c189298179fca39b4741f6d1f56d67a8bb60f8dc3724c7",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        35,
+        140,
+        220,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_006.png",
+      "sha256": "a255f85bfecbaa054c84ecf0f1a2efeaf799bcc303cbdffd5e65d9e5d5c9f988",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        107,
+        160,
+        405,
+        579
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_006.png",
+      "sha256": "e10bfd343ed3e4a5d7e17e64812c6460bba6ffb807f6d74665f9dbe28f458dc5",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        52,
+        79,
+        204,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_smash_rear_007.png",
+      "sha256": "18586e5626e3c5b16492b7383a74b6573e25f17b88292653ce751d0ff4b86dce",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        123,
+        119,
+        387,
+        580
+      ]
+    },
+    {
+      "file": "frames-256/hulk_smash_rear_007.png",
+      "sha256": "0a2b077dd983e0acb42a89ec3db0ecfc63bde478b79488678ef14ae63e624430",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        60,
+        58,
+        195,
+        291
+      ]
+    },
+    {
+      "file": "frames-512/hulk_thunderclap_rear_000.png",
+      "sha256": "78f682ad6531e95d3e9910d6a7f03f9c0ecf7d1f9c49eecbfde2c535f691aaee",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        63,
+        108,
+        370,
+        582
+      ]
+    },
+    {
+      "file": "frames-256/hulk_thunderclap_rear_000.png",
+      "sha256": "900e07e46d0e1075acf5c6ae5a2fedd6bc86512578624f598cca28642c57a4e4",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        30,
+        53,
+        186,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_thunderclap_rear_001.png",
+      "sha256": "7f8f967d142963cd3f0aa69086978f4dfe96fbc71e1f0f713805c99f02824a4e",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        49,
+        108,
+        467,
+        582
+      ]
+    },
+    {
+      "file": "frames-256/hulk_thunderclap_rear_001.png",
+      "sha256": "5e57e8f06239ceb37d56bb88f2d0dec86a31fadd6d4b6fce0074823ef877c795",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        23,
+        53,
+        235,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_thunderclap_rear_002.png",
+      "sha256": "6d377e74f6e2e020b123427b323dbc6e192b9ad51b20890a16282d07f3f33397",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        59,
+        108,
+        379,
+        582
+      ]
+    },
+    {
+      "file": "frames-256/hulk_thunderclap_rear_002.png",
+      "sha256": "768870b347903804e65f35fea25876bace9bdb78574b29f89264c56783c05c7b",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        28,
+        53,
+        191,
+        292
+      ]
+    },
+    {
+      "file": "frames-512/hulk_thunderclap_rear_003.png",
+      "sha256": "299f1fec8a1251d922ff8adcd532de2e216c93cea98b6f433c8bec48133bcf9a",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        63,
+        112,
+        376,
+        583
+      ]
+    },
+    {
+      "file": "frames-256/hulk_thunderclap_rear_003.png",
+      "sha256": "552c0c2ddabc708cf7cfec31307d82b22472ad815a0c7671dc0170cc618bc9f7",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        30,
+        55,
+        189,
+        293
+      ]
+    },
+    {
+      "file": "frames-512/hulk_thunderclap_rear_004.png",
+      "sha256": "f19f93a1e9beb262669b31558a6f06495640ce239549e8bd6f0bee6d8e2f00de",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        68,
+        112,
+        380,
+        583
+      ]
+    },
+    {
+      "file": "frames-256/hulk_thunderclap_rear_004.png",
+      "sha256": "e348f814ae6244964d2bff579d143ee7e39261dcf6bcf246e5ee28fa03034add",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        33,
+        55,
+        192,
+        293
+      ]
+    },
+    {
+      "file": "frames-512/hulk_thunderclap_rear_005.png",
+      "sha256": "f3317210814edd170a0c9968a3129b71e4b557ec3011bf69c8e5d8c6aee9ceae",
+      "dimensions": [
+        512,
+        640
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        64,
+        112,
+        372,
+        583
+      ]
+    },
+    {
+      "file": "frames-256/hulk_thunderclap_rear_005.png",
+      "sha256": "71ae28fc23c72f4b514c17246cef0f6d10b8925f17fe1c787bac0c91d07912e8",
+      "dimensions": [
+        256,
+        320
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "bounds": [
+        30,
+        55,
+        187,
+        293
+      ]
+    }
+  ],
+  "scope": "Checksums, RGBA dimensions, alpha, margins and atlas equality. Not approval of motion, anatomy, camera matching or physical-device performance."
+}

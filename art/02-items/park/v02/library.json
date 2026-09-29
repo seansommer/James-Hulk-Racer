@@ -1,0 +1,1676 @@
+{
+  "schemaVersion": 1,
+  "title": "Emerald Park · Art and Motion Library",
+  "productionReady": false,
+  "approval": "Candidate — owner review pending",
+  "generator": "OpenAI native image generation",
+  "track": "Real curved 3D half-pipe; illustrated sprites placed in the world",
+  "assets": [
+    {
+      "id": "gem",
+      "label": "Power gem",
+      "kind": "gem",
+      "source": "art/02-items/park/v02/sources/gem.png",
+      "sourceSha256": "99cbb799b09076acfefd7ccee988bc949cb2709ea8557226a755e698d16fdde1",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        238,
+        87,
+        1016,
+        1156
+      ],
+      "transparentFraction": 0.715716088103396,
+      "pivot": [
+        0.5,
+        0.4956140350877193
+      ],
+      "anchor": "center",
+      "exports": {
+        "512": "art/02-items/park/v02/textures-512/gem.png",
+        "1024": "art/02-items/park/v02/textures-1024/gem.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "star",
+      "label": "Golden star",
+      "kind": "special",
+      "source": "art/02-items/park/v02/sources/star.png",
+      "sourceSha256": "b5a9528255c435d6165c0cd404aed13ad5d82e00c3fcc3ffd1587108031006f7",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        56,
+        64,
+        1200,
+        1160
+      ],
+      "transparentFraction": 0.512768073583989,
+      "pivot": [
+        0.5007974481658692,
+        0.4880382775119617
+      ],
+      "anchor": "center",
+      "exports": {
+        "512": "art/02-items/park/v02/textures-512/star.png",
+        "1024": "art/02-items/park/v02/textures-1024/star.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "rock",
+      "label": "Moss rock",
+      "kind": "rock",
+      "source": "art/02-items/park/v02/sources/rock.png",
+      "sourceSha256": "4f0cc95bf52876eeb5665c6dfc2d9efa63041ac4405353e0f25df3187b3feaf7",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        59,
+        170,
+        1194,
+        1142
+      ],
+      "transparentFraction": 0.4372019108231649,
+      "pivot": [
+        0.4996012759170654,
+        0.9106858054226475
+      ],
+      "anchor": "ground",
+      "exports": {
+        "512": "art/02-items/park/v02/textures-512/rock.png",
+        "1024": "art/02-items/park/v02/textures-1024/rock.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "bumper",
+      "label": "Violet bumper",
+      "kind": "orb",
+      "source": "art/02-items/park/v02/sources/bumper.png",
+      "sourceSha256": "a7cb3946973d49840e6049fba44471a7b2ba202fa8ead2c4970b5d8336d4db4a",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        70,
+        77,
+        1184,
+        1177
+      ],
+      "transparentFraction": 0.44373411780865823,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "anchor": "center",
+      "exports": {
+        "512": "art/02-items/park/v02/textures-512/bumper.png",
+        "1024": "art/02-items/park/v02/textures-1024/bumper.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "goo",
+      "label": "Purple goo",
+      "kind": "goo",
+      "source": "art/02-items/park/v02/sources/goo.png",
+      "sourceSha256": "c45a2757ea6649b371cef46b20132da898a488cc3c0ccae0a6b9aa47edca4173",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        40,
+        438,
+        1218,
+        889
+      ],
+      "transparentFraction": 0.7840619745681443,
+      "pivot": [
+        0.5015948963317385,
+        0.7089314194577353
+      ],
+      "anchor": "ground",
+      "exports": {
+        "512": "art/02-items/park/v02/textures-512/goo.png",
+        "1024": "art/02-items/park/v02/textures-1024/goo.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "tree",
+      "label": "Park tree",
+      "kind": "tree",
+      "source": "art/03-environments/park/v01/sources/tree.png",
+      "sourceSha256": "60d01c9f6bd44715ebdc98688fa77f87ea7f8cfa264ddfd0b9354ffc2abb20cf",
+      "sourceSize": [
+        1024,
+        1536
+      ],
+      "visibleBounds": [
+        21,
+        38,
+        1011,
+        1426
+      ],
+      "transparentFraction": 0.46232032775878906,
+      "pivot": [
+        0.50390625,
+        0.9283854166666666
+      ],
+      "anchor": "ground",
+      "exports": {
+        "512": "art/03-environments/park/v01/textures-512/tree.png",
+        "1024": "art/03-environments/park/v01/textures-1024/tree.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "shrub",
+      "label": "Leafy shrub",
+      "kind": "shrub",
+      "source": "art/03-environments/park/v01/sources/shrub.png",
+      "sourceSha256": "c2ae14ffb39914bdd87e7b4f1264ba5863fbe44d357fef845dd98502565bce88",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "visibleBounds": [
+        18,
+        113,
+        1655,
+        823
+      ],
+      "transparentFraction": 0.5190262573155912,
+      "pivot": [
+        0.500299043062201,
+        0.8746014877789585
+      ],
+      "anchor": "ground",
+      "exports": {
+        "512": "art/03-environments/park/v01/textures-512/shrub.png",
+        "1024": "art/03-environments/park/v01/textures-1024/shrub.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "gateway",
+      "label": "Park gateway",
+      "kind": "gateway",
+      "source": "art/03-environments/park/v01/sources/gateway.png",
+      "sourceSha256": "aa1750099d473dba6e04e68db33a0f79028f3a091781a4cd2a1f632e59addbc0",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "visibleBounds": [
+        14,
+        124,
+        1240,
+        1136
+      ],
+      "transparentFraction": 0.5863412518537172,
+      "pivot": [
+        0.5,
+        0.9059011164274322
+      ],
+      "anchor": "ground",
+      "exports": {
+        "512": "art/03-environments/park/v01/textures-512/gateway.png",
+        "1024": "art/03-environments/park/v01/textures-1024/gateway.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "canopy",
+      "label": "Canopy layer",
+      "kind": "canopy",
+      "source": "art/03-environments/park/v01/sources/canopy.png",
+      "sourceSha256": "728376d9e64454408d78dfbc64d5af5e5b5f03e91f0101a2711fff094b6f4e37",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "visibleBounds": [
+        0,
+        300,
+        1672,
+        941
+      ],
+      "transparentFraction": 0.474335685847795,
+      "pivot": [
+        0.5,
+        1
+      ],
+      "anchor": "ground",
+      "exports": {
+        "512": "art/03-environments/park/v01/textures-512/canopy.png",
+        "1024": "art/03-environments/park/v01/textures-1024/canopy.png"
+      },
+      "productionReady": false
+    },
+    {
+      "id": "backdrop",
+      "label": "Park valley",
+      "kind": "backdrop",
+      "source": "art/03-environments/park/v01/sources/backdrop.png",
+      "sourceSha256": "c54ef3b1e8f020f9761be4808e661bfb47f62163969a512b48ca50934333db23",
+      "sourceSize": [
+        1672,
+        941
+      ],
+      "visibleBounds": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "transparentFraction": 0,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "anchor": "center",
+      "exports": {
+        "512": "art/03-environments/park/v01/textures-512/backdrop.png",
+        "1024": "art/03-environments/park/v01/textures-1024/backdrop.png"
+      },
+      "productionReady": false
+    }
+  ],
+  "clips": [
+    {
+      "id": "gem-turn",
+      "asset": "gem",
+      "grid": [
+        4,
+        3
+      ],
+      "count": 12,
+      "fps": 12,
+      "loop": true,
+      "anchor": "center",
+      "note": "AI facet-turn study. Check constant angular speed and final-to-first seam.",
+      "source": "art/02-items/park/v02/motion/sources/gem-turn.png",
+      "sourceSha256": "2e82ef8cec370affe814ac78c8c6c64d16ea4eb516d8b9152f2dccd3a6877a85",
+      "sourceSize": [
+        1448,
+        1086
+      ],
+      "atlas": "art/02-items/park/v02/motion/atlases/gem-turn.png",
+      "atlasSha256": "42429e32c681972b919c265bdcdd8a704ca8ad7378e5c85ae4599921c9337ce5",
+      "atlasSize": [
+        1056,
+        792
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "frames": [
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/00.png",
+          "sha256": "a8c43960dc87f8e41e5bfe6206d013c34509d9ac9d1d654407be782c0f82c6c0",
+          "sourceRect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            183,
+            178.5
+          ],
+          "crop": [
+            62,
+            13,
+            242,
+            331
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            4,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/01.png",
+          "sha256": "77d194d1f8c8a0b4a5c323d7ebcb9ba37693b7a4e5bc64244713fdee5f338908",
+          "sourceRect": [
+            362,
+            0,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            183,
+            179
+          ],
+          "crop": [
+            65,
+            14,
+            236,
+            330
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            268,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/02.png",
+          "sha256": "e2b7e597939e640d7d7ee9610aa17abf954dca017cc4bad71ed28fb8fd73abf5",
+          "sourceRect": [
+            724,
+            0,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            180,
+            178.5
+          ],
+          "crop": [
+            65,
+            14,
+            230,
+            329
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            532,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/03.png",
+          "sha256": "a1ca7ca95f2217a2de93fe2995fd3f1461ba77714c344e323fc7911218b1a640",
+          "sourceRect": [
+            1086,
+            0,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            181.5,
+            179
+          ],
+          "crop": [
+            73,
+            14,
+            217,
+            330
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            796,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/04.png",
+          "sha256": "0c69b9079c7179adc7c955a23f8fc09ace5d1c297670d3f92298660f0bf9119a",
+          "sourceRect": [
+            0,
+            362,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            184,
+            175.5
+          ],
+          "crop": [
+            71,
+            11,
+            226,
+            329
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            4,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/05.png",
+          "sha256": "5acd05508baf554ddf8a8e673a0ed0e987a3046c6bf6cc91650147c940fed445",
+          "sourceRect": [
+            362,
+            362,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            181,
+            175.5
+          ],
+          "crop": [
+            65,
+            11,
+            232,
+            329
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            268,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/06.png",
+          "sha256": "05e75e63ff6d8c62c37d6d0eeb6afe85403552fa6639531bc6a945a798bae5a9",
+          "sourceRect": [
+            724,
+            362,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            181.5,
+            174.5
+          ],
+          "crop": [
+            67,
+            10,
+            229,
+            329
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            532,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/07.png",
+          "sha256": "c4de4c23187d52c4ec5ac57db5072bc92ddfaa0b47ad26ba747227550e50b2cb",
+          "sourceRect": [
+            1086,
+            362,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            178,
+            175
+          ],
+          "crop": [
+            65,
+            10,
+            226,
+            330
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            796,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/08.png",
+          "sha256": "8a960d8fc4f747348bda90b14c0e598d3d3c298ab00988f59295de9824c44cfc",
+          "sourceRect": [
+            0,
+            724,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            181,
+            174.5
+          ],
+          "crop": [
+            66,
+            9,
+            230,
+            331
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            4,
+            532,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/09.png",
+          "sha256": "62a2c6bfff4d368e4febfc11cc5b15f18660e57c5deeb8165432779957d5bb18",
+          "sourceRect": [
+            362,
+            724,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            182,
+            175
+          ],
+          "crop": [
+            74,
+            10,
+            216,
+            330
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            268,
+            532,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/10.png",
+          "sha256": "547aac3454656c9b152220b5c368a631c28de7f88e37d21eb68e9c0033c18c6d",
+          "sourceRect": [
+            724,
+            724,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            179,
+            175
+          ],
+          "crop": [
+            65,
+            10,
+            228,
+            330
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            532,
+            532,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/gem-turn/11.png",
+          "sha256": "3b5ebd96a952df3e8401aee6c7b3d7bb113e49af6b0e653a7a8832eb50908046",
+          "sourceRect": [
+            1086,
+            724,
+            362,
+            362
+          ],
+          "sourceAnchor": [
+            181.5,
+            174.5
+          ],
+          "crop": [
+            64,
+            10,
+            235,
+            329
+          ],
+          "commonScale": 1.3993808049535603,
+          "rect": [
+            796,
+            532,
+            256,
+            256
+          ]
+        }
+      ],
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "registration": "Translation with one shared clip scale; original source sheet preserved",
+      "productionReady": false
+    },
+    {
+      "id": "star-turn",
+      "asset": "star",
+      "grid": [
+        3,
+        2
+      ],
+      "count": 6,
+      "fps": 6,
+      "loop": true,
+      "anchor": "center",
+      "note": "Six authored viewing angles; add in-betweens for a smoother close-up turn.",
+      "source": "art/02-items/park/v02/motion/sources/star-turn.png",
+      "sourceSha256": "4195ed1974eb205dd414e097f51466381be28ef337cd6b428218a167ad1c5ad2",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "atlas": "art/02-items/park/v02/motion/atlases/star-turn.png",
+      "atlasSha256": "796129d497abbdb4bce3820388b036809797f35c86287e5706e59a2fa58cc902",
+      "atlasSize": [
+        1056,
+        528
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "frames": [
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/star-turn/00.png",
+          "sha256": "d743c3983151189ee68a1335466dc3ba566b3693c433120dfce1f49bf0fa188b",
+          "sourceRect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            270.5,
+            249.5
+          ],
+          "crop": [
+            53,
+            43,
+            435,
+            413
+          ],
+          "commonScale": 1.0138248847926268,
+          "rect": [
+            4,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/star-turn/01.png",
+          "sha256": "683dd74fd10535ce01300356e240ddc1d81bc6cd30e294769f4a250433b11d9c",
+          "sourceRect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            265,
+            257.5
+          ],
+          "crop": [
+            99,
+            44,
+            332,
+            427
+          ],
+          "commonScale": 1.0138248847926268,
+          "rect": [
+            268,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/star-turn/02.png",
+          "sha256": "703abef7130ad3d373f554c5c7bc9ade8be444ce9934f75998510633a5cad5ea",
+          "sourceRect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            245.5,
+            254.5
+          ],
+          "crop": [
+            57,
+            43,
+            377,
+            423
+          ],
+          "commonScale": 1.0138248847926268,
+          "rect": [
+            532,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/star-turn/03.png",
+          "sha256": "07c08c665edb88a2033c279f98970505f82d53ea4788fc571d97230b4def751b",
+          "sourceRect": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            274,
+            235.5
+          ],
+          "crop": [
+            53,
+            30,
+            442,
+            411
+          ],
+          "commonScale": 1.0138248847926268,
+          "rect": [
+            796,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/star-turn/04.png",
+          "sha256": "5c46eb0edbe1921f464b73ddfaede13e4d6f33ff666c05d350d3fd5e673b330d",
+          "sourceRect": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            263.5,
+            240.5
+          ],
+          "crop": [
+            101,
+            30,
+            325,
+            421
+          ],
+          "commonScale": 1.0138248847926268,
+          "rect": [
+            4,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/star-turn/05.png",
+          "sha256": "78fd6f7b8e8451083356d6193ca03441c560a1a76ac02950f6af4db9e169b7c1",
+          "sourceRect": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            242.5,
+            241
+          ],
+          "crop": [
+            57,
+            30,
+            371,
+            422
+          ],
+          "commonScale": 1.0138248847926268,
+          "rect": [
+            268,
+            268,
+            256,
+            256
+          ]
+        }
+      ],
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "registration": "Translation with one shared clip scale; original source sheet preserved",
+      "productionReady": false
+    },
+    {
+      "id": "rock-crumble",
+      "asset": "rock",
+      "grid": [
+        4,
+        2
+      ],
+      "count": 8,
+      "fps": 10,
+      "loop": false,
+      "anchor": "ground",
+      "note": "One-shot smash reaction; final rubble may fade in runtime. Physics clears at the smash event.",
+      "source": "art/02-items/park/v02/motion/sources/rock-crumble.png",
+      "sourceSha256": "d69af865aeae10509ce5a3e2122951eb3f9cf862ee2c0511746b2aab8c1f2fd9",
+      "sourceSize": [
+        1774,
+        887
+      ],
+      "atlas": "art/02-items/park/v02/motion/atlases/rock-crumble.png",
+      "atlasSha256": "bf7a48d366ad9061cbc83772eff67e2f510e1187e4c2c0c3261a8939c5da5b2d",
+      "atlasSize": [
+        1056,
+        528
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.90625
+      ],
+      "frames": [
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/00.png",
+          "sha256": "260c29fe673f552283be1f5c8a282b1fa3302ad71ba52bf95cfb2c29294e0611",
+          "sourceRect": [
+            0,
+            0,
+            444,
+            444
+          ],
+          "sourceAnchor": [
+            222,
+            426.24
+          ],
+          "crop": [
+            19,
+            92,
+            397,
+            340
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            4,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/01.png",
+          "sha256": "12a215f006dc1f79b98b350697a4dbeaf18f09bd6265df876ee26a1fd1a712e7",
+          "sourceRect": [
+            444,
+            0,
+            443,
+            444
+          ],
+          "sourceAnchor": [
+            221.5,
+            426.24
+          ],
+          "crop": [
+            6,
+            85,
+            428,
+            348
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            268,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/02.png",
+          "sha256": "784d0e2315a52f246fd86e8d99528272065ff5db99125b4048cb727b45bbd3ce",
+          "sourceRect": [
+            887,
+            0,
+            444,
+            444
+          ],
+          "sourceAnchor": [
+            222,
+            426.24
+          ],
+          "crop": [
+            2,
+            72,
+            442,
+            368
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            532,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/03.png",
+          "sha256": "bd5aa67c07a755c720ca232605ee61626bf70eea8b6b3863e761ed199bc77fc9",
+          "sourceRect": [
+            1331,
+            0,
+            443,
+            444
+          ],
+          "sourceAnchor": [
+            221.5,
+            426.24
+          ],
+          "crop": [
+            0,
+            79,
+            427,
+            365
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            796,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/04.png",
+          "sha256": "fe7483b93f6754bab5b94e0cc1bea21fb53e456ac911652b36ee6cbbf1a71fed",
+          "sourceRect": [
+            0,
+            444,
+            444,
+            443
+          ],
+          "sourceAnchor": [
+            222,
+            425.28
+          ],
+          "crop": [
+            19,
+            53,
+            425,
+            362
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            4,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/05.png",
+          "sha256": "d2fbf72d2f2d50aba593be4f7494c288ec0a9c0ff81ce704de156dcf3640d61e",
+          "sourceRect": [
+            444,
+            444,
+            443,
+            443
+          ],
+          "sourceAnchor": [
+            221.5,
+            425.28
+          ],
+          "crop": [
+            0,
+            101,
+            442,
+            303
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            268,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/06.png",
+          "sha256": "193dcb0f2497cd24672f873e2d46d9fff6e9354e56f55b91e758e900c317a483",
+          "sourceRect": [
+            887,
+            444,
+            444,
+            443
+          ],
+          "sourceAnchor": [
+            222,
+            425.28
+          ],
+          "crop": [
+            4,
+            145,
+            434,
+            262
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            532,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/rock-crumble/07.png",
+          "sha256": "685fba793119889321a4f60c23eb2ca4319bf97f95c45b4b189a744210ae9a93",
+          "sourceRect": [
+            1331,
+            444,
+            443,
+            443
+          ],
+          "sourceAnchor": [
+            221.5,
+            425.28
+          ],
+          "crop": [
+            14,
+            177,
+            407,
+            230
+          ],
+          "commonScale": 0.990990990990991,
+          "rect": [
+            796,
+            268,
+            256,
+            256
+          ]
+        }
+      ],
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "registration": "Translation with one shared clip scale; original source sheet preserved",
+      "productionReady": false
+    },
+    {
+      "id": "bumper-pulse",
+      "asset": "bumper",
+      "grid": [
+        3,
+        2
+      ],
+      "count": 6,
+      "fps": 5,
+      "loop": true,
+      "anchor": "center",
+      "note": "Lens pulse. Inspect shell stability before final approval.",
+      "source": "art/02-items/park/v02/motion/sources/bumper-pulse.png",
+      "sourceSha256": "3005863e16c32c20c6069222e0e1222a42d048371c094fedc4d97a71fa84db8a",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "atlas": "art/02-items/park/v02/motion/atlases/bumper-pulse.png",
+      "atlasSha256": "bb315c354ad386d0f199000221ef3a95b401fe9a9a8675c4d78d947f246e3b00",
+      "atlasSize": [
+        1056,
+        528
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "frames": [
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/bumper-pulse/00.png",
+          "sha256": "ca8b67b9959b3fc39019ba5909420d57f5c938bf1ea47e9b7d556602f0e809ed",
+          "sourceRect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            258,
+            274
+          ],
+          "crop": [
+            4,
+            32,
+            508,
+            480
+          ],
+          "commonScale": 0.8782435129740519,
+          "rect": [
+            4,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/bumper-pulse/01.png",
+          "sha256": "dee6e042bced8929928137e6d33a67f58c41f627e2bdb3ead1215d8a495f333a",
+          "sourceRect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            258.5,
+            274
+          ],
+          "crop": [
+            5,
+            32,
+            507,
+            480
+          ],
+          "commonScale": 0.8782435129740519,
+          "rect": [
+            268,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/bumper-pulse/02.png",
+          "sha256": "fbc69fbdceaba80f26641159d67ad486650ef7fa060dcf0b7dc2434076d4adcf",
+          "sourceRect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            261,
+            274
+          ],
+          "crop": [
+            7,
+            32,
+            505,
+            480
+          ],
+          "commonScale": 0.8782435129740519,
+          "rect": [
+            532,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/bumper-pulse/03.png",
+          "sha256": "4ce76e1bcf9e1c0dd3eab39f1ec1fa4968635a32e49011f8274ce51e32f6e0b3",
+          "sourceRect": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            258,
+            246.5
+          ],
+          "crop": [
+            4,
+            0,
+            508,
+            497
+          ],
+          "commonScale": 0.8782435129740519,
+          "rect": [
+            796,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/bumper-pulse/04.png",
+          "sha256": "82c8dee4495a3d2a1019d0e53fd048d69dd51d44e4f2e6a0b5e8d0c530ab88cb",
+          "sourceRect": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            260.5,
+            246.5
+          ],
+          "crop": [
+            6,
+            0,
+            506,
+            497
+          ],
+          "commonScale": 0.8782435129740519,
+          "rect": [
+            4,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/bumper-pulse/05.png",
+          "sha256": "8e67b46f983bb9e757e9fa306677d310cdd4115ae7179a21bd4c44aecdef296d",
+          "sourceRect": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            261.5,
+            246.5
+          ],
+          "crop": [
+            7,
+            0,
+            505,
+            497
+          ],
+          "commonScale": 0.8782435129740519,
+          "rect": [
+            268,
+            268,
+            256,
+            256
+          ]
+        }
+      ],
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "registration": "Translation with one shared clip scale; original source sheet preserved",
+      "productionReady": false
+    },
+    {
+      "id": "goo-wobble",
+      "asset": "goo",
+      "grid": [
+        3,
+        2
+      ],
+      "count": 6,
+      "fps": 6,
+      "loop": true,
+      "anchor": "ground",
+      "note": "Jelly wobble; collision footprint remains fixed.",
+      "source": "art/02-items/park/v02/motion/sources/goo-wobble.png",
+      "sourceSha256": "e965f188c05a75d56211beb8d634ee537681164791ce5a27f68e81982c76ee24",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "atlas": "art/02-items/park/v02/motion/atlases/goo-wobble.png",
+      "atlasSha256": "119b58d0d813276c5ed7cd6880cf5db4fdfedae6cd7be8d957f1b0bb79e928f8",
+      "atlasSize": [
+        1056,
+        528
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.90625
+      ],
+      "frames": [
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/goo-wobble/00.png",
+          "sha256": "48d33f9b73bb5b1a4c6ec286fe7e21496d06f1c50f3b3228059635f48ba7fbc9",
+          "sourceRect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            268,
+            456
+          ],
+          "crop": [
+            23,
+            260,
+            489,
+            200
+          ],
+          "commonScale": 0.8835341365461847,
+          "rect": [
+            4,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/goo-wobble/01.png",
+          "sha256": "e797729378f8441341c327a04c81f435b9f3b6d5cd1a4358e1177e4b5b6344bf",
+          "sourceRect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            256,
+            460
+          ],
+          "crop": [
+            9,
+            232,
+            494,
+            232
+          ],
+          "commonScale": 0.8835341365461847,
+          "rect": [
+            268,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/goo-wobble/02.png",
+          "sha256": "7a1b5a90883cd65fb6d532333a1257fca37d2bb124fb3d68c86c76f86e081f92",
+          "sourceRect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            254.5,
+            457
+          ],
+          "crop": [
+            4,
+            255,
+            501,
+            206
+          ],
+          "commonScale": 0.8835341365461847,
+          "rect": [
+            532,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/goo-wobble/03.png",
+          "sha256": "fcb8d4aa6f4f16901aca28b68af6701a8f5bf9cc7a2937392c8e0a5e44398ac5",
+          "sourceRect": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            265.5,
+            364
+          ],
+          "crop": [
+            16,
+            166,
+            496,
+            202
+          ],
+          "commonScale": 0.8835341365461847,
+          "rect": [
+            796,
+            4,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/goo-wobble/04.png",
+          "sha256": "696a0fc0329ddd9c842731ddea5f264a95f2196ff39c446412598f4fe5e44dfb",
+          "sourceRect": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            261,
+            361
+          ],
+          "crop": [
+            8,
+            186,
+            504,
+            179
+          ],
+          "commonScale": 0.8835341365461847,
+          "rect": [
+            4,
+            268,
+            256,
+            256
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/goo-wobble/05.png",
+          "sha256": "af3ff844a01c26ed40e2a209122255f3e21e818b56444baf380a9892f7c85e30",
+          "sourceRect": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            255.5,
+            367
+          ],
+          "crop": [
+            6,
+            161,
+            499,
+            210
+          ],
+          "commonScale": 0.8835341365461847,
+          "rect": [
+            268,
+            268,
+            256,
+            256
+          ]
+        }
+      ],
+      "sequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "registration": "Translation with one shared clip scale; original source sheet preserved",
+      "productionReady": false
+    },
+    {
+      "id": "tree-sway",
+      "sourceId": "tree-sway-v02",
+      "asset": "tree",
+      "grid": [
+        3,
+        2
+      ],
+      "count": 3,
+      "fps": 2,
+      "loop": true,
+      "anchor": "ground",
+      "sequence": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "note": "Top-row poses only, ping-pong. Bottom row rejected for branch identity drift; first sheet rejected for clipping. More in-betweens and a steadier trunk remain polish tasks.",
+      "source": "art/02-items/park/v02/motion/sources/tree-sway-v02.png",
+      "sourceSha256": "d2de40a70cae505e4c1a5bf8f99e31a42c23d04d21534dc5fb70e09019f6fb7e",
+      "sourceSize": [
+        1536,
+        1024
+      ],
+      "atlas": "art/02-items/park/v02/motion/atlases/tree-sway.png",
+      "atlasSha256": "d6d03f09e7e2afc727a800a6f60b5f910d94831da98bf71d48c0629f5b8b407f",
+      "atlasSize": [
+        1560,
+        520
+      ],
+      "canvas": [
+        512,
+        512
+      ],
+      "pivot": [
+        0.5,
+        0.90625
+      ],
+      "frames": [
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/tree-sway/00.png",
+          "sha256": "565801b5c0c9b4e8e045a1750bd37c988450f5459dfca83589aca16dfc7992ec",
+          "sourceRect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            302,
+            507
+          ],
+          "crop": [
+            99,
+            33,
+            374,
+            479
+          ],
+          "commonScale": 0.9234042553191489,
+          "rect": [
+            4,
+            4,
+            512,
+            512
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/tree-sway/01.png",
+          "sha256": "b19b7a7eca8decb71d9eb9140ac1580b0fe24c0f228aba1237c3f80095b6a719",
+          "sourceRect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            300,
+            507
+          ],
+          "crop": [
+            75,
+            33,
+            375,
+            479
+          ],
+          "commonScale": 0.9234042553191489,
+          "rect": [
+            524,
+            4,
+            512,
+            512
+          ]
+        },
+        {
+          "file": "art/02-items/park/v02/motion/frames-512/tree-sway/02.png",
+          "sha256": "5333da68081530a5fafeb1e7758a4d044a1ef11015daaa0c270b8abc1e284f20",
+          "sourceRect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "sourceAnchor": [
+            285,
+            507
+          ],
+          "crop": [
+            51,
+            34,
+            389,
+            478
+          ],
+          "commonScale": 0.9234042553191489,
+          "rect": [
+            1044,
+            4,
+            512,
+            512
+          ]
+        }
+      ],
+      "registration": "Translation with one shared clip scale; original source sheet preserved",
+      "productionReady": false
+    }
+  ]
+}

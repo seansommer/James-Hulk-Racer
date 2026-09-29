@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batch": "states-06",
+  "status": "sources_archived",
+  "note": "Archive only these already-generated still images. Temporary transfer URLs grant access to artwork only and are removed from this current manifest after import. No additional generation, video, game or Firebase access is performed.",
+  "sources": [
+    {
+      "taskId": "71920b12-6569-4165-b144-6ed8ff4eb5db",
+      "artifactId": "cd856e8d-48b8-44ab-b891-2e641847a774",
+      "path": "art/01-characters/hulk/state-reviews/v01/source-power-up.png",
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "expectedBytes": 3263089,
+      "status": "archived",
+      "reviewStatus": "candidate_unreviewed",
+      "sourceReferenceTask": "e0e48694-5d96-4263-97c1-da7827fcc8fa",
+      "brief": "Six rear grounded power-up poses, 3 by 2 cells, separate effects, no cape emblem, stable identity and ground anchors.",
+      "sha256": "01cfb020dc47f515a478b871f6c6683522b1bc24f82776aab7368a2109f33d9b"
+    },
+    {
+      "taskId": "681bd6a4-4d25-4b58-8752-85786c824378",
+      "artifactId": "c314ec9a-72cb-4828-a05f-3f6e69d980a6",
+      "path": "art/01-characters/hulk/state-reviews/v01/source-bump.png",
+      "dimensions": [
+        2912,
+        1248
+      ],
+      "expectedBytes": 2779604,
+      "status": "archived",
+      "reviewStatus": "candidate_unreviewed",
+      "sourceReferenceTask": "e0e48694-5d96-4263-97c1-da7827fcc8fa",
+      "brief": "Three rear bump/recovery drawings in one row; gentle surprise, stabilizing step, ready stance. No injury or effects.",
+      "sha256": "b496eb4c1fc13906c097c78da457f442d6ae4cd3f7775e07bf4216f4ff131757"
+    },
+    {
+      "taskId": "7f8efcb6-d7c7-4bc0-ae79-4412fb7d6eb5",
+      "artifactId": "8a9c6c67-4d78-4429-8e79-2da110cba3bc",
+      "path": "art/01-characters/hulk/state-reviews/v01/source-menu-idle.png",
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "expectedBytes": 3398619,
+      "status": "archived",
+      "reviewStatus": "candidate_unreviewed",
+      "sourceReferenceTask": "35c32e2d-2a1d-4f88-9463-c3dc75e2076d",
+      "brief": "Four front-three-quarter subtle breathing poses in a 2 by 2 grid, upright J chest and belt, same face and planted feet, no effects.",
+      "sha256": "0dbdcfac9f2f203e90ea0797261b57f699dabafbbe6b0543e18acbc1e45689e9"
+    }
+  ],
+  "victory": {
+    "plannedDrawings": 8,
+    "status": "not_submitted",
+    "note": "The separate generation action was not authorized and returned no task or image. It was not retried."
+  }
+}

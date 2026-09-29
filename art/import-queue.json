@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "description": "Explicit owner-authorized artwork imports. Temporary media transfer URLs are removed from the current manifest after archival. No game credentials or Firebase rules are included.",
+  "imports": [
+    {
+      "path": "art/00-reference/lineup-j-v1.png",
+      "status": "archived",
+      "reviewStatus": "reference",
+      "sha256": "6fa0dc53e03be60c4f2becd0d8c32ef175c670b801e0aeb5b516447ba8328c14",
+      "notes": "Established five-costume reference with J emblems. Not a sprite sheet.",
+      "bytes": 2057086,
+      "width": 1916,
+      "height": 821
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v01-candidate.png",
+      "status": "archived",
+      "reviewStatus": "needs_revision",
+      "sha256": "51d8f6df4c21884c588e12e53ab606dcece85d444bb2e2e387529da9c7b033c0",
+      "notes": "Six-pose candidate with genuine alpha, NOT approved. Chest numerals must become J; lower-right contact pose faces front instead of the requested rear-three-quarter view; bank order and registration need review. See REVIEW-v01.md.",
+      "bytes": 2070104,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "path": "art/01-characters/hulk/archived-studies/hulk-visual-study-v01-superseded.png",
+      "status": "archived",
+      "reviewStatus": "superseded_study",
+      "sha256": "d60ed2a607e83f5c866a8c27d475a51a33a0cd6368cc90165e03a1a4ed417820",
+      "notes": "Superseded visual study, NOT an authoritative bible or a sprite atlas. Obsolete numeral emblems and cape-back badge conflict with v1.2; preserve only as an archived study, not a generation reference.",
+      "bytes": 2654913,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v02-source.png",
+      "status": "archived",
+      "reviewStatus": "candidate_unreviewed",
+      "sha256": "a88cd96b65d272a646b9300e1edef4ba3388c0d8cdc0a5ea2a41a4439291a47a",
+      "bytes": 3454219,
+      "width": 2560,
+      "height": 1712,
+      "notes": "Corrected J chest and rear-three-quarter two-fist contact study. Original white background retained. Not registered animation."
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/source-sheet.png",
+      "status": "archived",
+      "reviewStatus": "motion_candidate",
+      "sha256": "fe9cb4356404185535e410ff3e60c1cd2ab6b1061a48875ddb6ddd9519f74ef9",
+      "bytes": 3600366,
+      "width": 2560,
+      "height": 1712,
+      "notes": "Eight rear-running drawings from a generated contact sheet. Source order retained for honest motion review; not yet a verified continuous stride. White background, not transparent."
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v02/source-intermediate.png",
+      "status": "archived",
+      "reviewStatus": "intermediate_needs_motion_revision",
+      "sha256": "c3b9c234722db92171f4b5bfbd65babf42d6deac5e538e1467653b424b9c689e",
+      "bytes": 4230617,
+      "width": 2560,
+      "height": 1712,
+      "notes": "First v02 generation: complementary arm swing and asymmetric flight. Its third pose in each half-cycle swaps support too early. Not approved."
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v02/source-sheet.png",
+      "status": "archived",
+      "reviewStatus": "candidate_needs_phase_review",
+      "sha256": "a15c2083fd81d46076cd8cb24e2bc0ccdd602cb58b9f637c5517736d7c86d9aa",
+      "bytes": 4430885,
+      "width": 2560,
+      "height": 1712,
+      "notes": "Targeted leg/boot refinement of the preceding source. Tucked legs and toe-off detail improve, but actual left/right phase order must be checked and corrected before approval. Original bytes preserved."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "result": "PASS_REVIEW_PAGE_ONLY",
+  "checkCount": 13,
+  "checks": [
+    "12 embedded frames load; starts paused",
+    "Next steps one frame",
+    "Previous steps back",
+    "Playback advances",
+    "Pause holds the frame",
+    "Select lean_left and reset frame",
+    "Select lean_right and reset frame",
+    "Select rear_idle and reset frame",
+    "Background, small size and strip controls",
+    "390px portrait has no horizontal overflow",
+    "844px landscape has no horizontal overflow",
+    "No uncaught JavaScript errors",
+    "No external asset or account requests"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "browser": "Local headless Chromium; supplied self-contained HTML; simulated viewports, not physical iPhone/Safari",
+  "reviewerSha256": "baa09f97a4e2a7f0cd9049e85b4763223026d5ba2a8f04705f972f5a784c6ae9",
+  "scope": "Viewer loading, controls, layout and network isolation. Not a natural-motion or game-performance approval."
+}

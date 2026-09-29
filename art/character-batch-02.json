@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "note": "Recover two completed, owner-authorized character images from the prior session. First ingestion checks the provider-reported byte count, dimensions, PNG format and exact task path; SHA-256 is recorded from the retrieved bytes, not invented in advance. Subsequent runs require that recorded checksum. URLs are media-only transfer links and are removed from the current manifest after recovery.",
+  "sources": [
+    {
+      "path": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v02-source.png",
+      "taskId": "35c32e2d-2a1d-4f88-9463-c3dc75e2076d",
+      "expectedBytes": 3454219,
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "status": "archived",
+      "reviewStatus": "candidate_unreviewed",
+      "notes": "Corrected J chest and rear-three-quarter two-fist contact study. Original white background retained. Not registered animation.",
+      "sha256": "a88cd96b65d272a646b9300e1edef4ba3388c0d8cdc0a5ea2a41a4439291a47a"
+    },
+    {
+      "path": "art/01-characters/hulk/run-reviews/v01/source-sheet.png",
+      "taskId": "70752a33-bd71-4481-b558-3f01c87c1a6e",
+      "expectedBytes": 3600366,
+      "dimensions": [
+        2560,
+        1712
+      ],
+      "status": "archived",
+      "reviewStatus": "motion_candidate",
+      "notes": "Eight rear-running drawings from a generated contact sheet. Source order retained for honest motion review; not yet a verified continuous stride. White background, not transparent.",
+      "sha256": "fe9cb4356404185535e410ff3e60c1cd2ab6b1061a48875ddb6ddd9519f74ef9"
+    }
+  ]
+}

@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "id": "jump-land-04",
+  "status": "motion_review",
+  "productionReady": false,
+  "approvedByOwner": false,
+  "source": "source-sheet.png",
+  "sourceSha256": "3f3f2427774acb47d651294ab8af964904463383588bdfe49339e44263f71996",
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "alpha": "straight",
+  "trimmed": false,
+  "rotated": false,
+  "commonScale": 0.6,
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    792,
+    984
+  ],
+  "padding": 4,
+  "mipmaps": false,
+  "clips": {
+    "jump": {
+      "label": "Jump \u00b7 six poses",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "fps": 8,
+      "loop": false
+    },
+    "land": {
+      "label": "Landing \u00b7 three poses",
+      "frames": [
+        6,
+        7,
+        8
+      ],
+      "fps": 12,
+      "loop": false
+    },
+    "full": {
+      "label": "Jump \u2192 landing",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "fps": 8,
+      "loop": false
+    }
+  },
+  "frames": [
+    {
+      "id": "hulk_jump_rear_000",
+      "phase": "Preparation",
+      "sourceCell": 1,
+      "sourceRect": [
+        0,
+        0,
+        853,
+        830
+      ],
+      "provisionalRoot": [
+        424,
+        798
+      ],
+      "rootInCell": [
+        424,
+        798
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        2,
+        97
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_jump_rear_000.png",
+      "frame256": "frames-256/hulk_jump_rear_000.png",
+      "negativeSpaceSeeds": [
+        [
+          555,
+          498
+        ],
+        [
+          593,
+          548
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_jump_rear_001",
+      "phase": "Early lift",
+      "sourceCell": 2,
+      "sourceRect": [
+        853,
+        0,
+        1706,
+        830
+      ],
+      "provisionalRoot": [
+        1273,
+        800
+      ],
+      "rootInCell": [
+        420,
+        800
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        4,
+        96
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_jump_rear_001.png",
+      "frame256": "frames-256/hulk_jump_rear_001.png",
+      "negativeSpaceSeeds": [
+        [
+          355,
+          245
+        ],
+        [
+          488,
+          245
+        ]
+      ],
+      "floorPlateCleanup": false,
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_jump_rear_002",
+      "phase": "Rising tuck",
+      "sourceCell": 3,
+      "sourceRect": [
+        1706,
+        0,
+        2560,
+        830
+      ],
+      "provisionalRoot": [
+        2124,
+        800
+      ],
+      "rootInCell": [
+        418,
+        800
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        5,
+        96
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_jump_rear_002.png",
+      "frame256": "frames-256/hulk_jump_rear_002.png",
+      "negativeSpaceSeeds": [
+        [
+          448,
+          262
+        ]
+      ],
+      "floorPlateCleanup": false,
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_jump_rear_003",
+      "phase": "Apex tuck",
+      "sourceCell": 4,
+      "sourceRect": [
+        0,
+        830,
+        853,
+        1615
+      ],
+      "provisionalRoot": [
+        424,
+        1590
+      ],
+      "rootInCell": [
+        424,
+        760
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        2,
+        120
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_jump_rear_003.png",
+      "frame256": "frames-256/hulk_jump_rear_003.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": false,
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_jump_rear_004",
+      "phase": "Legs extending",
+      "sourceCell": 5,
+      "sourceRect": [
+        853,
+        830,
+        1706,
+        1615
+      ],
+      "provisionalRoot": [
+        1273,
+        1590
+      ],
+      "rootInCell": [
+        420,
+        760
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        4,
+        120
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_jump_rear_004.png",
+      "frame256": "frames-256/hulk_jump_rear_004.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": false,
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_jump_rear_005",
+      "phase": "Landing reach",
+      "sourceCell": 6,
+      "sourceRect": [
+        1706,
+        830,
+        2560,
+        1615
+      ],
+      "provisionalRoot": [
+        2125,
+        1590
+      ],
+      "rootInCell": [
+        419,
+        760
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        5,
+        120
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_jump_rear_005.png",
+      "frame256": "frames-256/hulk_jump_rear_005.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": false,
+      "productionReady": false,
+      "rect": [
+        532,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_land_rear_000",
+      "phase": "First contact",
+      "sourceCell": 7,
+      "sourceRect": [
+        0,
+        1615,
+        853,
+        2560
+      ],
+      "provisionalRoot": [
+        424,
+        2384
+      ],
+      "rootInCell": [
+        424,
+        769
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        2,
+        115
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_land_rear_000.png",
+      "frame256": "frames-256/hulk_land_rear_000.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_land_rear_001",
+      "phase": "Absorption",
+      "sourceCell": 8,
+      "sourceRect": [
+        853,
+        1615,
+        1706,
+        2560
+      ],
+      "provisionalRoot": [
+        1273,
+        2384
+      ],
+      "rootInCell": [
+        420,
+        769
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        4,
+        115
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_land_rear_001.png",
+      "frame256": "frames-256/hulk_land_rear_001.png",
+      "negativeSpaceSeeds": [
+        [
+          568,
+          587
+        ],
+        [
+          328,
+          515
+        ],
+        [
+          280,
+          588
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_land_rear_002",
+      "phase": "Recovered stance",
+      "sourceCell": 9,
+      "sourceRect": [
+        1706,
+        1615,
+        2560,
+        2560
+      ],
+      "provisionalRoot": [
+        2125,
+        2384
+      ],
+      "rootInCell": [
+        419,
+        769
+      ],
+      "commonSourceScale": 0.6,
+      "placement": [
+        5,
+        115
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_land_rear_002.png",
+      "frame256": "frames-256/hulk_land_rear_002.png",
+      "negativeSpaceSeeds": [
+        [
+          260,
+          475
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        660,
+        256,
+        320
+      ]
+    }
+  ],
+  "binding": "Pose-only samples. The game simulation must supply jump height; no world trajectory is baked into this exporter.",
+  "notes": "Nine selected source-order drawings, not production approval. Pose 2 is early lift, not toe-contact push-off. Root annotations are provisional; head/limb consistency, cape transitions and game-camera alignment remain review items."
+}

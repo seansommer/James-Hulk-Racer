@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 1,
+  "id": "states-06",
+  "status": "motion_review",
+  "productionReady": false,
+  "approvedByOwner": false,
+  "sourceHashes": {
+    "source-power-up.png": "01cfb020dc47f515a478b871f6c6683522b1bc24f82776aab7368a2109f33d9b",
+    "source-bump.png": "b496eb4c1fc13906c097c78da457f442d6ae4cd3f7775e07bf4216f4ff131757",
+    "source-menu-idle.png": "0dbdcfac9f2f203e90ea0797261b57f699dabafbbe6b0543e18acbc1e45689e9"
+  },
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "alpha": "straight",
+  "trimmed": false,
+  "rotated": false,
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    1056,
+    1312
+  ],
+  "padding": 4,
+  "mipmaps": false,
+  "clips": {
+    "power_up": {
+      "label": "Power-up \u00b7 six poses",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "fps": 12,
+      "loop": false,
+      "note": "Grounded body-pose study only; aura stays separate. Foot spacing, shoulders, cape spread and the return to ready need unified motion review."
+    },
+    "hurt": {
+      "label": "Bump recovery \u00b7 three poses",
+      "frames": [
+        6,
+        7,
+        8
+      ],
+      "fps": 10,
+      "loop": false,
+      "note": "Gentle surprise, a stabilizing step and recovery. Open-glove anatomy, side-to-side weight transfer and three-pose timing remain review items."
+    },
+    "menu_idle": {
+      "label": "Menu idle \u00b7 four poses",
+      "frames": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "fps": 6,
+      "loop": true,
+      "note": "Chest and belt J are preserved. This loop is a candidate: face/cape continuity and the fourth-to-first seam still need polish. The front camera is deliberately distinct from rear gameplay."
+    }
+  },
+  "frames": [
+    {
+      "id": "hulk_power_up_rear_000",
+      "clip": "power_up",
+      "phase": "Ready",
+      "source": "source-power-up.png",
+      "sourceCell": 1,
+      "sourceRect": [
+        0,
+        0,
+        853,
+        856
+      ],
+      "provisionalRoot": [
+        352,
+        802
+      ],
+      "rootInCell": [
+        352,
+        802
+      ],
+      "commonSourceScale": 0.63,
+      "placement": [
+        34,
+        71
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_power_up_rear_000.png",
+      "frame256": "frames-256/hulk_power_up_rear_000.png",
+      "negativeSpaceSeeds": [
+        [
+          231,
+          501
+        ],
+        [
+          479,
+          507
+        ],
+        [
+          457,
+          447
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_power_up_rear_001",
+      "clip": "power_up",
+      "phase": "Gathering power",
+      "source": "source-power-up.png",
+      "sourceCell": 2,
+      "sourceRect": [
+        853,
+        0,
+        1707,
+        856
+      ],
+      "provisionalRoot": [
+        1260,
+        802
+      ],
+      "rootInCell": [
+        407,
+        802
+      ],
+      "commonSourceScale": 0.63,
+      "placement": [
+        0,
+        71
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_power_up_rear_001.png",
+      "frame256": "frames-256/hulk_power_up_rear_001.png",
+      "negativeSpaceSeeds": [
+        [
+          295,
+          429
+        ],
+        [
+          514,
+          428
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_power_up_rear_002",
+      "clip": "power_up",
+      "phase": "Compressed anticipation",
+      "source": "source-power-up.png",
+      "sourceCell": 3,
+      "sourceRect": [
+        1707,
+        0,
+        2560,
+        856
+      ],
+      "provisionalRoot": [
+        2182,
+        802
+      ],
+      "rootInCell": [
+        475,
+        802
+      ],
+      "commonSourceScale": 0.63,
+      "placement": [
+        -43,
+        71
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_power_up_rear_002.png",
+      "frame256": "frames-256/hulk_power_up_rear_002.png",
+      "negativeSpaceSeeds": [
+        [
+          367,
+          457
+        ],
+        [
+          586,
+          452
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_power_up_rear_003",
+      "clip": "power_up",
+      "phase": "Rising strength",
+      "source": "source-power-up.png",
+      "sourceCell": 4,
+      "sourceRect": [
+        0,
+        856,
+        853,
+        1712
+      ],
+      "provisionalRoot": [
+        348,
+        1610
+      ],
+      "rootInCell": [
+        348,
+        754
+      ],
+      "commonSourceScale": 0.63,
+      "placement": [
+        37,
+        101
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_power_up_rear_003.png",
+      "frame256": "frames-256/hulk_power_up_rear_003.png",
+      "negativeSpaceSeeds": [
+        [
+          237,
+          378
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        796,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_power_up_rear_004",
+      "clip": "power_up",
+      "phase": "Peak stance",
+      "source": "source-power-up.png",
+      "sourceCell": 5,
+      "sourceRect": [
+        853,
+        856,
+        1707,
+        1712
+      ],
+      "provisionalRoot": [
+        1268,
+        1610
+      ],
+      "rootInCell": [
+        415,
+        754
+      ],
+      "commonSourceScale": 0.63,
+      "placement": [
+        -5,
+        101
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_power_up_rear_004.png",
+      "frame256": "frames-256/hulk_power_up_rear_004.png",
+      "negativeSpaceSeeds": [
+        [
+          289,
+          368
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_power_up_rear_005",
+      "clip": "power_up",
+      "phase": "Settling ready",
+      "source": "source-power-up.png",
+      "sourceCell": 6,
+      "sourceRect": [
+        1707,
+        856,
+        2560,
+        1712
+      ],
+      "provisionalRoot": [
+        2183,
+        1610
+      ],
+      "rootInCell": [
+        476,
+        754
+      ],
+      "commonSourceScale": 0.63,
+      "placement": [
+        -44,
+        101
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_power_up_rear_005.png",
+      "frame256": "frames-256/hulk_power_up_rear_005.png",
+      "negativeSpaceSeeds": [
+        [
+          358,
+          464
+        ],
+        [
+          607,
+          469
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_hurt_rear_000",
+      "clip": "hurt",
+      "phase": "Surprised lean",
+      "source": "source-bump.png",
+      "sourceCell": 1,
+      "sourceRect": [
+        0,
+        0,
+        971,
+        1248
+      ],
+      "provisionalRoot": [
+        514,
+        1088
+      ],
+      "rootInCell": [
+        514,
+        1088
+      ],
+      "commonSourceScale": 0.49,
+      "placement": [
+        4,
+        43
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_hurt_rear_000.png",
+      "frame256": "frames-256/hulk_hurt_rear_000.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_hurt_rear_001",
+      "clip": "hurt",
+      "phase": "Stabilizing step",
+      "source": "source-bump.png",
+      "sourceCell": 2,
+      "sourceRect": [
+        971,
+        0,
+        1941,
+        1248
+      ],
+      "provisionalRoot": [
+        1389,
+        1088
+      ],
+      "rootInCell": [
+        418,
+        1088
+      ],
+      "commonSourceScale": 0.49,
+      "placement": [
+        51,
+        43
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_hurt_rear_001.png",
+      "frame256": "frames-256/hulk_hurt_rear_001.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        796,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_hurt_rear_002",
+      "clip": "hurt",
+      "phase": "Balance restored",
+      "source": "source-bump.png",
+      "sourceCell": 3,
+      "sourceRect": [
+        1941,
+        0,
+        2912,
+        1248
+      ],
+      "provisionalRoot": [
+        2406,
+        1088
+      ],
+      "rootInCell": [
+        465,
+        1088
+      ],
+      "commonSourceScale": 0.49,
+      "placement": [
+        28,
+        43
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "rear",
+      "frame512": "frames-512/hulk_hurt_rear_002.png",
+      "frame256": "frames-256/hulk_hurt_rear_002.png",
+      "negativeSpaceSeeds": [],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_menu_idle_front_000",
+      "clip": "menu_idle",
+      "phase": "Calm ready",
+      "source": "source-menu-idle.png",
+      "sourceCell": 1,
+      "sourceRect": [
+        0,
+        0,
+        1280,
+        960
+      ],
+      "provisionalRoot": [
+        600,
+        866
+      ],
+      "rootInCell": [
+        600,
+        866
+      ],
+      "commonSourceScale": 0.5,
+      "placement": [
+        -44,
+        143
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "front_three_quarter",
+      "frame512": "frames-512/hulk_menu_idle_front_000.png",
+      "frame256": "frames-256/hulk_menu_idle_front_000.png",
+      "negativeSpaceSeeds": [
+        [
+          485,
+          484
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        268,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_menu_idle_front_001",
+      "clip": "menu_idle",
+      "phase": "Gentle inhale",
+      "source": "source-menu-idle.png",
+      "sourceCell": 2,
+      "sourceRect": [
+        1280,
+        0,
+        2560,
+        960
+      ],
+      "provisionalRoot": [
+        1805,
+        866
+      ],
+      "rootInCell": [
+        525,
+        866
+      ],
+      "commonSourceScale": 0.5,
+      "placement": [
+        -6,
+        143
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "front_three_quarter",
+      "frame512": "frames-512/hulk_menu_idle_front_001.png",
+      "frame256": "frames-256/hulk_menu_idle_front_001.png",
+      "negativeSpaceSeeds": [
+        [
+          420,
+          480
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        532,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_menu_idle_front_002",
+      "clip": "menu_idle",
+      "phase": "Breath held",
+      "source": "source-menu-idle.png",
+      "sourceCell": 3,
+      "sourceRect": [
+        0,
+        960,
+        1280,
+        1920
+      ],
+      "provisionalRoot": [
+        600,
+        1818
+      ],
+      "rootInCell": [
+        600,
+        858
+      ],
+      "commonSourceScale": 0.5,
+      "placement": [
+        -44,
+        147
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "front_three_quarter",
+      "frame512": "frames-512/hulk_menu_idle_front_002.png",
+      "frame256": "frames-256/hulk_menu_idle_front_002.png",
+      "negativeSpaceSeeds": [
+        [
+          498,
+          474
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        796,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_menu_idle_front_003",
+      "clip": "menu_idle",
+      "phase": "Soft exhale",
+      "source": "source-menu-idle.png",
+      "sourceCell": 4,
+      "sourceRect": [
+        1280,
+        960,
+        2560,
+        1920
+      ],
+      "provisionalRoot": [
+        1804,
+        1818
+      ],
+      "rootInCell": [
+        524,
+        858
+      ],
+      "commonSourceScale": 0.5,
+      "placement": [
+        -6,
+        147
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "view": "front_three_quarter",
+      "frame512": "frames-512/hulk_menu_idle_front_003.png",
+      "frame256": "frames-256/hulk_menu_idle_front_003.png",
+      "negativeSpaceSeeds": [
+        [
+          402,
+          477
+        ]
+      ],
+      "floorPlateCleanup": true,
+      "productionReady": false,
+      "rect": [
+        4,
+        988,
+        256,
+        320
+      ]
+    }
+  ],
+  "notes": "13 selected candidates in original source order. One scale per sheet, explicit provisional ground-root translations, no per-pose fit, mirror, warp or in-betweens. Menu/front scale differs from gameplay/rear for cape clearance. Final likeness, motion, camera and hitbox registration remain unapproved. No game-state events."
+}

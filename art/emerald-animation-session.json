@@ -1,0 +1,55 @@
+{
+  "generator": "OpenAI native image generation",
+  "date": "2026-09-29",
+  "productionReady": false,
+  "jobs": [
+    {
+      "key": "gem-turn",
+      "ref": "exec-d96b4e1c-b12d-4051-bac0-78d03d1b4c9c.png",
+      "prompt": "Use case: stylized-concept. Create a production ANIMATION SPRITE SHEET of the exact emerald collectible in the reference, with real changing facets during a turn. Exactly TWELVE frames in a strict 4-column by 3-row equal-cell grid, row-major time order. Landscape 4:3 sheet, no grid lines, no labels or numbers. Each cell has one upright elongated double-pyramid gem, identical height, identical center and top/bottom positions, filling 72% of cell height and at most65% width. Fixed mildly elevated front gameplay camera and fixed warm upper-left sunlight. Frame angles around the gem's vertical axis: 0,30,60,90,120,150,180,210,240,270,300,330 degrees. The gem stays upright; do NOT rotate it in the picture plane. Broad triangular facets, beveled edges, rich green depth; facets and specular highlights change coherently through the turn. The final-to-first step is another30degrees, no duplicate end frame. Preserve the reference shape, colors and rendering quality. True transparent background throughout all cells. No glow, no sparkles, no particles, no shadow, no floor, no blur, no extra objects. All frames fully visible with empty margins and no overlap. High detail.",
+      "sourceFile": "exec-1a948cce-341b-4ad8-95b8-3c9f62857de2.png"
+    },
+    {
+      "key": "tree-sway",
+      "ref": "exec-fd9b43fe-3a88-4ab0-8172-731ad5d601b2.png",
+      "prompt": "Use case: stylized-concept. Create a production ANIMATION SPRITE SHEET of this exact lush park tree in a gentle breeze. Exactly SIX complete tree frames in a strict 3-column by2-row equal-cell grid on a SQUARE sheet; each cell is tall portrait format. No grid lines, labels, numbers or text. Fixed camera, fixed warm upper-left sunlight, identical tree identity, trunk, roots, branches, leaf clusters and scale in every frame. Each tree centered in its cell, feet/root contact at90% cellheight, same anchored root position in every frame, tree top near10%, generous transparent side margins. Animation time order left-to-right top-to-bottom: frame1neutral; frame2upper crown subtly sways right; frame3right extreme of gentle breeze; frame4returns neutral; frame5upper crown subtly sways left; frame6left extreme. Root base and lower trunk remain stationary, upper branches bend only slightly, small leaf-cluster movement, not a rigid whole-tree rotation. Motion amplitude around2% of tree width. Seamless return fromframe6 toframe1. Preserve all tree detail and natural coherent shape. True transparent surroundings and branch gaps. No aura, halo, ground, shadows, particles, background or additional objects. Every tree fully visible.",
+      "sourceFile": "exec-2641bc63-33b9-447b-b6c5-90ec32d6a848.png"
+    },
+    {
+      "key": "rock-crumble",
+      "ref": "exec-6c416b56-1fec-414f-b625-e98330fefb25.png",
+      "prompt": "Use case: stylized-concept. Create a production ANIMATION SPRITE SHEET for this exact chunky gray moss-covered stone obstacle being smashed and crumbling. Exactly EIGHT frames in a strict4-column by2-row equal square-cell grid, wide2:1sheet. No grid lines, no numbers, no text. Fixed slightly elevated front three-quarter camera, fixed upper-left sunlight, consistent palette and scale. The original rock inframe1occupies55%cellwidth and45%cellheight, base at78%cellheight; ALL frames preserve that same world scale, ground anchor and camera, no individual zooming. Frame1intact exactreference; frame2same rock with fresh branching cracks; frame3deep fissures and slight pieces separating; frame4rock splits into5large coherent chunks with moss on same upperpieces; frame5chunks move outward/down slightly and small stonechips fall; frame6chunks collapse into low rubble; frame7small settled rubble at samegroundanchor; frame8faint remaining dust and few chips, mostlyempty. One-shot causal animation, not a loop. Keep all pieces within85%of eachcell and abovegroundanchor. Soft gray dust only local aroundbrokenstone; no blastfire, no glow, no weapons, no floor, no shadowplane. True transparent background. Detailed readable rounded stone forms, cracks and moss match reference. Smooth coherent progression.",
+      "sourceFile": "exec-a84a485a-e741-42a8-931f-02b489c67dfb.png"
+    },
+    {
+      "key": "star-turn",
+      "ref": "exec-b531c96d-b6e0-4b24-87eb-723115870baa.png",
+      "prompt": "Use case: stylized-concept. A high-detail sprite animation sheet of the exact thick five-point gold star collectible shown in the reference. SIX frames, strict3columns by2rows of equal square cells on a3:2landscape sheet. Each star centered at exactly50%,50%of its cell with identical height of65%cellheight, same fixed top andbottom. Empty transparent margin AT LEAST15%on every edge of everycell. Fixed camera and upper-left lighting. The star remains upright in the picture but rotates around its vertical axis: frame1front0degrees, frame2sixtydegrees showing thickness, frame3onehundredtwentydegrees back3quarter, frame4back180degrees, frame5twohundredfortydegrees, frame6threehundreddegrees. Broad bevels and amber-gold sides, butteryellow frontface, no eyes. Real different viewing angles, not six copies rotated on the page. Consistent shape and size; coherent highlights. TRUE transparency between and around ALL sixobjects. No text, gridlines, glow, sparkles, ground, shadow, blur, or extraobjects. Keep all silhouettes entirely within their cells.",
+      "sourceFile": "exec-48f15480-6ed2-47e0-8947-6c2f99559c45.png"
+    },
+    {
+      "key": "bumper-pulse",
+      "ref": "exec-6116475f-a033-41f3-9ad1-b644e28459a4.png",
+      "prompt": "Use case: stylized-concept. Production animation sprite sheet of the EXACT round darkmetal violet robotic bumper in reference. SIX frames in a strict3column by2row equal squarecell grid, landscape3:2. Fixed camera, fixed sphere position at50%,50%cellcenter, identical diameter65%cellwidth in EVERY frame, same studs and panel seams. Generous true transparent empty margin at least15%everycell edge. Animation is a subtle breathing pulse of violet lens illumination only: frame1medium purplelight; frame2brighter; frame3brightest pale-violet lenscenter; frame4mediumbright; frame5dim purple; frame6mediumdim. Only lens light levels and violet rimlight change, with all glow contained within the object. The shell should not morph, turn or change shape. Maintain exact reference panel design, mainfront circularlens and side lenses, roundedstuds and charcoalpolish. TRUE transparency, no outerhalo, no background, no shadow, no text, no grid, no motionblur, no additionalobjects. Frame6loops naturally back toframe1.",
+      "sourceFile": "exec-83dcf014-e607-4e87-aac6-82275151a4cc.png"
+    },
+    {
+      "key": "goo-wobble",
+      "ref": "exec-945e85c4-8f6b-4adf-896d-27b98ae1151f.png",
+      "prompt": "Use case: stylized-concept. Production sprite animation sheet of the exact glossy low violet goo puddle hazard in the reference. SIX frames in a strict3columns by2rows equal squarecell grid, landscape3:2sheet. Each puddle at the same groundanchor centerx50%y73%, same overall worldscale, footprint spans65%cellwidth, generous emptytransparent margins at least15%everyedge. Camera fixed slightly elevated frontthreequarter, light fixed upperleft. Continuous gentle jelly wobble loop: frame1neutral low centralmound; frame2mound slightlytaller withsmallsidebubble rising; frame3mound settles gentlytowardright; frame4neutral; frame5slightlywider andlower; frame6soft recoil towardneutral. Attached bubbles, outeredge nearlystationary, heightchange no morethan10%. Preserve glossy material, white-lavender highlights, richpurple body and organic lowprofile. Do not turn into creature, donot addeyes, no detached droplets, no giant splash, no wholeobjectrotation, no groundshadow, no text, no grid, no backdrop. TRUE transparency.",
+      "sourceFile": "exec-46f0aa32-3eb9-46b4-96fb-62082e707663.png"
+    },
+    {
+      "key": "tree-sway-v02",
+      "ref": "exec-fd9b43fe-3a88-4ab0-8172-731ad5d601b2.png",
+      "prompt": "Use case: stylized-concept. Six small complete versions of the exact tree reference, a subtle breeze sprite animation. STRICT 3 columns by 2 rows, each cell SQUARE, entire canvas landscape3:2. CRITICAL SPACING: Every tree must fit inside the CENTRAL HALF WIDTH of its cell, leave the outer25% of each cell EMPTY on both left and right. Tree height70%cell,15%top andbottom margin. Shrink every tree equally to meet this spacing. Absolutely no leaves or roots can touch a cell boundary. Six full trees with identical scale, fixed rootgroundanchor50%x85%y, same trunk/leafclusters/color/light. Only slight bending of the upper branches and leaf tips: neutral,rightslight,rightmost,neutral,leftslight,leftmost, continuous gentle breeze. The lower trunk androotbase are identical and motionless. Upper-crown travel only2%cellwidth. All trees should look like the SAME tree, not new trees. Keep the reference's rich sculpted dimensional leaves, warm brown trunk, nice fine detail. This is a clean practical animation sheet, not a decorative layout. TRUE transparent background and treegaps, no halo, no ground, no text or gridlines. High resolution, clean thin antialiased leaf edges.",
+      "sourceFile": "exec-96de20fd-09bd-4aa7-bf42-6f3b141b4c51.png"
+    }
+  ],
+  "reviewNotes": [
+    "First tree sheet clipped foliage and is rejected.",
+    "Tree v02 top-row poses retained for a ping-pong motion test. Bottom row includes branch/identity drift; not used.",
+    "AI turning clips are visual candidates; angular speed, silhouette stability and loop seam still need gameplay review.",
+    "Rock ends in rubble; runtime fade is separate from the authored collapse frames."
+  ]
+}

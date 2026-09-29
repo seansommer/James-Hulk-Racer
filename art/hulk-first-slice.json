@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "artScopeVersion": "1.4",
+  "stage": "github_live_emerald_iteration",
+  "activeHero": "hulk",
+  "activeWorld": {
+    "id": "park",
+    "index": 0,
+    "displayProposal": "Emerald Skyway"
+  },
+  "deferredHeroes": [
+    "spider",
+    "captain",
+    "iron",
+    "super"
+  ],
+  "deferredWorlds": [
+    "cavern",
+    "volcano"
+  ],
+  "resumeExpansionAfter": "emerald_gameplay_and_visual_polish",
+  "candidateArtAllowedInIsolatedPreview": true,
+  "productionApprovalImplied": false,
+  "previewRankedWrites": false,
+  "previewAccountWrites": false,
+  "reuse": [
+    "hulk_candidate_frames",
+    "existing_half_pipe_geometry",
+    "current_simulation",
+    "current_input_controls",
+    "sound_settings",
+    "minimal_procedural_feedback"
+  ],
+  "objectDesigns": [
+    {
+      "id": "park.power-gem",
+      "kind": "gem",
+      "pivot": "center",
+      "status": "animated_candidate",
+      "source": "art/02-items/park/v02/sources/gem.png"
+    },
+    {
+      "id": "park.golden-star",
+      "kind": "special",
+      "pivot": "center",
+      "status": "animated_candidate",
+      "source": "art/02-items/park/v02/sources/star.png"
+    },
+    {
+      "id": "park.moss-rock",
+      "kind": "rock",
+      "pivot": "bottom_center",
+      "status": "animated_candidate",
+      "source": "art/02-items/park/v02/sources/rock.png"
+    },
+    {
+      "id": "park.bumper",
+      "kind": "orb",
+      "pivot": "center",
+      "status": "animated_candidate",
+      "source": "art/02-items/park/v02/sources/bumper.png"
+    },
+    {
+      "id": "park.goo",
+      "kind": "goo",
+      "pivot": "bottom_center",
+      "status": "animated_candidate",
+      "source": "art/02-items/park/v02/sources/goo.png"
+    }
+  ],
+  "environment": [
+    {
+      "id": "park.backdrop",
+      "kind": "opaque_background",
+      "status": "source_candidate",
+      "source": "art/03-environments/park/v01/sources/backdrop.png"
+    },
+    {
+      "id": "park.canopy",
+      "kind": "transparent_mid_layer",
+      "status": "source_candidate",
+      "source": "art/03-environments/park/v01/sources/canopy.png"
+    },
+    {
+      "id": "park.tree",
+      "kind": "transparent_prop",
+      "status": "motion_candidate",
+      "source": "art/03-environments/park/v01/sources/tree.png"
+    },
+    {
+      "id": "park.shrub",
+      "kind": "transparent_prop",
+      "status": "source_candidate",
+      "source": "art/03-environments/park/v01/sources/shrub.png"
+    },
+    {
+      "id": "park.gateway",
+      "kind": "transparent_decoration",
+      "status": "source_candidate",
+      "source": "art/03-environments/park/v01/sources/gateway.png"
+    }
+  ],
+  "hulkArchiveAtScopeChange": {
+    "selectedDrawingCandidates": 64,
+    "verifiedRepositoryDrawings": 56,
+    "victoryDrawingsPendingSourceUpload": 8
+  },
+  "openArtNotes": [
+    "menu_victory_clip_scale",
+    "run_clap_camera_handoff",
+    "cape_and_hair_consistency",
+    "support_foot_timing",
+    "alpha_edges"
+  ],
+  "nextStages": [
+    "publish_emerald_through_game_center",
+    "track_surface_and_contact_lighting",
+    "animation_inbetweens_and_registration",
+    "phone_performance"
+  ],
+  "protected": [
+    "production_firebase_rules",
+    "jamesV1",
+    "email_nickname_signin",
+    "sole_initial_master_Sean",
+    "Player_Cards",
+    "Hall_of_Fame",
+    "production_score_receipts"
+  ],
+  "imageService": "builtin",
+  "runwayPermitted": false,
+  "storage": "GitHub_source_of_truth",
+  "animationLibrary": "art/02-items/park/v02/library.json",
+  "playablePreviewBranch": "feature/emerald-playable-preview",
+  "ownerPriority": "Detailed coherent sprite library, independent object animation, actual curved half-pipe",
+  "runwayUse": "Reserved for future video cutscenes; not used for images or this sprite batch.",
+  "candidateArtAllowedInLivePractice": true,
+  "ownerAuthorizedGitHubDeployment": true,
+  "deploymentPolicy": "Commit artwork and game changes to GitHub; publish through the existing Game Center URL without a separate manual preview gate.",
+  "gameURL": "https://seansommer.github.io/James-Hulk-Racer/emerald/",
+  "gameCenterURL": "https://seansommer.github.io/James-Game-Center/"
+}

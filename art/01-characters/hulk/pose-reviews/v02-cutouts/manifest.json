@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "id": "poses-v02",
+  "status": "pose_review",
+  "productionReady": false,
+  "source": "art/01-characters/hulk/pose-reviews/hulk-six-pose-v02-source.png",
+  "sourceSha256": "a88cd96b65d272a646b9300e1edef4ba3388c0d8cdc0a5ea2a41a4439291a47a",
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "alpha": "straight",
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    1056,
+    656
+  ],
+  "padding": 4,
+  "trimmed": false,
+  "rotated": false,
+  "notes": "Six cleaned pose studies. Front stance is near frontal, not a verified three-quarter camera. Bank names describe actual screen direction. Source/body construction and final track-camera registration still need review.",
+  "frames": [
+    {
+      "id": "front_stance",
+      "view": "front",
+      "sourceRect": [
+        160,
+        6,
+        846,
+        884
+      ],
+      "sourceGroundAnchor": [
+        376,
+        875
+      ],
+      "commonSheetScale": 0.53,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/front_stance.png",
+      "frame256": "frames-256/front_stance.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "rear_stance",
+      "view": "rear",
+      "sourceRect": [
+        1040,
+        15,
+        1570,
+        884
+      ],
+      "sourceGroundAnchor": [
+        1270,
+        875
+      ],
+      "commonSheetScale": 0.53,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/rear_stance.png",
+      "frame256": "frames-256/rear_stance.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "rear_run_key",
+      "view": "rear",
+      "sourceRect": [
+        1785,
+        44,
+        2416,
+        880
+      ],
+      "sourceGroundAnchor": [
+        2178,
+        885
+      ],
+      "commonSheetScale": 0.53,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/rear_run_key.png",
+      "frame256": "frames-256/rear_run_key.png",
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "bank_screen_right",
+      "view": "rear",
+      "sourceRect": [
+        47,
+        889,
+        733,
+        1694
+      ],
+      "sourceGroundAnchor": [
+        326,
+        1685
+      ],
+      "commonSheetScale": 0.53,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/bank_screen_right.png",
+      "frame256": "frames-256/bank_screen_right.png",
+      "productionReady": false,
+      "rect": [
+        796,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "bank_screen_left",
+      "view": "rear",
+      "sourceRect": [
+        972,
+        888,
+        1670,
+        1678
+      ],
+      "sourceGroundAnchor": [
+        1345,
+        1668
+      ],
+      "commonSheetScale": 0.53,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/bank_screen_left.png",
+      "frame256": "frames-256/bank_screen_left.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "rear_smash_contact",
+      "view": "rear_three_quarter",
+      "sourceRect": [
+        1812,
+        984,
+        2495,
+        1673
+      ],
+      "sourceGroundAnchor": [
+        2190,
+        1664
+      ],
+      "commonSheetScale": 0.53,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/rear_smash_contact.png",
+      "frame256": "frames-256/rear_smash_contact.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    }
+  ]
+}

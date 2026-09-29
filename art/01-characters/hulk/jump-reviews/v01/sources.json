@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "status": "source_archived",
+  "sources": [
+    {
+      "path": "art/01-characters/hulk/jump-reviews/v01/source-sheet.png",
+      "taskId": "0f1a94b3-5a0c-456f-a6e7-e5a4a758bc14",
+      "expectedBytes": 5494363,
+      "dimensions": [
+        2560,
+        2560
+      ],
+      "status": "archived",
+      "reviewStatus": "pose_candidate",
+      "notes": "Nine rear-view jump/landing drawings. White-backed source retained unchanged. Pose 2 reads as early ascent rather than literal toe-contact push-off. Candidates, not runtime approval.",
+      "sha256": "3f3f2427774acb47d651294ab8af964904463383588bdfe49339e44263f71996"
+    }
+  ]
+}

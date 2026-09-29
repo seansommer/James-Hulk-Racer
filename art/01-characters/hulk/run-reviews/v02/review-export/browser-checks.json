@@ -1,0 +1,20 @@
+{
+  "result": "PASS_REVIEW_PAGE_ONLY",
+  "checkCount": 12,
+  "checks": [
+    "Embedded new and previous atlases load; playback starts paused",
+    "Forward frame step",
+    "Backward frame step",
+    "Play advances and Pause holds the exact frame",
+    "Original-source order maps back to the correct new drawing",
+    "Previous/new comparison selectable",
+    "Light, dark and checker backgrounds",
+    "Size, speed and anchor controls",
+    "390x844 viewport has no horizontal overflow",
+    "844x390 viewport has no horizontal overflow",
+    "No uncaught browser errors",
+    "No external network requests during review"
+  ],
+  "errors": [],
+  "scope": "Local headless Chromium with embedded HTML; simulated sizes, not physical Safari or gameplay testing."
+}

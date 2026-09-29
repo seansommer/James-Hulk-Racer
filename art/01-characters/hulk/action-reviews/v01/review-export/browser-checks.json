@@ -1,0 +1,26 @@
+{
+  "result": "PASS_LOCAL_REVIEWER",
+  "checkCount": 16,
+  "checks": [
+    "Fourteen embedded images load; initially paused",
+    "Next steps forward",
+    "Previous steps backward",
+    "Pause holds pose",
+    "Smash one-shot holds its last pose",
+    "Replay restarts from first pose",
+    "Thunderclap selects six poses",
+    "Thunderclap one-shot holds its last pose",
+    "Smash selects eight poses",
+    "Checker background works",
+    "Small gameplay-size display works",
+    "Provisional guide can be hidden",
+    "Strip displays current clip only",
+    "390px portrait has no horizontal page overflow",
+    "844px landscape has no horizontal page overflow",
+    "No uncaught script errors or external requests"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "htmlSha256": "0467caed781514704e577abf6a8dc95a4fd102c3e46fcc6a3f87372b74bcb31c",
+  "scope": "Local Chromium with supplied self-contained HTML; simulated viewports, not physical iPhone/Safari, art approval or live-game testing."
+}

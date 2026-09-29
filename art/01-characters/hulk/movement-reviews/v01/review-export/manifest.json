@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 1,
+  "id": "movement-03",
+  "status": "motion_review",
+  "productionReady": false,
+  "approvedByOwner": false,
+  "sourceFrameSize": [
+    512,
+    640
+  ],
+  "runtimeFrameSize": [
+    256,
+    320
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "alpha": "straight",
+  "trimmed": false,
+  "rotated": false,
+  "atlas": "atlas-review.png",
+  "atlasSize": [
+    1056,
+    984
+  ],
+  "padding": 4,
+  "mipmaps": false,
+  "clips": {
+    "rear_idle": {
+      "label": "Rear idle",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 6,
+      "phaseLabels": [
+        "Rest",
+        "Breath rising",
+        "Breath peak",
+        "Settling"
+      ],
+      "note": "Subtle idle pose study. Boots, shoulder breathing and cape closure still require final motion review."
+    },
+    "lean_left": {
+      "label": "Bank toward screen left",
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 12,
+      "phaseLabels": [
+        "Left support A",
+        "Left support B",
+        "Right support A",
+        "Right support B"
+      ],
+      "note": "Two support-foot pairs for a left bank. Four-frame cadence, cape transitions and cross-source proportions remain review items."
+    },
+    "lean_right": {
+      "label": "Bank toward screen right",
+      "frames": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "fps": 12,
+      "phaseLabels": [
+        "Right support A",
+        "Right support B",
+        "Left support A",
+        "Left support B"
+      ],
+      "note": "Separately drawn right bank, not a mirrored left bank. Four-frame cadence and cross-source proportions remain review items."
+    }
+  },
+  "frames": [
+    {
+      "id": "hulk_idle_rear_000",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        0,
+        0,
+        640,
+        658
+      ],
+      "rootInCell": [
+        343,
+        640
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        -12,
+        77
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_idle_rear_000.png",
+      "frame256": "frames-256/hulk_idle_rear_000.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_idle_rear_001",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        640,
+        0,
+        1280,
+        658
+      ],
+      "rootInCell": [
+        329,
+        640
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        -1,
+        77
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_idle_rear_001.png",
+      "frame256": "frames-256/hulk_idle_rear_001.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_idle_rear_002",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        1280,
+        0,
+        1920,
+        658
+      ],
+      "rootInCell": [
+        316,
+        640
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        10,
+        77
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_idle_rear_002.png",
+      "frame256": "frames-256/hulk_idle_rear_002.png",
+      "productionReady": false,
+      "rect": [
+        532,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_idle_rear_003",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        1920,
+        0,
+        2560,
+        658
+      ],
+      "rootInCell": [
+        303,
+        640
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        20,
+        77
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_idle_rear_003.png",
+      "frame256": "frames-256/hulk_idle_rear_003.png",
+      "productionReady": false,
+      "rect": [
+        796,
+        4,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_left_000",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        0,
+        658,
+        640,
+        1240
+      ],
+      "rootInCell": [
+        328,
+        568
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        0,
+        133
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_left_000.png",
+      "frame256": "frames-256/hulk_bank_left_000.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_left_001",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        640,
+        658,
+        1280,
+        1240
+      ],
+      "rootInCell": [
+        316,
+        568
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        10,
+        133
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_left_001.png",
+      "frame256": "frames-256/hulk_bank_left_001.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_left_002",
+      "source": "source-opposite-steps.png",
+      "sourceRect": [
+        0,
+        0,
+        1280,
+        900
+      ],
+      "rootInCell": [
+        690,
+        866
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.51,
+      "placement": [
+        -96,
+        134
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_left_002.png",
+      "frame256": "frames-256/hulk_bank_left_002.png",
+      "productionReady": false,
+      "rect": [
+        532,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_left_003",
+      "source": "source-opposite-steps.png",
+      "sourceRect": [
+        1280,
+        0,
+        2560,
+        900
+      ],
+      "rootInCell": [
+        595,
+        866
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.51,
+      "placement": [
+        -47,
+        134
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_left_003.png",
+      "frame256": "frames-256/hulk_bank_left_003.png",
+      "productionReady": false,
+      "rect": [
+        796,
+        332,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_right_000",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        0,
+        1240,
+        640,
+        1920
+      ],
+      "rootInCell": [
+        346,
+        590
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        -14,
+        116
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_right_000.png",
+      "frame256": "frames-256/hulk_bank_right_000.png",
+      "productionReady": false,
+      "rect": [
+        4,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_right_001",
+      "source": "source-sheet.png",
+      "sourceRect": [
+        640,
+        1240,
+        1280,
+        1920
+      ],
+      "rootInCell": [
+        352,
+        590
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.78,
+      "placement": [
+        -19,
+        116
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_right_001.png",
+      "frame256": "frames-256/hulk_bank_right_001.png",
+      "productionReady": false,
+      "rect": [
+        268,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_right_002",
+      "source": "source-opposite-steps.png",
+      "sourceRect": [
+        0,
+        900,
+        1280,
+        1920
+      ],
+      "rootInCell": [
+        650,
+        920
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.51,
+      "placement": [
+        -76,
+        107
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_right_002.png",
+      "frame256": "frames-256/hulk_bank_right_002.png",
+      "productionReady": false,
+      "rect": [
+        532,
+        660,
+        256,
+        320
+      ]
+    },
+    {
+      "id": "hulk_bank_right_003",
+      "source": "source-opposite-steps.png",
+      "sourceRect": [
+        1280,
+        900,
+        2560,
+        1920
+      ],
+      "rootInCell": [
+        594,
+        920
+      ],
+      "negativeSpaceSeeds": [],
+      "commonSourceScale": 0.51,
+      "placement": [
+        -47,
+        107
+      ],
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "frame512": "frames-512/hulk_bank_right_003.png",
+      "frame256": "frames-256/hulk_bank_right_003.png",
+      "productionReady": false,
+      "rect": [
+        796,
+        660,
+        256,
+        320
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "source-sheet.png": "7e4624d546ab0cbd6f0bb7c5281368bf4a42204dfc4981dab46f58caea20c277",
+    "source-opposite-steps.png": "325af6a581a17006ed5d1c3489eeb0bf00e6e0ba5206b88d3f787d79faa9722c"
+  },
+  "notes": "12 selected review drawings from two sources, plus a preserved intermediate sheet. One scale per source and explicit placement; no mirroring, limb warping, physics or score changes. Final motion and camera approval pending."
+}

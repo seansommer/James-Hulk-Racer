@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "batch": "movement-03-idle-and-banks",
+  "note": "Three completed character-only still sources. Validate provider dimensions and byte counts on first import, then record SHA-256. Temporary file-specific transfer URLs are removed after import. No production approval is implied.",
+  "sources": [
+    {
+      "file": "source-intermediate.png",
+      "taskId": "b9de1615-acfc-405c-86bc-187461c291d7",
+      "expectedBytes": 3909923,
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "status": "archived",
+      "reviewStatus": "intermediate_study",
+      "notes": "Initial twelve-pose idle/bank source. Bank rows repeat the same supporting leg. Preserve as lineage, not a completed bank loop.",
+      "sha256": "d7ab017bea1d6f25dfd0754df7955b9ea062f46afb662d58b54c0f6262a43ac0"
+    },
+    {
+      "file": "source-sheet.png",
+      "taskId": "7408e01c-9848-4947-bf86-32a07027228b",
+      "expectedBytes": 4788672,
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "status": "archived",
+      "reviewStatus": "pose_candidate",
+      "notes": "Four idle poses plus bank studies. The attempted leg correction did not change support reliably; only selected poses may be used with the separate opposite-foot source.",
+      "sha256": "7e4624d546ab0cbd6f0bb7c5281368bf4a42204dfc4981dab46f58caea20c277"
+    },
+    {
+      "file": "source-opposite-steps.png",
+      "taskId": "a84e9f5e-7e1d-4a61-b91e-f1274619cd97",
+      "expectedBytes": 3289915,
+      "dimensions": [
+        2560,
+        1920
+      ],
+      "status": "archived",
+      "reviewStatus": "pose_candidate",
+      "notes": "Focused four-pose source supplies the opposite support foot for each bank. Needs scale, anchor and motion review alongside the main source.",
+      "sha256": "325af6a581a17006ed5d1c3489eeb0bf00e6e0ba5206b88d3f787d79faa9722c"
+    }
+  ]
+}

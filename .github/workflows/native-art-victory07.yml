@@ -1,0 +1,73 @@
+name: Process directly uploaded Victory 07 art
+on:
+  push:
+    branches: ['art/storybook-bible-v1-20260928']
+    paths:
+      - 'art/01-characters/hulk/victory-reviews/v01/sources/hulk-victory-v01-source.png'
+permissions:
+  contents: write
+concurrency:
+  group: jamesy-native-victory07
+  cancel-in-progress: false
+jobs:
+  archive:
+    if: github.ref == 'refs/heads/art/storybook-bible-v1-20260928'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: art/storybook-bible-v1-20260928
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install local art-processing dependencies
+        run: python -m pip install --disable-pip-version-check Pillow==12.3.0 numpy==2.3.5 scipy==1.17.0
+      - name: Verify source and build candidate exports without an image service
+        run: |
+          python production/native-art/victory07/export.py --source art/01-characters/hulk/victory-reviews/v01/sources/hulk-victory-v01-source.png --out art/01-characters/hulk/victory-reviews/v01/review-export
+          cp production/native-art/victory07/review.html art/01-characters/hulk/victory-reviews/v01/review-export/review.html
+          python production/native-art/victory07/check.py art/01-characters/hulk/victory-reviews/v01
+      - name: Record only the verified archive result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('art/01-characters/hulk/victory-reviews/v01/SOURCE.json')
+          data=json.loads(p.read_text())
+          data['repositoryBinaryStatus']='archived'
+          data['archiveMethod']='Direct source upload plus local processing; no image service'
+          data['productionReady']=False
+          p.write_text(json.dumps(data,indent=2)+'\n')
+          progress=Path('art/PROGRESS.md')
+          text=progress.read_text()
+          start='## Archive boundary — important\n'
+          end='## Selected Hulk drawing schedule\n'
+          if start in text and end in text:
+              a=text.index(start);b=text.index(end,a)
+              text=text[:a]+start+'\nVictory 07 source bytes and derived image exports are now archived on the art branch. The source checksum and file checks passed. There are 64 selected Hulk drawing candidates across twelve clips; none is automatically production-approved. See [SOURCE.json](01-characters/hulk/victory-reviews/v01/SOURCE.json) and the batch review notes.\n\n'+text[b:]
+              progress.write_text(text)
+          PY
+          python production/tools/prepare_art.py
+      - name: Refresh unified review now that Victory is present
+        run: |
+          python production/unified08/export.py --root . --out art/01-characters/hulk/unified-review/v01 --template production/unified08/viewer.html --link-existing
+          node production/unified08/check.mjs art/01-characters/hulk/unified-review/v01
+      - name: Commit the art archive only
+        run: |
+          git add -- art/01-characters/hulk/victory-reviews/v01 art/PROGRESS.md art/inventory.json art/gallery.html
+          DIR=art/01-characters/hulk/unified-review/v01
+          git add -- "$DIR/review.html" "$DIR/manifest.json" "$DIR/manifest.js" "$DIR/file-checks.json" "$DIR/playback-logic-checks.json" "$DIR/Hulk-Jamesy-All-Clips.jpg" "$DIR/Hulk-Jamesy-All-Drawings.jpg"
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Archive directly uploaded Victory 07 and refresh the complete Hulk review'
+            git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jamesy-victory07-review
+          path: |
+            art/01-characters/hulk/victory-reviews/v01/
+            art/01-characters/hulk/unified-review/v01/
+          retention-days: 14
