@@ -36,6 +36,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Test gameplay, account forms and actual app artwork
         run: npm run test:browser
+      - name: Test the published Emerald half-pipe and art review
+        run: npm run preview:test
       - name: Prepare scoped offline shell
         run: npm run offline
       - name: Keep verification, rules and dependency lock
@@ -45,6 +47,7 @@ jobs:
           name: james-racer-verification
           path: |
             dist/qa/
+            test-results/emerald/
             dist/assets/*.webp
             dist/assets/*.jpg
             firebase-database.rules.json
