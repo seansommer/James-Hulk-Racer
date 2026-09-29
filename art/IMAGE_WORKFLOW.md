@@ -2,16 +2,18 @@
 
 ## Current owner direction
 
-Use the built-in ChatGPT image generator for new character artwork. Do not use Runway unnecessarily for image generation. Do not default to Runway for transfers either. Use another paid generation/editing service only when the owner explicitly requests it for a specific task.
+Use the built-in image generator for new artwork. Do not use Runway for generation or transfers. Another paid service requires an explicit task-specific request. Reuse a suitable existing image rather than generating a duplicate.
 
-Reuse a suitable image already attached or archived instead of generating a duplicate. Preserve original source bytes, record checksums and distinguish source drawings, processed review exports, approved production art and live integration.
+**Current scope is Hulk first.** Make Emerald objects and the first environment kit, then test gameplay before the other four costumes. This supersedes the older instruction to finish all characters first. See [Art Bible v1.3](../production/art-bible-v1/ART_BIBLE_v1.3.md).
 
-Continue in groups: characters first, then items, environments, interface and effects. The existing art bible v1.2 and permanent J-emblem identity remain authoritative. Costumes are not player accounts.
+## Source discipline
+
+Preserve original source bytes and hashes. Distinguish design candidates, processed review exports, approved source art and production-ready assets. Contact sheets, source copies and multiple export resolutions do not add animation counts. Pose or object approval is not automatic motion, collision or device approval.
 
 ## Direct native-image archive
 
-Generated files can be uploaded directly to the art branch without going through an image service. The Victory 07 processing workflow watches its exact source PNG path, verifies the expected source checksum, creates local transparent review exports and commits the art-only result. It never generates an image or contacts Runway.
+Use direct GitHub source uploads or a supported binary write, without routing through an image service. Existing Victory 07 processing watches its exact source path, verifies its checksum and builds review exports locally.
 
-When this conversation's GitHub connector has not transferred image bytes, record the batch as pending_direct_upload. A local file, planned path, source hash or text commit is not evidence that the source image has reached GitHub. Never mark the archive complete until real repository files are present.
+When image bytes have not been transferred, record `pending_direct_upload`. A planned repository path, local file, source hash, workflow definition or text commit is not proof of an archive. Report `archived` only after the real image exists at the intended branch/path with matching bytes.
 
-The next batch is documented in `01-characters/hulk/victory-reviews/v01/README.md`.
+Keep original master, review exports and file manifest together. Do not create a new archive workflow per request unless needed; avoid repeatedly regenerating unrelated old art. The current art library stays separate from live game/account code and deployments.

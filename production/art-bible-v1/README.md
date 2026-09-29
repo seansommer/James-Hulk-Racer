@@ -1,26 +1,22 @@
-# Jamesy art production — current edition v1.2
+# Jamesy art production — current scope v1.3
 
-Start with **[ART_BIBLE_v1.2.md](ART_BIBLE_v1.2.md)**. The generated **[PDF](Jamesy-Art-Bible-v1.2.pdf)** is a readable companion built from the same source; it appears after the art-library archival workflow succeeds.
+Start with **[ART_BIBLE_v1.3.md](ART_BIBLE_v1.3.md)**: **Hulk first, objects and Emerald environment next, then gameplay testing.** The latest owner instruction pauses the other four characters. It supersedes older directions to finish all characters and every art group before assembly.
 
-## The latest production decision
+The retained identity/material/export reference is [ART_BIBLE_v1.2.md](ART_BIBLE_v1.2.md). Its [PDF](Jamesy-Art-Bible-v1.2.pdf) is historical for production order; it has not been re-exported with this scope change. J chest/belt branding and established costume references remain valid.
 
-Complete **all character poses and sprite packages first**, then **items**, then **environments**, **interface artwork** and **effects**. Assemble and test the game after those art groups are ready. Review motion inside the character group before expanding defects into other poses. Do not start item generation while character work is still pending.
+## Immediate work
 
-The roster names are Hulk Jamesy, Spider Jamesy, Captain Jamesy, Iron Jamesy and Super Jamesy. All chest and belt emblems use J; Captain Jamesy's shield uses J too. No age numeral appears in new character branding.
+Five Emerald objects together → small layered park kit → isolated Hulk/park practice preview → gameplay-led art corrections. Start with one world; do not create all three item/world families before testing. Spider, Captain, Iron and Super Jamesy remain deferred with their references preserved.
 
 ## Resume here
 
-- [Art library and gallery](../../art/README.md)
-- [Current progress and next sub-batch](../../art/PROGRESS.md)
-- [Hulk animation schedule](animations.json): 12 clips, 64 unique planned frames.
-- [Real file inventory](../../art/inventory.json): populated from archived files, not from a planned list.
+- [Current progress](../../art/PROGRESS.md)
+- [Hulk-first slice plan](../../art/hulk-first-slice.json)
+- [Emerald objects](../../art/02-items/park/BRIEF.md)
+- [Emerald environment](../../art/03-environments/park/BRIEF.md)
+- [Unified Hulk review](../../art/01-characters/hulk/unified-review/v01/README.md)
+- [Actual file inventory](../../art/inventory.json)
 
-The first new deliverable is a Hulk pose-review board, followed by an eight-frame rear-run proof. A board is a candidate, not a transparent sprite atlas. No new production-ready animation is claimed by this documentation update.
+## Boundaries
 
-## Historical documents
-
-[ART_BIBLE.md](ART_BIBLE.md), [EMBLEM_REVISION_v1.1.md](EMBLEM_REVISION_v1.1.md) and [PRODUCTION_PLAN.md](PRODUCTION_PLAN.md) are preserved as historical editorial snapshots. v1.2 supersedes their conflicting names, numeral-emblem directions and production order. Earlier external companion-kit or tool-test claims are not evidence that those files are in this repository.
-
-## Protected boundary
-
-The art branch does not alter the live renderer, account source, Firebase rules, player roster or scores. Preserve the v1.3 email/nickname Realtime Database design and Sean as the sole initial Master. The archive workflow writes only artwork, its inventory/gallery and the bible PDF; it does not publish GitHub Pages.
+Candidate art may be tested in an explicitly unranked, isolated preview. Do not call a prototype a production release or fabricate missing assets. Source binaries must be verified in GitHub before archival is reported complete. Keep existing game/account code, Firebase rules, roster, scores and main deployment unchanged until a separate integration pass. The preview must not submit ranked records.

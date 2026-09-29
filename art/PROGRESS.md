@@ -1,41 +1,31 @@
-# Resume Jamesy art production — Unified Review 08
+# Resume Jamesy production — Hulk-first scope
 
-## Latest owner direction
+## Latest owner instruction — overrides prior sequencing
 
-Continue character artwork in groups and use the built-in image generator when new images are needed. Reuse suitable existing art. The owner likes Victory 07's visual direction. No new image-generation or Runway call was made in Unified Review 08.
+Start with Jamesy the Hulk only, test gameplay before the remaining characters, and move to objects/environments now. **Spider, Captain, Iron and Super Jamesy are paused.** Preserve their references; do not generate their poses or sprite packages yet.
 
-## Current stage
+Read [Art Bible v1.3](../production/art-bible-v1/ART_BIBLE_v1.3.md). It supersedes v1.2's all-characters-before-items requirement. Built-in image generation only; no Runway generation or transfers.
 
-**Group 1 — Characters. The complete 64-drawing Hulk first pass has been assembled locally into a twelve-clip consistency review.** Existing movement, actions, states and victory were compared at a shared canvas size and ground guide. These are selected candidates, not final animation or a deployed renderer.
+## What already exists
 
-See [Unified Review 08](01-characters/hulk/unified-review/v01/README.md) and its [specific findings](01-characters/hulk/unified-review/v01/REVIEW.md). The new utilities preserve existing PNG pixels and make size/camera differences visible rather than hiding them with per-frame fits.
+The complete conversation review contains 64 selected Hulk drawings across twelve clips. The latest verified GitHub snapshot contains 56; eight locally supplied Victory 07 drawings await direct source archival. See [Victory source metadata](01-characters/hulk/victory-reviews/v01/SOURCE.json) before changing that archive claim.
 
-## Archive boundary — important
+[Unified Review 08](01-characters/hulk/unified-review/v01/README.md) preserves the previous art and documents menu/victory size, rear/action camera, cape, hair, support-foot and loop-seam issues. These remain open. The owner liked the victory direction; that is not blanket runtime approval. Use gameplay tests to prioritize fixes rather than blocking all object production on perfect animation.
 
-The GitHub checkout still contains the earlier **56 selected drawings**. The eight Victory 07 drawings and their original source are supplied in the conversation review package but await the previously described direct source upload. See [SOURCE.json](01-characters/hulk/victory-reviews/v01/SOURCE.json). A pending source is not an archived source.
+## Immediate art sub-batch
 
-The GitHub-generated unified viewer uses only files actually present: 56 now, 64 once the victory source is archived and exports rebuilt. It shows an explicit missing clip instead of fabricated artwork. The separate conversation package contains all 64 for review now.
+**Emerald objects:** power gem, golden star, mossy rock, dark floating bumper and violet goo, as five isolated static design candidates in one consistent family. See [the brief](02-items/park/BRIEF.md). No new item source is counted as archived by this plan-only commit.
 
-## Selected Hulk drawing schedule
+**Next:** the small [Emerald environment kit](03-environments/park/BRIEF.md): backdrop, canopy layer, tree/shrub props and gateway. Then an isolated Hulk/park practice preview with current responsive controls. Existing track geometry and minimal procedural feedback can be reused; full UI/effects art is not a blocker.
 
-Rear idle 4; run 8; left bank 4; right bank 4; jump 6; land 3; Smash 8; Thunderclap 6; power-up 6; bump 3; victory 8; menu idle 4. Total: 64 candidates across twelve clips. Duplicate resolutions, older revisions, atlases and review composites do not add unique frames.
+Only `park` / 0 is active in the first slice. Crystal and Volcanic art kits wait until the first gameplay test. Their existing world IDs and the overall three-world goal remain unchanged.
 
-## What the combined pass found
+## First test and archive boundaries
 
-1. Menu idle is visibly smaller than victory at the same canvas scale: first-frame visible heights are 213 and 243 pixels using alpha >=16. Reconcile landmarks rather than fitting every drawing separately.
-2. Thunderclap's rear-three-quarter camera does not match the straight-rear run. Plan an intentional turn-in/turn-out or a camera-matched redraw.
-3. Rear idle, run and banks need a common hair/shoulder/cape landmark pass and connected support-foot timing.
+New images are candidates, not automatically approved or integrated. Preserve originals, verify alpha, record pivot and collision-footprint metadata, and archive exact bytes. A generated scene is not already a separated environment layer set. Record local/pending/archived states honestly.
 
-The existing jump, Smash, power-up, bump, matte and loop-seam review notes remain open. The victory visual direction is accepted for continuing; neither file checks nor positive feedback automatically validates runtime motion.
+The preview may display candidate sprites but **must not send ranked score receipts or modify player data**. Victory archival is not a reason to postpone movement tests. Gameplay integration and browser/device tests have not been executed by this documentation change.
 
-## Verification
+## Protected systems
 
-The full local review checks 64 real 256x320 RGBA images and byte-identical copies. Ten Node checks executed the viewer's timing/control code using a minimal DOM stub. This does not test browser rendering or mobile layout. Managed Chromium blocked file navigation before any browser assertions; no policy was disabled. Contact boards were inspected separately. Physical iPhone Safari remains unverified.
-
-## Next exact character work
-
-Reconcile the menu-to-victory size and the rear/action handoffs, then start Spider Jamesy's identity/pose proof using the established five-costume lineup and the same permanent J. Continue the remaining character families before items, environments, interface artwork, effects and assembly.
-
-## Protected boundary
-
-No live-game source, Firebase rules, account setup, roster, saved score, Player Card or Hall of Fame data is changed. Keep the v1.3 email/nickname Realtime Database design with Sean as sole initial Master. Costumes are not accounts. The art branch does not deploy main, and no Google Drive move is needed for this review.
+Do not alter production Firebase rules, v1.3 email/nickname login, `jamesV1`, Sean's sole initial Master account, Player Cards, Hall of Fame, saved scores or main deployment. No other costume is a new player. GitHub remains the preferred art archive; no Google Drive move is requested.
