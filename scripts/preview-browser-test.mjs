@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createServer} from 'vite';
+import {chromium} from 'playwright';
+
+const server=await createServer({configFile:'vite.preview.config.js',server:{port:4174,strictPort:true}});await server.listen();
+const browser=await chromium.launch({headless:true,...(process.env.JAMESY_CHROMIUM_PATH?{executablePath:process.env.JAMESY_CHROMIUM_PATH}:{}),args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader','--disable-dev-shm-usage']});
+const errors=[],external=[];await mkdir('test-results/emerald',{recursive:true});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith('http://127.0.0.1:4174/'))external.push(r.url());});
+ await page.goto('http://127.0.0.1:4174/preview/?qa=1');await page.waitForFunction(()=>window.__jamesyPreview,{timeout:30000});
+ await page.screenshot({path:'test-results/emerald/home.png'});await page.locator('#start').click();await page.waitForFunction(()=>window.__jamesyPreview.engine.state==='running');
+ await page.keyboard.down('ArrowLeft');await page.waitForTimeout(350);await page.keyboard.up('ArrowLeft');assert((await page.evaluate(()=>window.__jamesyPreview.engine.theta))<-.1,'Keyboard steering must move onto the left curve');
+ await page.keyboard.press('Space');await page.waitForTimeout(120);assert((await page.evaluate(()=>window.__jamesyPreview.engine.run.jump))>0,'Jump input must lift the hero');
+ await page.locator('#pause').click();const distance=await page.evaluate(()=>window.__jamesyPreview.engine.run.distance);await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>window.__jamesyPreview.engine.run.distance),distance,'Pause freezes simulation');await page.locator('#resume').click();
+ const rockId=await page.evaluate(()=>{const e=window.__jamesyPreview.engine,r=e.course.find(i=>i.kind==='rock'&&!i.done&&i.s>e.run.distance+12);e.run.distance=r.s-15;e.run.power=80;e.theta=e.targetTheta=r.theta;return r.id;});await page.waitForTimeout(120);await page.keyboard.press('x');await page.waitForTimeout(90);assert(await page.evaluate(id=>window.__jamesyPreview.engine.course.find(i=>i.id===id).done,rockId),'Smash clears the matching obstacle');assert(await page.evaluate(id=>window.__jamesyPreview.engine.itemSprites.find(p=>p.item.id===id).doneAt!==null,rockId),'Rock destruction animation starts');
+ await page.evaluate(()=>{const e=window.__jamesyPreview.engine;e.run.distance=115;e.run.power=76;e.theta=e.targetTheta=0;e.run.jumpTime=0;e.run.jump=0;});await page.waitForTimeout(150);await page.screenshot({path:'test-results/emerald/game.png'});
+ await page.locator('#library-button').click();assert.equal(await page.locator('.motion-card').count(),6);await page.locator('#review-background').selectOption('dark');await page.locator('#play-motion').click();await page.locator('[data-frame="2"]').fill('4');await page.waitForFunction(()=>document.getElementById('frame-2').textContent==='5');await page.screenshot({path:'test-results/emerald/library.png'});await page.locator('#close-library').click();assert.equal(await page.evaluate(()=>window.__jamesyPreview.engine.state),'running');
+ await page.evaluate(()=>{const e=window.__jamesyPreview.engine;e.run.distance=e.level.length-.1;});await page.waitForFunction(()=>window.__jamesyPreview.engine.state==='finished');assert(await page.locator('#results').isVisible());await page.locator('#retry').click();assert.equal(await page.evaluate(()=>window.__jamesyPreview.engine.run.score),0,'Retry clears practice score');assert.equal(await page.evaluate(()=>window.__jamesyPreview.engine.course.filter(i=>i.done).length),0,'Retry restores collectibles and obstacles');
+ await page.setViewportSize({width:390,height:844});await page.waitForFunction(()=>window.__jamesyPreview.engine.state==='running');const before=await page.evaluate(()=>window.__jamesyPreview.engine.theta);await page.locator('#right').dispatchEvent('pointerdown',{pointerId:1,pointerType:'touch'});await page.waitForTimeout(250);await page.locator('#right').dispatchEvent('pointerup',{pointerId:1,pointerType:'touch'});assert((await page.evaluate(()=>window.__jamesyPreview.engine.theta))>before,'Touch steering moves the hero');await page.screenshot({path:'test-results/emerald/mobile.png'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'Mobile layout fits the viewport');
+ assert.deepEqual(errors,[],'No browser exceptions');assert.deepEqual(external,[],'Practice scene has no external service requests');assert.equal(await page.evaluate(()=>localStorage.length),0,'Practice scene does not write account or score storage');
+ await page.close();
+ const portable=await browser.newPage({viewport:{width:390,height:844}}),portableErrors=[],portableRequests=[];
+ portable.on('pageerror',e=>portableErrors.push(e.message));portable.on('request',r=>{if(/^https?:/.test(r.url()))portableRequests.push(r.url());});
+ await portable.goto(pathToFileURL(resolve('releases/Jamesy-Emerald-Preview.html')).href+'?qa=1');await portable.waitForFunction(()=>window.__jamesyPreview);
+ await portable.locator('#start').click();await portable.waitForFunction(()=>window.__jamesyPreview.engine.state==='running');await portable.locator('#library-button').click();assert.equal(await portable.locator('.motion-card').count(),6,'The portable file includes the motion library');assert.deepEqual(portableErrors,[],'Portable build has no browser errors');assert.deepEqual(portableRequests,[],'Portable build requires no network');
+ console.log('Emerald preview passed: load, keyboard/touch movement, jump, pause/resume, smash animation, gallery controls, finish, retry, mobile layout, no external/account writes, and direct offline HTML playback.');
+}finally{await browser.close();await server.close();}

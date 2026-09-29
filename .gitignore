@@ -11,3 +11,6 @@ test-results/
 *Personalized*
 *personalized*
 private-rules/
+
+dist-preview/
+releases/

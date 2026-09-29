@@ -1,0 +1,2 @@
+import {defineConfig} from 'vite';
+export default defineConfig({base:'./',publicDir:'preview-public',build:{outDir:'dist-preview',target:'es2022',modulePreload:false,cssCodeSplit:false,chunkSizeWarningLimit:1000,rolldownOptions:{input:'preview/index.html'}},server:{host:'127.0.0.1',port:4174,strictPort:true,watch:{ignored:['**/dist/**','**/dist-preview/**','**/releases/**','**/test-results/**']}}});

@@ -1,1 +1,35 @@
-{"name":"jamesy-hulk-racer","version":"1.3.0","private":true,"type":"module","scripts":{"dev":"vite --host 127.0.0.1","rules:build":"node scripts/database-rules.mjs","build":"vite build && node scripts/database-rules.mjs --publish","test":"node --test tests/logic.test.js tests/profile.test.js tests/center-model.test.js tests/center-profile.test.js tests/identity.test.js","test:rules":"npm run rules:build && firebase emulators:exec --only database --project demo-james-game-center \"node --test --test-concurrency=1 tests/rtdb.test.js\"","test:database":"npm run test:rules","test:browser":"node scripts/browser-test.mjs && node scripts/center-browser-test.mjs","test:center":"node scripts/center-browser-test.mjs","offline":"node scripts/offline.mjs"},"dependencies":{"firebase":"12.19.0","three":"0.170.0"},"devDependencies":{"@firebase/rules-unit-testing":"5.0.2","firebase-tools":"15.31.0","playwright":"1.63.0","sharp":"0.35.4","vite":"8.3.1"},"engines":{"node":">=22.12.0"}}
+{
+  "name": "jamesy-hulk-racer",
+  "version": "1.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "rules:build": "node scripts/database-rules.mjs",
+    "build": "vite build && node scripts/database-rules.mjs --publish",
+    "test": "node --test tests/logic.test.js tests/profile.test.js tests/center-model.test.js tests/center-profile.test.js tests/identity.test.js",
+    "test:rules": "npm run rules:build && firebase emulators:exec --only database --project demo-james-game-center \"node --test --test-concurrency=1 tests/rtdb.test.js\"",
+    "test:database": "npm run test:rules",
+    "test:browser": "node scripts/browser-test.mjs && node scripts/center-browser-test.mjs",
+    "test:center": "node scripts/center-browser-test.mjs",
+    "offline": "node scripts/offline.mjs",
+    "preview:dev": "vite --config vite.preview.config.js",
+    "preview:build": "vite build --config vite.preview.config.js",
+    "preview:package": "node scripts/package-emerald-preview.mjs",
+    "preview:test": "node scripts/preview-browser-test.mjs"
+  },
+  "dependencies": {
+    "firebase": "12.19.0",
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "5.0.2",
+    "firebase-tools": "15.31.0",
+    "playwright": "1.63.0",
+    "sharp": "0.35.4",
+    "vite": "8.3.1"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
