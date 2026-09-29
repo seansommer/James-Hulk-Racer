@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "availableFrames": 56,
+  "testEnvironment": "Node VM plus minimal DOM stub; NOT a browser rendering, layout, image-decoding or device test",
+  "checks": [
+    "Twelve clips start paused",
+    "Run advances under actual viewer timing code",
+    "Available one-shots stop on final pose",
+    "Pause preserves all frame indices",
+    "Reset restores frame one",
+    "Thumbnail selection binds the correct source frame",
+    "Backdrop, size and onion state propagate",
+    "Transition comparison toggles the reference",
+    "Playback speed control changes time multiplier",
+    "No script-state errors; absent clips stay paused"
+  ]
+}

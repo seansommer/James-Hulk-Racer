@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "checkedFrames": 56,
+  "unchangedCopies": 0,
+  "referencedOriginals": 56,
+  "dimension": [
+    256,
+    320
+  ],
+  "alpha": "All frames are RGBA with distinct foreground and transparency",
+  "notTested": [
+    "Animation approval",
+    "Camera / hitbox alignment",
+    "Physical iPhone Safari"
+  ],
+  "warnings": [
+    "Victory is missing from the GitHub checkout; not counted as archived."
+  ],
+  "localSupplement": null
+}
