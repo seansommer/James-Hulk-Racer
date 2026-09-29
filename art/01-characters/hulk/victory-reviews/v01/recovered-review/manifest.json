@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "productionReady": false,
+  "provenance": "Exact embedded PNG bytes recovered from the owner-saved Hulk-Jamesy-Review.html; no regeneration or resampling.",
+  "reviewHtmlSha256": "12adbc22fa3c0611ea3d815dfd52bc68d70c710da8a57d453c8685e6d15fa82b",
+  "originalSourceSheetArchived": false,
+  "note": "These are review exports only. The original source sheet listed in ../SOURCE.json is still missing.",
+  "frames": [
+    {
+      "file": "victory-0.png",
+      "sha256": "a2879d9ede435e3abae759406043480de3dc7d19a9c1547d7c7a480fe1202a0b",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-1.png",
+      "sha256": "64a537bd1c49c69a864b425134f04d573298b3706c266b5d7b966480a595534f",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-2.png",
+      "sha256": "da38667b1b64ed2522c4a9503491f738f53794df7733d571b809000789b0c910",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-3.png",
+      "sha256": "fb3368e9b33de2bf78965f31211b79acc00c22e2780929b2c76a71824663e76f",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-4.png",
+      "sha256": "60336ed7314046b1f5e1cfd2632fa66a43022e437a1026556f09a82d1595fba9",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-5.png",
+      "sha256": "b21156d03ef5549eb64e6beba363a8a48e8e76e2a8790210ffff419c6a4127ee",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-6.png",
+      "sha256": "1d75c077e4b268ca48ffd00b6cc63cb89efd07c1446ce7afefc071e4c5851096",
+      "size": [
+        256,
+        320
+      ]
+    },
+    {
+      "file": "victory-7.png",
+      "sha256": "8187b72e1a38607b418161f9de257e7f6a4fa6bd17b2f341c1b87dd82a62f110",
+      "size": [
+        256,
+        320
+      ]
+    }
+  ]
+}

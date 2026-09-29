@@ -1,3 +1,19 @@
+# Current checkpoint — detailed Emerald motion and playable review
+
+The owner now prioritizes a detailed art library, separately animated objects, and the curved half-pipe in the concept art. The current pass has **10 detailed source designs, 41 selected new animation drawings in six clips, registered exports, and an isolated playable preview**. See [the current library](02-items/park/v02/README.md) and `feature/emerald-playable-preview`. Main deployment and account systems remain protected.
+
+Original sources, exact prompts, hashes, pivots and rejected motion poses are archived. Tree clipping and branch drift were caught; only selected poses are used. New art is candidate artwork pending owner review. The preview reuses the existing simulation on real half-pipe geometry and passed browser checks for controls, actions, completion, replay and absence of external/account writes. Its phone layout was checked by browser emulation; actual-device performance is still pending.
+
+Eight exact victory review PNGs have also been recovered into `01-characters/hulk/victory-reviews/v01/recovered-review`. All 64 selected drawings now have a repository export copy. The victory ORIGINAL SOURCE SHEET remains missing; recovery of review PNGs does not close that source-archive gap.
+
+All new image work uses native image generation. The latest owner instruction reserves Runway for future video cutscenes, superseding older blanket wording for that later task.
+
+Next: owner motion/gameplay review, smoother animation and character registration, richer track surfaces/contact lighting, then actual-phone performance. Remaining costumes/worlds stay deferred.
+
+---
+
+# Historical checkpoint (before the current pass)
+
 # Resume Jamesy production — Hulk-first scope
 
 ## Latest owner instruction — overrides prior sequencing
