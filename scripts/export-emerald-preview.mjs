@@ -13,7 +13,7 @@ for(const c of hero.clips){
  if(c.id==='victory')continue;const size=[384,480],pad=4,cols=Math.min(4,c.frames.length),rows=Math.ceil(c.frames.length/cols),width=cols*(size[0]+pad*2),height=rows*(size[1]+pad*2),layers=[],frames=[];
  for(let i=0;i<c.frames.length;i++){
   const f=c.frames[i];if(!f.sourcePath)throw new Error(`Missing archived source for ${c.id}`);const source=f.sourcePath.replace('frames-256','frames-512');await access(path.join(artRoot,source));const b=await readFile(path.join(artRoot,source));const x=i%cols*(size[0]+pad*2)+pad,y=Math.floor(i/cols)*(size[1]+pad*2)+pad;
-  layers.push({input:await sharp(b).resize(...size).png().toBuffer(),left:x,top:y});frames.push({rect:[x,y,...size],source,sourceSha256:createHash('sha256').update(b).digest('hex')});
+  const resized=await sharp(b).resize(...size).png().toBuffer();layers.push({input:resized,left:x,top:y});if(c.id==='menu_idle'&&i===0)await writeFile(`${out}/media/portrait.png`,resized);frames.push({rect:[x,y,...size],source,sourceSha256:createHash('sha256').update(b).digest('hex')});
  }
  const file=`media/hero-${c.id}.png`;await sharp({create:{width,height,channels:4,background:{r:0,g:0,b:0,alpha:0}}}).composite(layers).png().toFile(`${out}/${file}`);
  result.hero.push({id:c.id,label:c.label,fps:c.fps,loop:c.loop,canvas:size,pivot:hero.pivot,atlasSize:[width,height],file,frames,sequence:frames.map((_,i)=>i),productionReady:false,note:c.note});

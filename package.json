@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "rules:build": "node scripts/database-rules.mjs",
-    "build": "vite build && node scripts/database-rules.mjs --publish",
+    "build": "vite build && node scripts/database-rules.mjs --publish && npm run preview:build && node scripts/publish-emerald-preview.mjs",
     "test": "node --test tests/logic.test.js tests/profile.test.js tests/center-model.test.js tests/center-profile.test.js tests/identity.test.js",
     "test:rules": "npm run rules:build && firebase emulators:exec --only database --project demo-james-game-center \"node --test --test-concurrency=1 tests/rtdb.test.js\"",
     "test:database": "npm run test:rules",

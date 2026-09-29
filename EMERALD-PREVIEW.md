@@ -1,6 +1,6 @@
-# Jamesy · Emerald Park playable art preview
+# Jamesy · Emerald Park game
 
-Use the separately delivered `Jamesy-Emerald-Preview.html`, or build it with the commands below, then open it in a current browser with WebGL support. The file contains the game and artwork; no account, install, or web server is needed. On phones, download and open the file in a browser, rather than a file-manager preview. A hosted phone playtest remains the next delivery step.
+Launch the illustrated Emerald Park game from the existing [Game Center](https://seansommer.github.io/James-Game-Center/). Its direct route is [Emerald Park](https://seansommer.github.io/James-Hulk-Racer/emerald/). Updates and browser verification run through GitHub Actions before Pages deployment. No file download is required.
 
 The **Art & motion** button opens animation playback, speed, frame scrubbing, light/dark/checkerboard backgrounds, and the detailed asset collection.
 
@@ -13,7 +13,7 @@ The **Art & motion** button opens animation playback, speed, frame scrubbing, li
 - Ten original detailed Emerald asset designs, with transparent scenery and an opaque park backdrop.
 - Keyboard and touch controls, synthesized sound, pause/resume, finish/retry, and reduced background motion.
 
-This practice entry does not import Firebase, account, profile, leaderboard, or score-submission code. It makes no external requests and writes no account or score storage. The main game entry and deployment workflow are unchanged. Preview artwork lives under `preview-public` and is excluded from the main app build.
+This practice entry does not import Firebase, account, profile, leaderboard, or score-submission code. It makes no external requests and writes no account or score storage. The existing game remains at the root. The Pages build now adds the illustrated game at `/emerald/` and verifies that published route before deployment. Preview artwork lives under `preview-public`.
 
 ## Art status
 
@@ -36,8 +36,7 @@ The first tree sheet clipped the leaves. The second sheet's lower row changed br
 npm install
 npm run preview:dev
 # Open http://127.0.0.1:4174/preview/
-npm run preview:build
-npm run preview:package
+npm run build
 npx playwright install chromium
 npm run preview:test
 ```

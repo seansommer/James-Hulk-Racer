@@ -1,6 +1,6 @@
 import * as T from 'three';
 // Public preview files are siblings of this entry. The portable build supplies data URLs.
-export const assetURL=file=>window.JAMESY_FILES?.[file]||new URL(`../preview/${file}`,location.href).href;
+export const assetURL=file=>window.JAMESY_FILES?.[file]||new URL(`./${file}`,location.href).href;
 export async function loadArt(){
  const response=await fetch(assetURL('manifest.json'));if(!response.ok)throw new Error('The Emerald art library could not load.');
  const data=await response.json(),loader=new T.TextureLoader(),cache=new Map();
