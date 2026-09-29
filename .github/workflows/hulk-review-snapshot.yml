@@ -1,0 +1,32 @@
+name: Collect Hulk review snapshot
+on:
+  push:
+    branches: ['art/storybook-bible-v1-20260928']
+    paths: ['.github/workflows/hulk-review-snapshot.yml']
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    if: github.ref == 'refs/heads/art/storybook-bible-v1-20260928'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Record the exact source revision
+        run: git rev-parse HEAD > review-snapshot-commit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hulk-unified-review-inputs
+          path: |
+            art/01-characters/hulk/
+            art/00-reference/
+            art/PROGRESS.md
+            art/inventory.json
+            production/tools/
+            production/art-bible-v1/
+            .github/workflows/victory07.yml
+            review-snapshot-commit.txt
+          if-no-files-found: error
+          retention-days: 14
