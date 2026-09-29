@@ -49,17 +49,25 @@ jobs:
               progress.write_text(text)
           PY
           python production/tools/prepare_art.py
+      - name: Refresh unified review now that Victory is present
+        run: |
+          python production/unified08/export.py --root . --out art/01-characters/hulk/unified-review/v01 --template production/unified08/viewer.html --link-existing
+          node production/unified08/check.mjs art/01-characters/hulk/unified-review/v01
       - name: Commit the art archive only
         run: |
           git add -- art/01-characters/hulk/victory-reviews/v01 art/PROGRESS.md art/inventory.json art/gallery.html
+          DIR=art/01-characters/hulk/unified-review/v01
+          git add -- "$DIR/review.html" "$DIR/manifest.json" "$DIR/manifest.js" "$DIR/file-checks.json" "$DIR/playback-logic-checks.json" "$DIR/Hulk-Jamesy-All-Clips.jpg" "$DIR/Hulk-Jamesy-All-Drawings.jpg"
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Archive directly uploaded Victory 07 source and review sprites'
+            git commit -m 'Archive directly uploaded Victory 07 and refresh the complete Hulk review'
             git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
           fi
       - uses: actions/upload-artifact@v4
         with:
           name: jamesy-victory07-review
-          path: art/01-characters/hulk/victory-reviews/v01/
+          path: |
+            art/01-characters/hulk/victory-reviews/v01/
+            art/01-characters/hulk/unified-review/v01/
           retention-days: 14

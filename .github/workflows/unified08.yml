@@ -1,0 +1,46 @@
+name: Build Hulk unified art review
+on:
+  push:
+    branches: ['art/storybook-bible-v1-20260928']
+    paths:
+      - 'production/unified08/**'
+      - '.github/workflows/unified08.yml'
+permissions:
+  contents: write
+concurrency:
+  group: jamesy-native-victory07
+  cancel-in-progress: false
+jobs:
+  review:
+    if: github.ref == 'refs/heads/art/storybook-bible-v1-20260928'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: art/storybook-bible-v1-20260928
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install image assembly dependency
+        run: python -m pip install --disable-pip-version-check Pillow==12.3.0
+      - name: Assemble only existing art and test playback code
+        run: |
+          python production/unified08/export.py --root . --out art/01-characters/hulk/unified-review/v01 --template production/unified08/viewer.html --link-existing
+          node production/unified08/check.mjs art/01-characters/hulk/unified-review/v01
+      - name: Save review metadata and composites without duplicating source PNGs
+        run: |
+          DIR=art/01-characters/hulk/unified-review/v01
+          git add -- "$DIR/review.html" "$DIR/manifest.json" "$DIR/manifest.js" "$DIR/file-checks.json" "$DIR/playback-logic-checks.json" "$DIR/Hulk-Jamesy-All-Clips.jpg" "$DIR/Hulk-Jamesy-All-Drawings.jpg"
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Save combined Hulk review with explicit available and pending artwork counts'
+            git push origin HEAD:refs/heads/art/storybook-bible-v1-20260928
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hulk-unified-review
+          path: art/01-characters/hulk/unified-review/v01/
+          if-no-files-found: error
+          retention-days: 14
