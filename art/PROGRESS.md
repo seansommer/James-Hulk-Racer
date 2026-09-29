@@ -1,14 +1,16 @@
-# Current checkpoint — detailed Emerald motion and playable review
+# Current checkpoint — GitHub and the live Emerald game
 
-The owner now prioritizes a detailed art library, separately animated objects, and the curved half-pipe in the concept art. The current pass has **10 detailed source designs, 41 selected new animation drawings in six clips, registered exports, and an isolated playable preview**. See [the current library](02-items/park/v02/README.md) and `feature/emerald-playable-preview`. Main deployment and account systems remain protected.
+The owner has authorized continuing development directly through GitHub and the existing [Game Center](https://seansommer.github.io/James-Game-Center/). **All game code, artwork, source sheets, and animation exports belong in GitHub.** Publish each playable advance through the Game Center; no separate manual preview approval is required. This supersedes the historical main-deployment restriction below. Account systems and production score behavior remain unchanged.
 
-Original sources, exact prompts, hashes, pivots and rejected motion poses are archived. Tree clipping and branch drift were caught; only selected poses are used. New art is candidate artwork pending owner review. The preview reuses the existing simulation on real half-pipe geometry and passed browser checks for controls, actions, completion, replay and absence of external/account writes. Its phone layout was checked by browser emulation; actual-device performance is still pending.
+The current library contains **10 detailed source designs, 41 selected new animation drawings in six clips, and registered runtime exports**. The playable Emerald Park uses 56 hero drawings in 11 clips on a curved 3D half-pipe, with turning gems/stars, pulsing bumpers, moving goo, swaying trees, and rocks that crumble when smashed. Its route is `/James-Hulk-Racer/emerald/`.
 
-Eight exact victory review PNGs have also been recovered into `01-characters/hulk/victory-reviews/v01/recovered-review`. All 64 selected drawings now have a repository export copy. The victory ORIGINAL SOURCE SHEET remains missing; recovery of review PNGs does not close that source-archive gap.
+Original sources, exact prompts, hashes, pivots, and rejected motion poses are archived. Tree clipping and branch drift were caught; only selected poses are used. Artwork remains open to refinement as the owner plays the live game. Practice runs currently reset scores and do not write account data.
 
-All new image work uses native image generation. The latest owner instruction reserves Runway for future video cutscenes, superseding older blanket wording for that later task.
+Eight exact victory review PNGs have also been recovered into `01-characters/hulk/victory-reviews/v01/recovered-review`. All 64 selected drawings now have a repository export copy. The victory original source sheet remains missing; recovered review PNGs do not close that source-archive gap.
 
-Next: owner motion/gameplay review, smoother animation and character registration, richer track surfaces/contact lighting, then actual-phone performance. Remaining costumes/worlds stay deferred.
+Native image generation is used for artwork. Runway is reserved for future video cutscenes.
+
+Next: richer track surfaces and contact lighting, smoother object loops and character transitions, then additional world kits. Remaining costumes/worlds stay deferred while Emerald receives this polish.
 
 ---
 

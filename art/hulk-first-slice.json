@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "artScopeVersion": "1.3",
-  "stage": "animated_emerald_playable_review",
+  "artScopeVersion": "1.4",
+  "stage": "github_live_emerald_iteration",
   "activeHero": "hulk",
   "activeWorld": {
     "id": "park",
@@ -18,7 +18,7 @@
     "cavern",
     "volcano"
   ],
-  "resumeExpansionAfter": "owner_review_of_hulk_gameplay_test",
+  "resumeExpansionAfter": "emerald_gameplay_and_visual_polish",
   "candidateArtAllowedInIsolatedPreview": true,
   "productionApprovalImplied": false,
   "previewRankedWrites": false,
@@ -113,10 +113,10 @@
     "alpha_edges"
   ],
   "nextStages": [
-    "owner_motion_and_gameplay_review",
-    "animation_inbetweens_and_registration",
+    "publish_emerald_through_game_center",
     "track_surface_and_contact_lighting",
-    "actual_phone_performance_test"
+    "animation_inbetweens_and_registration",
+    "phone_performance"
   ],
   "protected": [
     "production_firebase_rules",
@@ -125,14 +125,18 @@
     "sole_initial_master_Sean",
     "Player_Cards",
     "Hall_of_Fame",
-    "production_score_receipts",
-    "main_deployment"
+    "production_score_receipts"
   ],
   "imageService": "builtin",
   "runwayPermitted": false,
-  "storage": "GitHub_preferred_verified_binary_uploads_only",
+  "storage": "GitHub_source_of_truth",
   "animationLibrary": "art/02-items/park/v02/library.json",
   "playablePreviewBranch": "feature/emerald-playable-preview",
   "ownerPriority": "Detailed coherent sprite library, independent object animation, actual curved half-pipe",
-  "runwayUse": "Reserved for future video cutscenes; not used for images or this sprite batch."
+  "runwayUse": "Reserved for future video cutscenes; not used for images or this sprite batch.",
+  "candidateArtAllowedInLivePractice": true,
+  "ownerAuthorizedGitHubDeployment": true,
+  "deploymentPolicy": "Commit artwork and game changes to GitHub; publish through the existing Game Center URL without a separate manual preview gate.",
+  "gameURL": "https://seansommer.github.io/James-Hulk-Racer/emerald/",
+  "gameCenterURL": "https://seansommer.github.io/James-Game-Center/"
 }
